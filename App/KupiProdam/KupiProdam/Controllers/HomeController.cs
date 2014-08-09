@@ -1,15 +1,13 @@
 ﻿namespace KupiProdam.Controllers
 {
+    using KupiProdam.Core;
     using KupiProdam.Utils;
     using System.Collections.Generic;
     using System.Web.Mvc;
 
-    public class HomeController : Controller
+    public class HomeController : Controller, IBaseController
     {
-        /// <summary>
-        /// Заголовок котроллера
-        /// </summary>
-        public string Titile 
+        public string Title 
         { 
             get 
             { 
@@ -17,27 +15,36 @@
             } 
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
-            this.ViewBag.Titile = this.Titile;
-            this.ViewBag.Pagination = this.GetPagination();
+            this.ViewBag.Title = this.Title;
+            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs();
 
             return View();
         }
 
-        /// <summary>
-        /// Получение списка пэйджинга
-        /// </summary>
-        /// <returns>List<PaginationItem> - список пэйджингов</returns>
-        private List<PaginationItem> GetPagination()
+        [HttpGet]
+        public ActionResult News()
         {
-            var result = new List<PaginationItem>();
+            return View();
+        }
 
-            result.Add(new PaginationItem() 
+        [HttpGet]
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public List<BreadcrumbsItem> GetBreadcrumbs()
+        {
+            var result = new List<BreadcrumbsItem>();
+
+            result.Add(new BreadcrumbsItem() 
             { 
                 Controller = "Home", 
                 Method = "Index",
-                Titile = this.Titile
+                Titile = this.Title
             });
 
             return result;

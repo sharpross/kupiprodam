@@ -1,0 +1,8 @@
+﻿@if (ViewBag.Pagination != null) {
+    @foreach (var page in ViewBag.Pagination)
+    {
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink(page.Title, page.Method, page.Controller)</li>
+        </ol>
+    }
+}

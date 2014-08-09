@@ -1,9 +1,9 @@
 ﻿namespace KupiProdam.Utils
 {
     /// <summary>
-    /// Описывает элемент пэйджинга
+    /// Описывает хлебной крошки
     /// </summary>
-    public class PaginationItem
+    public class BreadcrumbsItem
     {
         /// <summary>
         /// Заголовок

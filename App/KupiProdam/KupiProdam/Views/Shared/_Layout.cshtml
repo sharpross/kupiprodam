@@ -3,13 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/static")
+    @Styles.Render("~/Content/static/css")
+    @Styles.Render("~/Content/app/css")
 </head>
 <body>
-    
-    @RenderBody()
-        
-    @Scripts.Render("~/Content/jslibs")
-    @RenderSection("scripts", required: false)
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                @RenderPage("_FooterTop.cshtml")
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    @RenderPage("_MainMenu.cshtml")                       
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    @RenderBody()
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    помощ
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                @RenderPage("_FooterBottom.cshtml")
+            </div>
+        </div>
+    </div>
+
+@Scripts.Render("~/Content/static/js")
+@Scripts.Render("~/Content/app/js")
+@RenderSection("scripts", required: false)
 </body>
 </html>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KupiProdam.Entities", "Kupi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KupiProdam.Utils", "KupiProdam.Utils\KupiProdam.Utils.csproj", "{AF7B31B8-20E0-486F-A237-982C558B6DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KupiProdam.Core", "KupiProdam.Core\KupiProdam.Core.csproj", "{216E3E94-7128-4CE9-AF0A-6AB018036DCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AF7B31B8-20E0-486F-A237-982C558B6DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF7B31B8-20E0-486F-A237-982C558B6DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF7B31B8-20E0-486F-A237-982C558B6DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216E3E94-7128-4CE9-AF0A-6AB018036DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216E3E94-7128-4CE9-AF0A-6AB018036DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216E3E94-7128-4CE9-AF0A-6AB018036DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216E3E94-7128-4CE9-AF0A-6AB018036DCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

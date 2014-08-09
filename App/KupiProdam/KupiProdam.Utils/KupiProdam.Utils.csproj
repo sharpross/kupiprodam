@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuItem.cs" />
-    <Compile Include="PaginationItem.cs" />
+    <Compile Include="UI\MenuItem.cs" />
+    <Compile Include="UI\BreadcrumbsItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

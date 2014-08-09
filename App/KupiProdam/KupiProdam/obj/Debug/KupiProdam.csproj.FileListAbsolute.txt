@@ -57,3 +57,5 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Entities.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Entities.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Utils.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.pdb

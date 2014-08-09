@@ -1,0 +1,7 @@
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.csprojResolveAssemblyReference.cache
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Core.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Core.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.pdb

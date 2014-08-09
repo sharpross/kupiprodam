@@ -158,7 +158,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuyerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +170,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app\scripts\common.js" />
+    <Content Include="Content\app\styles\styles.css" />
+    <Content Include="Content\static\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\static\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\static\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\static\jquery\jquery.js" />
+    <Content Include="Content\static\jquery\jquery.min.js" />
+    <Content Include="Content\static\svgjs\svg.js" />
+    <Content Include="Content\static\svgjs\svg.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -182,16 +199,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\app\" />
-    <Folder Include="Content\static\bootstrap\" />
-    <Folder Include="Content\static\jquery\" />
-    <Folder Include="Content\static\svgjs\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KupiProdam.Core\KupiProdam.Core.csproj">
+      <Project>{216e3e94-7128-4ce9-af0a-6ab018036dce}</Project>
+      <Name>KupiProdam.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KupiProdam.Entities\KupiProdam.Entities.csproj">
       <Project>{dd897c9f-5cd9-4161-a770-06261ca88dd6}</Project>
       <Name>KupiProdam.Entities</Name>
@@ -200,6 +216,37 @@
       <Project>{af7b31b8-20e0-486f-a237-982c558b6dfa}</Project>
       <Name>KupiProdam.Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Registration.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\static\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\static\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\static\jquery\jquery.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MainMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_FooterTop.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_FooterBottom.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Buyer\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Buyer\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

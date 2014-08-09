@@ -3,9 +3,9 @@ kupiprodam (шабашка)
 
   Общее
   -----
-БД: MySQL
-Маппинг: NHibernate
-Платформа: .Net ASP MVC 4
+БД: MySQL; 
+Маппинг: NHibernate; 
+Платформа: .Net ASP MVC 4;
 Дополнительные библиотеки:
  - Bootstrap (css, дабы всё было красиво)
  - jQuery (отгадай что это)
