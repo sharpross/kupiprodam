@@ -14,6 +14,6 @@
         /// Получение списка хлебных крошек
         /// </summary>
         /// <returns>List<PaginationItem> - хлебных крошек</returns>
-        List<BreadcrumbsItem> GetBreadcrumbs();
+        List<BreadcrumbsItem> GetBreadcrumbs(string pageBane);
     }
 }

@@ -240,13 +240,22 @@
     <Content Include="Views\Shared\_FooterBottom.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Buyer\List.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Buyer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Seller\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Seller\Catalog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Buyer\Catalog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

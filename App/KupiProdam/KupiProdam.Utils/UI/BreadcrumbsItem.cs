@@ -8,7 +8,7 @@
         /// <summary>
         /// Заголовок
         /// </summary>
-        public string Titile { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// Имя контроллера
@@ -19,5 +19,10 @@
         /// Имя метода котроллера
         /// </summary>
         public string Method { get; set; }
+
+        /// <summary>
+        /// Является активной
+        /// </summary>
+        public bool IsActive { get; set; }
     }
 }

@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="UI\Breadcrumbs.cs" />
     <Compile Include="UI\MenuItem.cs" />
     <Compile Include="UI\BreadcrumbsItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

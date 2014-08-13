@@ -12,7 +12,7 @@ namespace KupiProdam.Controllers
     {
         public  string Title
         {
-            get { return "Учётная запись"; }
+            get { return Constants.Cotrollers.Title_Account; }
         }
 
         // GET: Account
@@ -20,10 +20,8 @@ namespace KupiProdam.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var listPagination = this.GetBreadcrumbs();
-
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = listPagination;
+            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs(string.Empty);
 
             return View();
         }
@@ -31,16 +29,8 @@ namespace KupiProdam.Controllers
         [HttpGet]
         public ActionResult Registration()
         {
-            var listPagination = this.GetBreadcrumbs();
-            listPagination.Add(new BreadcrumbsItem()
-            {
-                Controller = "Account",
-                Method = "Registration",
-                Titile = "Регистрация"
-            });
-
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = listPagination;
+            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs("Registration");
 
             return View();
         }
@@ -48,40 +38,43 @@ namespace KupiProdam.Controllers
         [HttpGet]
         public ActionResult UserProfile()
         {
-            var listPagination = this.GetBreadcrumbs();
-            listPagination.Add(new BreadcrumbsItem()
-            {
-                Controller = "Account",
-                Method = "Profile",
-                Titile = "Профиль"
-            });
-
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Pagination = listPagination;
+            this.ViewBag.Pagination = this.GetBreadcrumbs("UserProfile");
 
             return View();
         }
 
-        public ActionResult SellerProfile()
-        {
-            return View();
-        }
-
-        public ActionResult BuyerProfile()
-        {
-            return View();
-        }
-
-        public List<BreadcrumbsItem> GetBreadcrumbs()
+        public List<BreadcrumbsItem> GetBreadcrumbs(string pageName)
         {
             var result = new List<BreadcrumbsItem>();
 
-            result.Add(new BreadcrumbsItem() 
+            result.Add(new BreadcrumbsItem()
             {
-                Controller = "Account",
+                Controller = "Seller",
                 Method = "Index",
-                Titile = this.Title
+                Title = this.Title
             });
+
+            switch (pageName)
+            {
+                case "UserProfile":
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = "Account",
+                        Method = "Profile",
+                        Title = "Профиль"
+                    });
+                    break;
+                case "Registration":
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = "Account",
+                        Method = "Registration",
+                        Title = "Регистрация"
+                    });
+                    break;
+                default: break;
+            }
 
             return result;
         }

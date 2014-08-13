@@ -12,36 +12,36 @@ namespace KupiProdam.Controllers
     {
         public string Title
         {
-            get { return "Покупатели"; }
+            get { return Constants.Cotrollers.Title_Buyers; }
         }
 
         [HttpGet]
         public ActionResult Index()
         {
             this.ViewBag.Title = this.Title;
-            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs();
+            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs(string.Empty);
+            this.ViewBag.TopContent = this.GetTopContent();
 
             return View();
         }
 
         [HttpGet]
-        public ActionResult List(int? page)
+        public ActionResult Catalog(int? page)
         {
-            var listPagination = this.GetBreadcrumbs();
-            listPagination.Add(new BreadcrumbsItem()
-            {
-                Controller = "Buyer",
-                Method = "List",
-                Titile = "Список покупателей"
-            });
-
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = listPagination;
+            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs("Catalog");
 
             return View();
         }
 
-        public List<BreadcrumbsItem> GetBreadcrumbs()
+        private List<object> GetTopContent()
+        {
+            var result = new List<object>();
+
+            return result;
+        }
+
+        public List<BreadcrumbsItem> GetBreadcrumbs(string pageName)
         {
             var result = new List<BreadcrumbsItem>();
 
@@ -49,8 +49,21 @@ namespace KupiProdam.Controllers
             {
                 Controller = "Buyer",
                 Method = "Index",
-                Titile = this.Title
+                Title = this.Title
             });
+
+            switch (pageName)
+            {
+                case "Catalog":
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = "Buyer",
+                        Method = "Catalog",
+                        Title = Constants.Cotrollers.Title_Catalog
+                    });
+                    break;
+                default: break;
+            }
 
             return result;
         }
