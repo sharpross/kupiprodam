@@ -1,5 +1,6 @@
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.csprojResolveAssemblyReference.cache
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll.CodeAnalysisLog.xml
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll.lastcodeanalysissucceeded

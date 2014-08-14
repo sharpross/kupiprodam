@@ -18,10 +18,11 @@ namespace KupiProdam.Controllers
         // GET: Account
         [HttpGet]
         [Authorize]
+        [OutputCache(Duration=10)]
         public ActionResult Index()
         {
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs(string.Empty);
+            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Index");
 
             return View();
         }
@@ -30,53 +31,19 @@ namespace KupiProdam.Controllers
         public ActionResult Registration()
         {
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = this.GetBreadcrumbs("Registration");
+            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Registration");
 
             return View();
         }
 
         [HttpGet]
-        public ActionResult UserProfile()
+        [OutputCache(Duration = 10)]
+        public ActionResult Profile()
         {
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Pagination = this.GetBreadcrumbs("UserProfile");
+            this.ViewBag.Pagination = Breadcrumbs.Get("Account", "UserProfile");
 
             return View();
-        }
-
-        public List<BreadcrumbsItem> GetBreadcrumbs(string pageName)
-        {
-            var result = new List<BreadcrumbsItem>();
-
-            result.Add(new BreadcrumbsItem()
-            {
-                Controller = "Seller",
-                Method = "Index",
-                Title = this.Title
-            });
-
-            switch (pageName)
-            {
-                case "UserProfile":
-                    result.Add(new BreadcrumbsItem()
-                    {
-                        Controller = "Account",
-                        Method = "Profile",
-                        Title = "Профиль"
-                    });
-                    break;
-                case "Registration":
-                    result.Add(new BreadcrumbsItem()
-                    {
-                        Controller = "Account",
-                        Method = "Registration",
-                        Title = "Регистрация"
-                    });
-                    break;
-                default: break;
-            }
-
-            return result;
         }
     }
 }

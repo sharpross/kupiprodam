@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace KupiProdam.Utils
 {
-    public class Breadcrumbs
+    public static class Breadcrumbs
     {
-        public List<BreadcrumbsItem> GetBreadcrumbs(string controller, string method)
+        public static List<BreadcrumbsItem> Get(string controller, string method)
         {
             var index = "Index";
 
@@ -37,7 +37,12 @@ namespace KupiProdam.Utils
                     }
                     break;
                 case "Account":
-
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = controller,
+                        Method = index,
+                        Title = Constants.Cotrollers.Title_Account
+                    });
                     break;
             }
 
