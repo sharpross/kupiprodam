@@ -5,3 +5,10 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.pdb
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Core.dll
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Core.pdb
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.dll
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.pdb
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.csprojResolveAssemblyReference.cache
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.dll
+C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.pdb

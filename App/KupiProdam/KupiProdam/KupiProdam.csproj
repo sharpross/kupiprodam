@@ -172,6 +172,8 @@
   <ItemGroup>
     <Content Include="Content\app\scripts\common.js" />
     <Content Include="Content\app\styles\styles.css" />
+    <Content Include="Content\images\basket_bayer_buttion_noact.png" />
+    <Content Include="Content\images\basket_seller_buttion_noact.png" />
     <Content Include="Content\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\static\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\static\bootstrap\css\bootstrap.css" />
@@ -198,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Seller\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -247,6 +248,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\About.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Seller\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

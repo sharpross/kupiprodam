@@ -25,6 +25,7 @@ namespace KupiProdam.Controllers
             return View();
         }
 
+
         public ActionResult Description()
         {
             this.ViewBag.Title = this.Title;

@@ -21,6 +21,10 @@ namespace KupiProdam.Utils
             public const string Title_Catalog = "Каталог";
 
             public const string Title_About = "О нас";
+
+            public const int Max_Top_Sellers = 5;
+
+            public const int Max_Top_Buyers = 5;
         }
     }
 }

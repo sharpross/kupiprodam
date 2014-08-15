@@ -28,6 +28,7 @@ namespace KupiProdam.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Duration = 10)]
         public ActionResult Registration()
         {
             this.ViewBag.Titile = this.Title;
@@ -38,7 +39,27 @@ namespace KupiProdam.Controllers
 
         [HttpGet]
         [OutputCache(Duration = 10)]
-        public ActionResult Profile()
+        public ActionResult BuyerRegistration()
+        {
+            this.ViewBag.Titile = this.Title;
+            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "BuyerRegistration");
+
+            return View();
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 10)]
+        public ActionResult SellerRegistration()
+        {
+            this.ViewBag.Titile = this.Title;
+            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "SellerRegistration");
+
+            return View();
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 10)]
+        public ActionResult Profiles()
         {
             this.ViewBag.Titile = this.Title;
             this.ViewBag.Pagination = Breadcrumbs.Get("Account", "UserProfile");

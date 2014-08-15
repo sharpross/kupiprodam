@@ -23,14 +23,5 @@ namespace KupiProdam.Controllers
 
             return View();
         }
-
-        [HttpGet]
-        public ActionResult Catalog(int? page)
-        {
-            this.ViewBag.Titile = this.Title;
-            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Seller", "Catalog");
-
-            return View();
-        }
     }
 }
