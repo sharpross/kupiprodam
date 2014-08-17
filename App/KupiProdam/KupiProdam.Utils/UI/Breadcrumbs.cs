@@ -44,6 +44,36 @@ namespace KupiProdam.Utils
                         Title = Constants.Cotrollers.Title_Account
                     });
                     break;
+                case "Seller":
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = controller,
+                        Method = index,
+                        Title = Constants.Cotrollers.Title_Sallers
+                    });
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = controller,
+                        Method = "Index",
+                        Title = Constants.Common.Catalog,
+                        IsActive = true
+                    });
+                    break;
+                case "Buyer":
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = controller,
+                        Method = index,
+                        Title = Constants.Cotrollers.Title_Buyers
+                    });
+                    result.Add(new BreadcrumbsItem()
+                    {
+                        Controller = controller,
+                        Method = "Index",
+                        Title = Constants.Common.Catalog,
+                        IsActive = true
+                    });
+                    break;
             }
 
             return result;

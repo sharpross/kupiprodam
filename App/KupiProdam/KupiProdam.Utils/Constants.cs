@@ -26,5 +26,10 @@ namespace KupiProdam.Utils
 
             public const int Max_Top_Buyers = 5;
         }
+
+        public static class Common
+        {
+            public const string Catalog = "Каталог";
+        }
     }
 }

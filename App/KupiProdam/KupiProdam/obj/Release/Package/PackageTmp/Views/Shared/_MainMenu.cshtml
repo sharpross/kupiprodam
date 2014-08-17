@@ -1,0 +1,13 @@
+﻿@if (ViewBag.HideRigthSide == null)
+{
+    <div class="text-left">
+        <nav>
+            <p>@Html.ActionLink("Главная", "Index", "Home")</p>
+            <p>@Html.ActionLink("Покупатели", "Index", "Buyer")</p>
+            <p>@Html.ActionLink("Продавцы", "Index", "Seller")</p>
+            <p>@Html.ActionLink("О нас", "About", "Home")</p>
+        </nav>
+        <br />
+        <p>@Html.ActionLink("Регистрация", "Registration", "Account")</p>
+    </div>
+}

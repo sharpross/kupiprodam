@@ -1,0 +1,5 @@
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\bin\Release\KupiProdam.Entities.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\bin\Release\KupiProdam.Entities.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Release\KupiProdam.Entities.csprojResolveAssemblyReference.cache
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Release\KupiProdam.Entities.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Release\KupiProdam.Entities.pdb

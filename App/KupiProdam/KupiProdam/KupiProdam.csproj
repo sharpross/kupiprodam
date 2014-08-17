@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -174,6 +174,10 @@
     <Content Include="Content\app\styles\styles.css" />
     <Content Include="Content\images\basket_bayer_buttion_noact.png" />
     <Content Include="Content\images\basket_seller_buttion_noact.png" />
+    <Content Include="Content\images\top_logo.jpg" />
+    <Content Include="Content\images\fish\1.jpg" />
+    <Content Include="Content\images\need_help_act.png" />
+    <Content Include="Content\images\need_help_std.png" />
     <Content Include="Content\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Content\static\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Content\static\bootstrap\css\bootstrap.css" />
@@ -257,6 +261,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Seller\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_RigthSide.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\KupiProdam.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -59,8 +59,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Entities.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Utils.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll.CodeAnalysisLog.xml
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll.lastcodeanalysissucceeded
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll.config
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.pdb

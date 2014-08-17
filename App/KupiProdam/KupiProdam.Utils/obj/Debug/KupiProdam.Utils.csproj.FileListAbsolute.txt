@@ -2,10 +2,9 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Util
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll.CodeAnalysisLog.xml
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll.lastcodeanalysissucceeded
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.pdb
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.csprojResolveAssemblyReference.cache
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.dll
 C:\Users\vidrickiy\Documents\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.csprojResolveAssemblyReference.cache

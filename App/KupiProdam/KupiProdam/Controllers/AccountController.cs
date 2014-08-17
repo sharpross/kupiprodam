@@ -33,6 +33,10 @@ namespace KupiProdam.Controllers
         {
             this.ViewBag.Titile = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Registration");
+            
+            this.ViewBag.HideBreadcrumbs = true;
+            this.ViewBag.HideRigthSide = true;
+            this.ViewBag.HideLeftSide = true;
 
             return View();
         }
@@ -44,6 +48,10 @@ namespace KupiProdam.Controllers
             this.ViewBag.Titile = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "BuyerRegistration");
 
+            this.ViewBag.HideBreadcrumbs = true;
+            this.ViewBag.HideRigthSide = true;
+            this.ViewBag.HideLeftSide = true;
+
             return View();
         }
 
@@ -53,6 +61,10 @@ namespace KupiProdam.Controllers
         {
             this.ViewBag.Titile = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "SellerRegistration");
+            
+            this.ViewBag.HideBreadcrumbs = true;
+            this.ViewBag.HideRigthSide = true;
+            this.ViewBag.HideLeftSide = true;
 
             return View();
         }
@@ -62,7 +74,7 @@ namespace KupiProdam.Controllers
         public ActionResult Profiles()
         {
             this.ViewBag.Titile = this.Title;
-            this.ViewBag.Pagination = Breadcrumbs.Get("Account", "UserProfile");
+            this.ViewBag.Pagination = Breadcrumbs.Get("Account", "Profiles");
 
             return View();
         }

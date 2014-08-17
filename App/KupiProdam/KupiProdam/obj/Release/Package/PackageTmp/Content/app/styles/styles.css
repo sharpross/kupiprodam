@@ -1,0 +1,66 @@
+﻿body {
+    padding: 10px;
+}
+
+hr {
+    height: 2px;
+    color: red;
+}
+
+.footer_bottom {
+    padding-bottom: 10px;
+}
+
+.footer_top {
+    width: 100%;
+    height: 100px;
+}
+
+.footer_bottom {
+    width: 100%;
+    height: 100px;
+}
+
+.breadcrumb {
+    background-color: white;
+}
+
+.top_logo {
+    width: 500px;
+    height: 120px;
+    background-image: url(../../images/top_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.need_help {
+    margin-top: 50px;
+    width: 80px;
+    text-align: center;
+}
+.need_help_img {
+    width: 80px;
+    height: 70px;
+}
+.need_help a {
+    color: grey;
+    text-decoration: none;
+
+    background-image: url("../../images/need_help_std.png");
+    background-repeat: no-repeat;
+}
+.need_help a :hover {
+    background-image: url("../../images/need_help_act.png");
+}
+
+.desc_block .title {
+    text-align: center;
+}
+.desc_block .title img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.desc_block .desc_text {
+    text-align: justify;
+}
