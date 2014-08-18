@@ -172,8 +172,8 @@
   <ItemGroup>
     <Content Include="Content\app\scripts\common.js" />
     <Content Include="Content\app\styles\styles.css" />
-    <Content Include="Content\images\basket_bayer_buttion_noact.png" />
-    <Content Include="Content\images\basket_seller_buttion_noact.png" />
+    <Content Include="Content\images\cart_buy.png" />
+    <Content Include="Content\images\cart_sell.png" />
     <Content Include="Content\images\top_logo.jpg" />
     <Content Include="Content\images\fish\1.jpg" />
     <Content Include="Content\images\need_help_act.png" />
