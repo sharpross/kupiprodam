@@ -1,47 +1,88 @@
-﻿<div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-8">
+﻿@RenderPage("_LoginForm.cshtml")
 
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8">
+        <!-- Top Header -->
+<div class="top-header">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-md-10 col-sm-10">
-                <div class="top_logo"></div>
-            </div>
-            
-            <div class="col-lg-2 col-md-2 col-sm-2">
-                <div class="btn btn-primary" id="login" style="width: 100%;">Войти</div>
+            <div class="col-sm-12">
+                <nav class="top-header-menu">
+                    <ul class="menu">
+                        <li><a href="sign-in.html">Вход</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-8">
-
-    </div>
 </div>
-
-<div id="loginForm" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Закрыть</span></button>
-                <h4 class="modal-title">Войти</h4>
+<!-- Header: Logo and Main Nav -->
+<header>
+    <div id="navOne" class="navbar navbar-wp" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-aside-menu">
+                    <i class="fa fa-outdent icon-custom"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" title="Boomerang | One template. Infinite solutions">
+                    <img src="images/boomerang-logo-dark.png" alt="Boomerang | One template. Infinite solutions">
+                </a>
             </div>
-            <div class="modal-body">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Главная</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Продавцы</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Покупатели</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">О нас</a>
+                    </li>
 
-                <form role="form">
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="login" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Пароль">
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Запомнить
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Войти</button>
-                </form>
+                    <li class="dropdown animate-click" data-animate="animated fadeInUp" style="z-index:500;">
+                        <a href="#" class="dropdown-toggle dropdown-form-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-user animate-wr">
+                            <li id="dropdownForm">
+                                <div class="dropdown-form">
+                                    <form class="form-default form-inline p-15">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Поиск...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-two" type="button">Искать</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="#" id="cmdAsideMenu" class="dropdown-toggle dropdown-form-toggle" title="Open sidebar">
+                            <i class="fa fa-outdent"></i>
+                        </a>
+                    </li>
+                </ul>
 
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</header>
+<div class="pg-opt pin">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@ViewBag.Title</h2>
+            </div>
+            <div class="col-md-6">
+                @RenderPage("_Breadcrumbs.cshtml")
             </div>
         </div>
     </div>

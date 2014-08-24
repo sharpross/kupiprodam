@@ -1,13 +1,12 @@
 ﻿@if (ViewBag.HideRigthSide == null)
 {
-    <div class="text-left">
-        <nav>
-            <p>@Html.ActionLink("Главная", "Index", "Home")</p>
-            <p>@Html.ActionLink("Покупатели", "Index", "Buyer")</p>
-            <p>@Html.ActionLink("Продавцы", "Index", "Seller")</p>
-            <p>@Html.ActionLink("О нас", "About", "Home")</p>
-        </nav>
-        <br />
-        <p>@Html.ActionLink("Регистрация", "Registration", "Account")</p>
+    <div class="widget">
+        <ul class="categories">
+            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+            <li>@Html.ActionLink("Покупатели", "Index", "Buyer")</li>
+            <li>@Html.ActionLink("Продавцы", "Index", "Seller")</li>
+            <li>@Html.ActionLink("О нас", "About", "Home")</li>
+            <li>@Html.ActionLink("Регистрация", "Registration", "Account")</li>
+        </ul>
     </div>
 }
