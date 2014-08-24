@@ -7,6 +7,11 @@ hr {
     color: red;
 }
 
+.col-center {
+    float: none !important;
+    margin: 0 auto !important;
+}
+
 .footer_bottom {
     padding-bottom: 10px;
 }
@@ -31,6 +36,11 @@ hr {
     background-image: url(../../images/top_logo.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.content-center {
+    float: none;
+    margin: 0 50%;
 }
 
 .need_help {
@@ -74,10 +84,10 @@ hr {
     font-weight: bold;
 }
 .reg_cart .reg_cart_title {
-    width: 200px;
-    position: absolute;
-    left: 110px;
-    top: 25px;
+    width: 000px;
+    position: inherit;
+    left: -100px;
+    top: 0px;
 }
 .reg_cart .reg_cart_title p {
     color: gray;
@@ -86,7 +96,7 @@ hr {
 .reg_cart .reg_cart_img img{
     width: 100px;
     height: 100px;
-    position: absolute;
-    left: 0px;
+    position: inherit;
+    left: -100px;
     top: 0px;
 }
