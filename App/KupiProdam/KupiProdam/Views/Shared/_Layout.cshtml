@@ -62,13 +62,19 @@
             <div class="w-section inverse shop">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
-                            @RenderPage("_MainMenu.cshtml")
-
-                        </div>
-                        <div class="col-md-9">
-                            @RenderBody()
-                        </div>
+                        @if (ViewBag.HideRigthSide == null)
+                        {
+                            @RenderPage("_LeftSide.cshtml")
+                            <div class="col-md-9">
+                                @RenderBody()
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-12">
+                                @RenderBody()
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
