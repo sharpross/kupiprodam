@@ -6,6 +6,16 @@ hr {
     color: red;
 }
 
+form a {
+    text-decoration: underline;
+}
+
+header .navbar-brand img {
+    position: relative;
+    top: -6px;
+    height: 60px;
+}
+
 .col-center {
     float: none !important;
     margin: 0 auto !important;
@@ -37,9 +47,8 @@ hr {
     background-size: contain;
 }
 
-.content-center {
-    float: none;
-    margin: 0 50%;
+.vert_20 {
+    padding: 20px;
 }
 
 .need_help {
@@ -63,39 +72,28 @@ hr {
 }
 
 .desc_block .title {
-    text-align: center;
+    height: 120px;
 }
 .desc_block .title img {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 100px;
+}
+.desc_block .title_text {
+    position: relative;
+    font-size: 18px;
+    text-transform: uppercase;
+    left: 220px;
+    top: -80px;
+}
+.desc_block .title_desc {
+    position: relative;
+    font-size: 14px;
+    text-transform: uppercase;
+    left: 220px;
+    top: -80px;
 }
 .desc_block .desc_text {
     text-align: justify;
-}
-
-.reg_cart {
-    margin:0 25% 0 25%;
-    width:50%;
-    height: 130px;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
-}
-.reg_cart .reg_cart_title {
-    width: 000px;
-    position: inherit;
-    left: -100px;
-    top: 0px;
-}
-.reg_cart .reg_cart_title p {
-    color: gray;
-    font-size: 14px;
-}
-.reg_cart .reg_cart_img img{
-    width: 100px;
-    height: 100px;
-    position: inherit;
-    left: -100px;
-    top: 0px;
 }

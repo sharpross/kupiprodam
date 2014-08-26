@@ -8,34 +8,90 @@
     @Styles.Render("~/Content/app/css")
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                @RenderPage("_FooterTop.cshtml")
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
 
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    @RenderPage("_MainMenu.cshtml")
-                </div>
 
-                <div class="col-lg-8 col-md-8 col-sm-8">
-                    @RenderPage("_Breadcrumbs.cshtml")
-                    @RenderBody()
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    @RenderPage("_RigthSide.cshtml")                    
-                </div>
+    <section id="asideMenu" class="aside-menu">
+        <form class="form-inline form-search">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Поиск..." />
+                <span class="input-group-btn">
+                    <button id="btnHideAsideMenu" class="btn btn-close" type="button" title="Hide sidebar"><i class="fa fa-times"></i></button>
+                </span>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                @RenderPage("_FooterBottom.cshtml")
-            </div>
+        </form>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="#">Главная</a>
+                </li>
+                <li>
+                    <a href="#">Продавцы</a>
+                </li>
+                <li>
+                    <a href="#">Покупатели</a>
+                </li>
+                <li>
+                    <a href="#">О нас</a>
+                </li>
+            </ul>
         </div>
+
+        <div class="social-media">
+            <a href="#"><i class="fa fa-facebook facebook"></i></a>
+            <a href="#"><i class="fa fa-google-plus google"></i></a>
+            <a href="#"><i class="fa fa-twitter twitter"></i></a>
+        </div>
+
+        <h5 class="side-section-title">О нас</h5>
+        <div class="contact-info">
+            <h5>Адрес</h5>
+            <p>5th Avenue, New York - United States</p>
+
+            <h5>Email</h5>
+            <p>hello@webpixels.ro</p>
+
+            <h5>Телефон</h5>
+            <p>+10 724 1234 567</p>
+        </div>
+    </section>
+
+    <div class="wrapper">
+        @RenderPage("_FooterTop.cshtml")
+
+        <section class="slice bg-3">
+            <div class="w-section inverse shop">
+                <div class="container">
+                    <div class="row">
+                        @if (ViewBag.HideRigthSide == null)
+                        {
+                            @RenderPage("_LeftSide.cshtml")
+                            <div class="col-md-9">
+                                @RenderBody()
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-12">
+                                @RenderBody()
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @RenderPage("_FooterBottom.cshtml")
+
     </div>
 
 @Scripts.Render("~/Content/static/js")
 @Scripts.Render("~/Content/app/js")
+
+<!--[if lt IE 9]>
+    <script src="/Content/static/theme/js/html5shiv.js"></script>
+    <script src="/Content/static/theme/js/respond.min.js"></script>
+<![endif]-->
+
 @RenderSection("scripts", required: false)
 </body>
 </html>

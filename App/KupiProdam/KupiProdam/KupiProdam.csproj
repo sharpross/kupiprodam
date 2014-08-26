@@ -178,6 +178,7 @@
     <Content Include="Content\images\fish\1.jpg" />
     <Content Include="Content\images\need_help_act.png" />
     <Content Include="Content\images\need_help_std.png" />
+    <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\static\jquery\jquery.js" />
     <Content Include="Content\static\jquery\jquery.min.js" />
     <Content Include="Content\static\svgjs\svg.js" />
@@ -596,6 +597,8 @@
     <None Include="Properties\PublishProfiles\KupiProdam.pubxml" />
     <Content Include="Views\Shared\_FooterTop.cshtml" />
     <Content Include="Views\Shared\_LeftSide.cshtml" />
+    <Content Include="Views\Account\BuyerRegistartion.cshtml" />
+    <Content Include="Views\Account\SellerRegistartion.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

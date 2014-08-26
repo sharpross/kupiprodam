@@ -57,11 +57,25 @@ namespace KupiProdam.Controllers
 
         [HttpGet]
         [OutputCache(Duration = 10)]
-        public ActionResult SellerRegistration()
+        public ActionResult SellerRegistartion()
         {
-            this.ViewBag.Titile = this.Title;
+            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, Constants.Cotrollers.Title_Sallers);
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "SellerRegistration");
             
+            this.ViewBag.HideBreadcrumbs = true;
+            this.ViewBag.HideRigthSide = true;
+            this.ViewBag.HideLeftSide = true;
+
+            return View();
+        }
+
+        [HttpGet]
+        [OutputCache(Duration = 10)]
+        public ActionResult BuyerRegistartion()
+        {
+            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, Constants.Cotrollers.Title_Buyers);
+            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "BuyerRegistration");
+
             this.ViewBag.HideBreadcrumbs = true;
             this.ViewBag.HideRigthSide = true;
             this.ViewBag.HideLeftSide = true;
