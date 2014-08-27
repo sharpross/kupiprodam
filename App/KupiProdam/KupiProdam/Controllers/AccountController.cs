@@ -15,14 +15,12 @@ namespace KupiProdam.Controllers
             get { return Constants.Cotrollers.Title_Account; }
         }
 
-        // GET: Account
-        [HttpGet]
-        [Authorize]
         [OutputCache(Duration=10)]
-        public ActionResult Index()
+        public ActionResult Index(bool isSeller)
         {
             this.ViewBag.Titile = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Index");
+            this.ViewBag.IsSeller = isSeller;
 
             return View();
         }
@@ -79,16 +77,6 @@ namespace KupiProdam.Controllers
             this.ViewBag.HideBreadcrumbs = true;
             this.ViewBag.HideRigthSide = true;
             this.ViewBag.HideLeftSide = true;
-
-            return View();
-        }
-
-        [HttpGet]
-        [OutputCache(Duration = 10)]
-        public ActionResult Profiles()
-        {
-            this.ViewBag.Titile = this.Title;
-            this.ViewBag.Pagination = Breadcrumbs.Get("Account", "Profiles");
 
             return View();
         }

@@ -1,2 +1,9 @@
 ﻿<h2>Профиль</h2>
-
+@if (ViewBag.IsBuyer == false)
+{
+    @RenderPage("_BuyerProfile.cshtml")
+}
+@if (ViewBag.IsSeller == true)
+{
+    @RenderPage("_SellerProfile.cshtml")
+}

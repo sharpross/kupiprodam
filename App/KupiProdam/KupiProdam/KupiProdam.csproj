@@ -599,6 +599,8 @@
     <Content Include="Views\Shared\_LeftSide.cshtml" />
     <Content Include="Views\Account\BuyerRegistartion.cshtml" />
     <Content Include="Views\Account\SellerRegistartion.cshtml" />
+    <Content Include="Views\Account\_SellerProfile.cshtml" />
+    <Content Include="Views\Account\_BuyerProfile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
