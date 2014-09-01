@@ -97,3 +97,16 @@ header .navbar-brand img {
 .desc_block .desc_text {
     text-align: justify;
 }
+
+.card-table td {
+    padding: 10px 5px 10px 5px;
+}
+.card-td-title {
+    vertical-align: top; 
+    text-align: right; 
+    padding-right: 5px; 
+    font-weight: bold;
+}
+.card-adding {
+    padding-top: 10px;
+}

@@ -1,0 +1,113 @@
+﻿@model KupiProdam.Entities.Entites.Seller
+
+@{
+    ViewBag.Title = "Card";
+}
+
+<div class="tabs">
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#tab5-1" data-toggle="tab"><i class="icon-star"></i>Визитка</a></li>
+        <li class=""><a href="#tab5-2" data-toggle="tab">Товары</a></li>
+        <li class=""><a href="#tab5-3" data-toggle="tab">Услуги</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab5-1">
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="@Model.Name" src="@Url.Content(Model.Photo)" style="width: 100%; height: 100%;" class="img-thumbnail">
+                    <div class="card-adding widget" style="padding-top: 10px;">
+                        <ul class="categories">
+                            <li><a href="@Model.Site" target="_blank"><i class="fa fa-external-link"></i>Сайт</a></li>
+                            <li><a href="@Model.Site" target="_blank"><i class="fa fa-star"></i>В избранное</a></li>
+                            <li><a href="#"><i class="fa fa-comments"></i>Отправить сообщение</a></li>
+                            <li><a href="#"><i class="fa fa-file-o"></i>На печать</a></li>
+                            <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Пожалоавться</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <p><h2>@Model.Name</h2></p>
+                    <br />
+                    <table class="card-table">
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                О нас:
+                            </td>
+                            <td>
+                                @Model.About
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Наш сайт:
+                            </td>
+                            <td>
+                                @Model.Site
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Наша почта:
+                            </td>
+                            <td>
+                                <a href="mailto:@Model.Email">@Model.Email</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Skype:
+                            </td>
+                            <td>
+                                <a href="callto:@Model.Skype">@Model.Skype</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                ВКонтакте:
+                            </td>
+                            <td>
+                                <a href="@Model.VKontakte" target="_blank">@Model.VKontakte</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Facebook:
+                            </td>
+                            <td>
+                                <a href="@Model.Facebook" target="_blank">@Model.Facebook</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Телефоны:
+                            </td>
+                            <td>
+                                @foreach (string phone in Model.Phones)
+                                {
+                                    <p><a href="callto:@phone">@phone</a></p>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" class="card-td-title">
+                                Адреса:
+                            </td>
+                            <td>
+                                @foreach (string address in Model.Addresses)
+                                {
+                                    <p>@address</p>
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab5-2">
+            This is tab two.
+        </div>
+        <div class="tab-pane" id="tab5-3">
+            This is tab three.
+        </div>
+    </div>
+</div>

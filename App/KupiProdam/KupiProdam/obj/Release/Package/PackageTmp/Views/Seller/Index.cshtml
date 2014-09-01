@@ -1,2 +1,46 @@
-﻿<h2>Продавцы</h2>
-Здесь будет список  продавцов
+﻿@model IEnumerable<KupiProdam.Entities.Entites.Seller>
+
+@{
+    var row = 0;
+}
+
+<div class="wp-example">
+
+@foreach(var item in Model)
+{
+    if(row == 0)
+    {
+        @:<div class="row">
+    }
+
+            <div class="col-md-4">
+                <div class="w-box product">
+                    <figure>
+                        <img alt="@item.Name" src="@Url.Content(item.Photo)" style="width: 150px; height: 150px;" class="img-responsive img-center">
+                    </figure>
+                    <h2><a href="">@item.Name</a></h2>
+                    <p>
+                        @item.About
+                    </p>
+                    <div class="w-footer">
+                        <span class="price pull-left"></span>
+                        @Html.ActionLink("Подробнее...", "Card", "Seller", new { id = item.Id }, new { @class = "btn btn-xs btn-two pull-right" })
+                    </div>
+                </div>
+            </div>
+
+    if(row == 2) 
+    {
+        @:</div>
+    }
+
+    row++;
+    
+    if (row == 3)
+    {
+        row = 0;
+    }
+}
+
+</div>
+

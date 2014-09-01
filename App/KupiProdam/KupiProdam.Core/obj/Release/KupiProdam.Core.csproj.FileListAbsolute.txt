@@ -5,3 +5,5 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Release\KupiProdam.Uti
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Release\KupiProdam.Core.csprojResolveAssemblyReference.cache
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Release\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Release\KupiProdam.Core.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Release\KupiProdam.Entities.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Release\KupiProdam.Entities.pdb

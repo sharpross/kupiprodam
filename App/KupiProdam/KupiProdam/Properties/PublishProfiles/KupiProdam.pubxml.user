@@ -19,16 +19,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2014 23:27:43</publishTime>
     </File>
     <File Include="bin/KupiProdam.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/01/2014 22:47:29</publishTime>
     </File>
     <File Include="bin/KupiProdam.dll">
-      <publishTime>08/27/2014 01:18:33</publishTime>
+      <publishTime>09/01/2014 22:47:29</publishTime>
     </File>
     <File Include="bin/KupiProdam.Entities.dll">
-      <publishTime>08/17/2014 18:48:03</publishTime>
+      <publishTime>09/01/2014 22:47:28</publishTime>
     </File>
     <File Include="bin/KupiProdam.Utils.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/01/2014 22:47:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>08/08/2014 23:27:45</publishTime>
@@ -103,7 +103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2014 00:32:45</publishTime>
     </File>
     <File Include="Content/app/styles/styles.css">
-      <publishTime>08/27/2014 01:17:45</publishTime>
+      <publishTime>09/01/2014 21:19:30</publishTime>
     </File>
     <File Include="Content/images/basket_bayer_buttion_noact.png">
       <publishTime>08/16/2014 15:25:56</publishTime>
@@ -119,6 +119,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/images/fish/1.jpg">
       <publishTime>08/17/2014 21:09:53</publishTime>
+    </File>
+    <File Include="Content/images/fish/2.jpg">
+      <publishTime>09/01/2014 15:06:39</publishTime>
+    </File>
+    <File Include="Content/images/fish/3.jpg">
+      <publishTime>09/01/2014 22:21:47</publishTime>
+    </File>
+    <File Include="Content/images/fish/4.jpg">
+      <publishTime>09/01/2014 22:21:47</publishTime>
     </File>
     <File Include="Content/images/logo.jpg">
       <publishTime>08/27/2014 01:12:45</publishTime>
@@ -1219,13 +1228,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 01:08:50</publishTime>
     </File>
     <File Include="Views/Account/Index.cshtml">
-      <publishTime>08/17/2014 14:19:39</publishTime>
+      <publishTime>08/29/2014 22:32:55</publishTime>
     </File>
     <File Include="Views/Account/Registration.cshtml">
       <publishTime>08/26/2014 22:27:41</publishTime>
     </File>
     <File Include="Views/Account/SellerRegistartion.cshtml">
       <publishTime>08/27/2014 01:11:41</publishTime>
+    </File>
+    <File Include="Views/Account/_BuyerProfile.cshtml">
+      <publishTime>09/01/2014 22:45:20</publishTime>
+    </File>
+    <File Include="Views/Account/_SellerProfile.cshtml">
+      <publishTime>09/01/2014 22:45:23</publishTime>
     </File>
     <File Include="Views/Buyer/Index.cshtml">
       <publishTime>08/17/2014 19:32:48</publishTime>
@@ -1234,19 +1249,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2014 00:22:50</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/18/2014 00:22:36</publishTime>
+      <publishTime>09/01/2014 22:46:17</publishTime>
+    </File>
+    <File Include="Views/Seller/Card.cshtml">
+      <publishTime>09/01/2014 22:42:28</publishTime>
     </File>
     <File Include="Views/Seller/Index.cshtml">
-      <publishTime>08/17/2014 19:31:38</publishTime>
+      <publishTime>09/01/2014 19:09:34</publishTime>
     </File>
     <File Include="Views/Shared/_Breadcrumbs.cshtml">
-      <publishTime>08/25/2014 00:31:03</publishTime>
+      <publishTime>08/27/2014 18:23:49</publishTime>
     </File>
     <File Include="Views/Shared/_FooterBottom.cshtml">
       <publishTime>08/25/2014 00:43:37</publishTime>
     </File>
     <File Include="Views/Shared/_FooterTop.cshtml">
-      <publishTime>08/27/2014 01:15:27</publishTime>
+      <publishTime>08/29/2014 22:31:56</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>08/25/2014 20:17:32</publishTime>

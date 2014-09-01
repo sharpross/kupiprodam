@@ -1,4 +1,5 @@
 ﻿using KupiProdam.Core;
+using KupiProdam.Entities.Entites;
 using KupiProdam.Utils;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,26 @@ namespace KupiProdam.Controllers
         {
             this.ViewBag.Title = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Buyer", "Index");
-            this.ViewBag.TopContent = this.GetTopContent();
 
             return View();
         }
 
-
-        public ActionResult Description()
+        /// <summary>
+        /// Каталог покупателя
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Catalog()
         {
-            this.ViewBag.Title = this.Title;
-            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Buyer", "Description");
-            this.ViewBag.TopContent = this.GetTopContent();
+            return View();
+        }
 
+        /// <summary>
+        /// Визитка
+        /// </summary>
+        /// <param name="id">Идентификатор</param>
+        /// <returns></returns>
+        public ActionResult Card(int id)
+        {
             return View();
         }
 

@@ -40,10 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Generators\Sellers.cs" />
     <Compile Include="UI\Breadcrumbs.cs" />
     <Compile Include="UI\MenuItem.cs" />
     <Compile Include="UI\BreadcrumbsItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KupiProdam.Entities\KupiProdam.Entities.csproj">
+      <Project>{dd897c9f-5cd9-4161-a770-06261ca88dd6}</Project>
+      <Name>KupiProdam.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
