@@ -31,5 +31,10 @@ namespace KupiProdam.Utils
         {
             public const string Catalog = "Каталог";
         }
+
+        public static class System
+        {
+            public const string ConnectionString = "";
+        }
     }
 }

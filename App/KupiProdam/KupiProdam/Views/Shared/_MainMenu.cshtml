@@ -1,12 +1,25 @@
-﻿@if (ViewBag.HideMainMenu == null)
-{
-    <div class="widget">
-        <ul class="categories">
-            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-            <li>@Html.ActionLink("Покупатели", "Index", "Buyer")</li>
-            <li>@Html.ActionLink("Продавцы", "Index", "Seller")</li>
-            <li>@Html.ActionLink("О нас", "About", "Home")</li>
-            <li>@Html.ActionLink("Регистрация", "Registration", "Account")</li>
-        </ul>
-    </div>
-}
+﻿<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Главная</a>
+    <ul class="dropdown-menu">
+        <li>
+            @Html.ActionLink("На главную", "Index", "Home")
+            @Html.ActionLink("О нас", "About", "Home")
+        </li>
+    </ul>
+</li>
+<li class="dropdown">
+    <a href="Buyer/Index" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Продавцы</a>
+</li>
+<li class="dropdown">
+    <a href="Seller/Index" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Покупатели</a>
+</li>
+<li class="dropdown">
+    <a href="Account/Registration" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">Страницы</a>
+    <ul class="dropdown-menu">
+        <li>
+            @Html.ActionLink("Регистрация", "Registration", "Account")
+            @Html.ActionLink("Каталог", "Index", "Seller")
+            @Html.ActionLink("Профиль продавца", "Index", "Account", new { isSeller = true}, null)
+        </li>
+    </ul>
+</li>

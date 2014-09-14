@@ -1,1 +1,108 @@
-﻿
+﻿@model KupiProdam.Entities.Entites.Seller
+
+<div class="tabs">
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#tab5-1" data-toggle="tab"><i class="icon-star"></i>Основное</a></li>
+        <li class=""><a href="#tab5-2" data-toggle="tab">Дополнительно</a></li>
+        <li class=""><a href="#tab5-3" data-toggle="tab">Продукция</a></li>
+        <li class=""><a href="#tab5-4" data-toggle="tab">Услуги</a></li>
+        <li class=""><a href="#tab5-5" data-toggle="tab">Портфолио</a></li>
+        <li class=""><a href="#tab5-6" data-toggle="tab">Настройки</a></li>
+        <li class=""><a href="#tab5-7" data-toggle="tab">Оплата</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab5-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div style="text-align: center; width:100%">
+                                <p>
+                                    <img src="@Url.Content(@Model.Photo)" style="width: 300px; height: 300px;" class="img-thumbnail">
+                                </p>
+                                <p>
+                                    <div class="btn btn-info" style="width: 200px;">Загрузить</div>
+                                </p>
+                            </div>
+                            <br />
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="Name">Название организации*</label>
+                                    <input type="text" class="form-control" id="Name" placeholder="Название организации" value="@Model.Name">
+                                </div>
+                                <div class="vert_20"></div>
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input type="email" class="form-control" id="Email" placeholder="Email" value="@Model.Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Phone">Телефон</label>
+                                    <input type="tel" class="form-control" id="Phone" placeholder="+71234567890" value="@Model.MainPhone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Phone">О нас</label>
+                                    <input type="text" class="form-control" id="Phone" placeholder="+71234567890" value="@Model.About">
+                                </div>
+
+                                <div style="width: 100%; text-align: center;">
+                                    <button type="submit" class="btn btn-four">Обновить</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab5-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="Name">Сайт</label>
+                                    <input type="url" class="form-control" id="Name" placeholder="www.site.ru" value="@Model.Site">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Skype</label>
+                                    <input type="text" class="form-control" id="Email" placeholder="Email" value="@Model.Skype">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">ВКонтакте</label>
+                                    <input type="text" class="form-control" id="Email" placeholder="Email" value="@Model.VKontakte">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Facebook</label>
+                                    <input type="text" class="form-control" id="Email" placeholder="Email" value="@Model.Facebook">
+                                </div>
+
+                                <div style="width: 100%; text-align: center;">
+                                    <button type="submit" class="btn btn-four">Обновить</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab5-3">
+
+        </div>
+        <div class="tab-pane" id="tab5-4">
+
+        </div>
+        <div class="tab-pane" id="tab5-5">
+
+        </div>
+        <div class="tab-pane" id="tab5-6">
+
+        </div>
+        <div class="tab-pane" id="tab5-7">
+
+        </div>
+    </div>
+</div>

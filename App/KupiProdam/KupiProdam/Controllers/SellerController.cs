@@ -16,6 +16,7 @@ namespace KupiProdam.Controllers
         public SellerController()
             : base()
         {
+            
             var generator = new KupiProdam.Utils.Generators.Sellers(); 
             this.Sellers = generator.Get();
         }

@@ -26,7 +26,7 @@
                 {
                     Id = i,
                     Name = this.GetName(),
-                    Photo = this.GetPhotos(),
+                    //Photo = this.GetPhotos(),
                     Email = "mail@yandex.ru",
                     About = "Мы явно очень хорошее предприятие. У нас очень много довольных клиентов. Айдате к нам! Мы явно очень хорошее предприятие. У нас очень много довольных клиентов. Айдате к нам!",
                     Site = "www.yandex.ru",

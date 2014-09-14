@@ -22,16 +22,16 @@
         <div class="nav">
             <ul>
                 <li>
-                    <a href="#">Главная</a>
+                    <a href="Home/Index">Главная</a>
                 </li>
                 <li>
-                    <a href="#">Продавцы</a>
+                    <a href="Seller/Index">Продавцы</a>
                 </li>
                 <li>
-                    <a href="#">Покупатели</a>
+                    <a href="Buyer/Index">Покупатели</a>
                 </li>
                 <li>
-                    <a href="#">О нас</a>
+                    <a href="Home/Index">О нас</a>
                 </li>
             </ul>
         </div>
@@ -64,8 +64,7 @@
                     <div class="row">
                         @if (ViewBag.HideRigthSide == null)
                         {
-                            @RenderPage("_LeftSide.cshtml")
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 @RenderBody()
                             </div>
                         }
@@ -80,17 +79,16 @@
             </div>
         </section>
 
-        @RenderPage("_FooterBottom.cshtml")
+        
 
     </div>
 
 @Scripts.Render("~/Content/static/js")
+    <!--[if lt IE 9]>
+        <script src="/Content/static/theme/js/html5shiv.js"></script>
+        <script src="/Content/static/theme/js/respond.min.js"></script>
+    <![endif]-->
 @Scripts.Render("~/Content/app/js")
-
-<!--[if lt IE 9]>
-    <script src="/Content/static/theme/js/html5shiv.js"></script>
-    <script src="/Content/static/theme/js/respond.min.js"></script>
-<![endif]-->
 
 @RenderSection("scripts", required: false)
 </body>

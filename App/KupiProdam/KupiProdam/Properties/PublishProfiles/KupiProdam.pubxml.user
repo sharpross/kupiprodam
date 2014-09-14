@@ -19,16 +19,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2014 23:27:43</publishTime>
     </File>
     <File Include="bin/KupiProdam.Core.dll">
-      <publishTime>09/01/2014 22:47:29</publishTime>
+      <publishTime>09/07/2014 22:17:49</publishTime>
     </File>
     <File Include="bin/KupiProdam.dll">
-      <publishTime>09/01/2014 22:47:29</publishTime>
+      <publishTime>09/07/2014 22:17:49</publishTime>
     </File>
     <File Include="bin/KupiProdam.Entities.dll">
-      <publishTime>09/01/2014 22:47:28</publishTime>
+      <publishTime>09/07/2014 22:17:48</publishTime>
     </File>
     <File Include="bin/KupiProdam.Utils.dll">
-      <publishTime>09/01/2014 22:47:29</publishTime>
+      <publishTime>09/07/2014 22:17:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>08/08/2014 23:27:45</publishTime>
@@ -103,7 +103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2014 00:32:45</publishTime>
     </File>
     <File Include="Content/app/styles/styles.css">
-      <publishTime>09/01/2014 21:19:30</publishTime>
+      <publishTime>09/07/2014 16:38:55</publishTime>
     </File>
     <File Include="Content/images/basket_bayer_buttion_noact.png">
       <publishTime>08/16/2014 15:25:56</publishTime>
@@ -121,13 +121,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2014 21:09:53</publishTime>
     </File>
     <File Include="Content/images/fish/2.jpg">
-      <publishTime>09/01/2014 15:06:39</publishTime>
+      <publishTime>01/09/2014 15:06:39</publishTime>
     </File>
     <File Include="Content/images/fish/3.jpg">
-      <publishTime>09/01/2014 22:21:47</publishTime>
+      <publishTime>01/09/2014 22:21:47</publishTime>
     </File>
     <File Include="Content/images/fish/4.jpg">
-      <publishTime>09/01/2014 22:21:47</publishTime>
+      <publishTime>01/09/2014 22:21:47</publishTime>
     </File>
     <File Include="Content/images/logo.jpg">
       <publishTime>08/27/2014 01:12:45</publishTime>
@@ -1228,19 +1228,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2014 01:08:50</publishTime>
     </File>
     <File Include="Views/Account/Index.cshtml">
-      <publishTime>08/29/2014 22:32:55</publishTime>
+      <publishTime>09/03/2014 20:46:41</publishTime>
     </File>
     <File Include="Views/Account/Registration.cshtml">
       <publishTime>08/26/2014 22:27:41</publishTime>
     </File>
     <File Include="Views/Account/SellerRegistartion.cshtml">
-      <publishTime>08/27/2014 01:11:41</publishTime>
+      <publishTime>09/07/2014 18:35:17</publishTime>
     </File>
     <File Include="Views/Account/_BuyerProfile.cshtml">
-      <publishTime>09/01/2014 22:45:20</publishTime>
+      <publishTime>01/09/2014 22:45:20</publishTime>
     </File>
     <File Include="Views/Account/_SellerProfile.cshtml">
-      <publishTime>09/01/2014 22:45:23</publishTime>
+      <publishTime>09/07/2014 18:37:14</publishTime>
     </File>
     <File Include="Views/Buyer/Index.cshtml">
       <publishTime>08/17/2014 19:32:48</publishTime>
@@ -1249,13 +1249,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2014 00:22:50</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/01/2014 22:46:17</publishTime>
+      <publishTime>01/09/2014 22:46:17</publishTime>
     </File>
     <File Include="Views/Seller/Card.cshtml">
-      <publishTime>09/01/2014 22:42:28</publishTime>
+      <publishTime>09/07/2014 18:35:11</publishTime>
     </File>
     <File Include="Views/Seller/Index.cshtml">
-      <publishTime>09/01/2014 19:09:34</publishTime>
+      <publishTime>01/09/2014 19:09:34</publishTime>
     </File>
     <File Include="Views/Shared/_Breadcrumbs.cshtml">
       <publishTime>08/27/2014 18:23:49</publishTime>
@@ -1264,19 +1264,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2014 00:43:37</publishTime>
     </File>
     <File Include="Views/Shared/_FooterTop.cshtml">
-      <publishTime>08/29/2014 22:31:56</publishTime>
+      <publishTime>09/07/2014 16:31:46</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/25/2014 20:17:32</publishTime>
+      <publishTime>09/07/2014 16:34:45</publishTime>
     </File>
     <File Include="Views/Shared/_LeftSide.cshtml">
-      <publishTime>08/25/2014 20:17:32</publishTime>
+      <publishTime>09/07/2014 15:33:28</publishTime>
     </File>
     <File Include="Views/Shared/_LoginForm.cshtml">
       <publishTime>08/25/2014 00:33:03</publishTime>
     </File>
     <File Include="Views/Shared/_MainMenu.cshtml">
-      <publishTime>08/25/2014 20:17:32</publishTime>
+      <publishTime>09/07/2014 18:41:04</publishTime>
     </File>
     <File Include="Views/Shared/_RigthSide.cshtml">
       <publishTime>08/25/2014 20:17:32</publishTime>

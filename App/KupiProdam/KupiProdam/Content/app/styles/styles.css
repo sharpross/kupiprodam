@@ -110,3 +110,7 @@ header .navbar-brand img {
 .card-adding {
     padding-top: 10px;
 }
+
+div.tabs ul.nav-tabs a:last-child, div.tabs ul.nav-tabs a:last-child:hover {
+    border-radius: 10px 10px 0px 0px;
+}
