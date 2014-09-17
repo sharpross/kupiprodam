@@ -126,6 +126,7 @@ namespace KupiProdam.Entities.Entites
             this.MainPhone = string.Empty;
             this.Products = new List<Product>();
             this.Addresses = new List<string>();
+            this.Phones = new List<string>();
         }
     }
 }

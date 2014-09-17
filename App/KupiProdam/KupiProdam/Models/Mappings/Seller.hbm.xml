@@ -6,7 +6,7 @@ assembly="KupiProdam"
 namespace="KupiProdam.Entities.Entites"
 auto-import="true">
 
-    <class name="KupiProdam.Entities.Entites.Seller, KupiProdam.Entities">
+    <class name="KupiProdam.Entities.Entites.Seller, KupiProdam.Entities" table="seller">
     
     <id name="Id" 
         access="property" 

@@ -1,4 +1,5 @@
 ﻿using KupiProdam.Core;
+using KupiProdam.Entities;
 using KupiProdam.Entities.Entites;
 using KupiProdam.Utils;
 using System;
@@ -26,6 +27,7 @@ namespace KupiProdam.Controllers
             get { return Constants.Cotrollers.Title_Sallers; }
         }
 
+        //[Authorize]
         [HttpGet]
         public ActionResult Index(int? page)
         {
@@ -39,9 +41,11 @@ namespace KupiProdam.Controllers
         /// Каталог покупателя
         /// </summary>
         /// <returns></returns>
+        //[Authorize]
+        [HttpGet]
         public ActionResult Catalog()
         {
-            return View();
+            return View(this.Sellers);
         }
 
         /// <summary>
@@ -49,6 +53,8 @@ namespace KupiProdam.Controllers
         /// </summary>
         /// <param name="id">Идентификатор</param>
         /// <returns></returns>
+        ///[Authorize]
+        [HttpGet]
         public ActionResult Card(int? id)
         {
             if (!id.HasValue)
@@ -56,7 +62,7 @@ namespace KupiProdam.Controllers
                 return Redirect("Index");
             }
 
-            var seller = this.Sellers.Where(x => x.Id == id).FirstOrDefault();
+            var seller = new RepoSeller().GetById(id.Value);
 
             if (seller == null)
             {

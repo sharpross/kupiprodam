@@ -50,12 +50,11 @@
     <Compile Include="Entites\Buyer.cs" />
     <Compile Include="Entites\Product.cs" />
     <Compile Include="Entites\Seller.cs" />
+    <Compile Include="Mapping\SellerMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\RepoSeller.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KupiProdam.Entities;
+using System.Web.Security;
 
 namespace KupiProdam.Controllers
 {
@@ -17,8 +18,23 @@ namespace KupiProdam.Controllers
             get { return Constants.Cotrollers.Title_Account; }
         }
 
+        [HttpPost]
+        public ActionResult Login(string login, string password)
+        {
+            var sellRepo = new RepoSeller();
+            var user = sellRepo.GetAll().Where(x => x.Name == login && x.Password == password).FirstOrDefault();
+
+            if (user != null)
+            {
+                return Redirect("Index");
+            }
+
+            return Redirect("Registration");
+        }
+
+        //[Authorize]
         [OutputCache(Duration=10)]
-        public ActionResult Index(bool isSeller)
+        public ActionResult Index(bool? isSeller)
         {
             this.ViewBag.Titile = this.Title;
             //this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Index");
@@ -34,9 +50,10 @@ namespace KupiProdam.Controllers
                    return View(buyer);
             }
 
-            return Redirect("Home/Index");
+            return Redirect("Registration");
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [OutputCache(Duration = 10)]
         public ActionResult Registration()
@@ -46,6 +63,7 @@ namespace KupiProdam.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [OutputCache(Duration = 10)]
         public ActionResult BuyerRegistration()
@@ -59,6 +77,7 @@ namespace KupiProdam.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [OutputCache(Duration = 10)]
         public ActionResult SellerRegistartion()
@@ -92,7 +111,9 @@ namespace KupiProdam.Controllers
 
         private Seller GetSellerProfile()
         {
-            return new Entities.Entites.Seller()
+            var repo = new RepoSeller();
+            return repo.GetAll().Where(x => x.Id == 1).FirstOrDefault();
+            /*return new Entities.Entites.Seller()
             {
                 Id = 0,
                 Name = "Фирмас",
@@ -106,7 +127,7 @@ namespace KupiProdam.Controllers
                 Facebook = "www.facebook.ru",
                 Phones = new List<string>() { "+9876543210", "+9876543212" },
                 Addresses = new List<string>() { "qw", "as" }
-            };
+            };*/
         }
 
         private Buyer GetBuyerProfile()

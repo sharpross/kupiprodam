@@ -16,6 +16,7 @@
             } 
         }
 
+        //[Authorize]
         [HttpGet]
         public ActionResult Index()
         {
@@ -26,6 +27,7 @@
             return View();
         }
 
+        //[Authorize]
         [HttpGet]
         public ActionResult About()
         {
@@ -35,6 +37,7 @@
             return View();
         }
 
+        [NonAction]
         private List<object> GetTopContent()
         {
             var result = new List<object>();

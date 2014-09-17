@@ -22,11 +22,21 @@ namespace KupiProdam.Entities
                 var data = cgf.Configure(
                     HttpContext.Current.Server.MapPath(@"Models\Config\hibernate.cfg.xml")
                         .Replace("\\Account", string.Empty)
+                        .Replace("\\Seller\\Card", string.Empty)
+                        .Replace("\\Seller\\Index", string.Empty)
+                        .Replace("\\Buyer", string.Empty)
+                        .Replace("\\Home", string.Empty)
+                        .Replace("\\Image", string.Empty)
                     );
 
                 cgf.AddDirectory(new System.IO.DirectoryInfo(
                     HttpContext.Current.Server.MapPath(@"Models\Mappings")
                         .Replace("\\Account", string.Empty)
+                        .Replace("\\Seller\\Card", string.Empty)
+                        .Replace("\\Seller\\Index", string.Empty)
+                        .Replace("\\Buyer", string.Empty)
+                        .Replace("\\Home", string.Empty)
+                        .Replace("\\Image", string.Empty)
                     ));
 
                 sessionFactory = data.BuildSessionFactory();
@@ -39,7 +49,7 @@ namespace KupiProdam.Entities
             IList<Seller> Sellers;
             using (ISession session = OpenSession())
             {
-                IQuery query = session.CreateQuery("from sellers");
+                IQuery query = session.CreateQuery("from seller");
                 Sellers = query.List<Seller>();
             }
             return Sellers;

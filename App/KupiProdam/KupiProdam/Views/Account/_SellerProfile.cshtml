@@ -19,7 +19,7 @@
                         <div class="col-lg-6">
                             <div style="text-align: center; width:100%">
                                 <p>
-                                    <img src="@Url.Content(@Model.Photo)" style="width: 300px; height: 300px;" class="img-thumbnail">
+                                    <!-- <img src="Url.Content(Model.Photo)" style="width: 300px; height: 300px;" class="img-thumbnail"> -->
                                 </p>
                                 <p>
                                     <div class="btn btn-info" style="width: 200px;">Загрузить</div>
@@ -28,7 +28,7 @@
                             <br />
                             <form role="form">
                                 <div class="form-group">
-                                    <label for="Name">Название организации*</label>
+                                    <label for="Name">Название организации (или ваше ФИО)*</label>
                                     <input type="text" class="form-control" id="Name" placeholder="Название организации" value="@Model.Name">
                                 </div>
                                 <div class="vert_20"></div>
