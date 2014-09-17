@@ -53,6 +53,19 @@ namespace KupiProdam.Controllers
             return Redirect("Registration");
         }
 
+        [HttpPost]
+        public ActionResult Update(object profileData)
+        {
+            if (profileData is Seller)
+            {
+                var repo = new RepoSeller();
+
+                repo.Update(profileData as Seller);
+            }
+
+            return null;
+        }
+
         [AllowAnonymous]
         [HttpGet]
         [OutputCache(Duration = 10)]
@@ -113,21 +126,6 @@ namespace KupiProdam.Controllers
         {
             var repo = new RepoSeller();
             return repo.GetAll().Where(x => x.Id == 1).FirstOrDefault();
-            /*return new Entities.Entites.Seller()
-            {
-                Id = 0,
-                Name = "Фирмас",
-                //Photo = "~/Content/images/fish/1.jpg",
-                About = "Мы явно очень хорошее предприятие. У нас очень много довольных клиентов. Айдате к нам! Мы явно очень хорошее предприятие. У нас очень много довольных клиентов. Айдате к нам!",
-                Email = "mail@mail.ru",
-                MainPhone = "+9877543210",
-                Site = "www.site.ru",
-                Skype = "skype",
-                VKontakte = "www.vk.ru",
-                Facebook = "www.facebook.ru",
-                Phones = new List<string>() { "+9876543210", "+9876543212" },
-                Addresses = new List<string>() { "qw", "as" }
-            };*/
         }
 
         private Buyer GetBuyerProfile()

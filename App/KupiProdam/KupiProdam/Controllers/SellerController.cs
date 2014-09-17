@@ -34,7 +34,9 @@ namespace KupiProdam.Controllers
             this.ViewBag.Title = this.Title;
             this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Seller", "Index");
 
-            return View(this.Sellers);
+            var repo = new RepoSeller();
+
+            return View(repo.GetAll());
         }
 
         /// <summary>
