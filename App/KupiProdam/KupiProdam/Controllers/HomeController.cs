@@ -16,7 +16,7 @@
             } 
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult Index()
         {
@@ -27,7 +27,7 @@
             return View();
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult About()
         {

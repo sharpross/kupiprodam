@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNet.Identity;
 
 namespace KupiProdam.Entities.Entites
 {
     /// <summary>
     /// Продавец
     /// </summary>
-    public class Seller
+    public class Seller : IUser
     {
         /// <summary>
         /// Идентификатор
@@ -127,6 +128,23 @@ namespace KupiProdam.Entities.Entites
             this.Products = new List<Product>();
             this.Addresses = new List<string>();
             this.Phones = new List<string>();
+        }
+
+        string IUser<string>.Id
+        {
+            get { return this.Id.ToString(); }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return this.Email;
+            }
+            set
+            {
+                this.Email = value;
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace KupiProdam.Controllers
             get { return Constants.Cotrollers.Title_Sallers; }
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult Index(int? page)
         {
@@ -43,7 +43,7 @@ namespace KupiProdam.Controllers
         /// Каталог покупателя
         /// </summary>
         /// <returns></returns>
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult Catalog()
         {
@@ -55,7 +55,7 @@ namespace KupiProdam.Controllers
         /// </summary>
         /// <param name="id">Идентификатор</param>
         /// <returns></returns>
-        ///[Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult Card(int? id)
         {

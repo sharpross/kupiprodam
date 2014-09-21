@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using KupiProdam.Entities;
 using System.Web.Security;
+using System.ComponentModel.DataAnnotations;
 
 namespace KupiProdam.Controllers
 {
@@ -18,15 +19,33 @@ namespace KupiProdam.Controllers
             get { return Constants.Cotrollers.Title_Account; }
         }
 
-        [HttpPost]
-        public ActionResult Login(string login, string password)
+        /*/[HttpPost]
+        public ActionResult Login(LogInModel model)
         {
             var sellRepo = new RepoSeller();
-            var user = sellRepo.GetAll().Where(x => x.Name == login && x.Password == password).FirstOrDefault();
+            var user = sellRepo.GetAll().Where(x => x.Email == model.Email && x.Password == model.Password).FirstOrDefault();
 
             if (user != null)
             {
+                FormsAuthentication.SetAuthCookie(user.Name, false);
+
                 return Redirect("Index");
+            }
+
+            return View();
+        }*/
+
+        [HttpPost]
+        public ActionResult Login(string email, string password)
+        {
+            var sellRepo = new RepoSeller();
+            var user = sellRepo.GetAll().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
+
+            if (user != null)
+            {
+                FormsAuthentication.SetAuthCookie(user.Name, false);
+
+                return RedirectToAction("Index", "Home");;
             }
 
             return Redirect("Registration");
@@ -150,6 +169,13 @@ namespace KupiProdam.Controllers
             {
                 
             }
+        }
+
+        public class LogInModel
+        {
+            public string Email { get; set; }
+
+            public string Password { get; set; }
         }
     }
 }
