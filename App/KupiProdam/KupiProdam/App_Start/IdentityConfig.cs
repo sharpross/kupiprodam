@@ -98,15 +98,27 @@ namespace KupiProdam
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(Seller user)
+        /*public override Task<ClaimsIdentity> CreateUserIdentityAsync(Seller user)
         {
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);
-        }
+        }*/
 
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
-    
+
+    public class ApplicationDbContext : IdentityDbContext<Seller>
+    {
+        public ApplicationDbContext()
+            : base("DefaultConnection", throwIfV1Schema: false)
+        {
+        }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+    }
 }

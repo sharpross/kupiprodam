@@ -162,6 +162,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CustomAuthotication.cs" />
+    <Compile Include="App_Start\CustomUserManager.cs" />
+    <Compile Include="App_Start\CustomUserSore.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

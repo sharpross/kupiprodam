@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace KupiProdam.Entities.Entites
 {
     /// <summary>
     /// Продавец
     /// </summary>
-    public class Seller : IUser
+    public class Seller : IdentityUser
     {
         /// <summary>
         /// Идентификатор
@@ -128,23 +129,6 @@ namespace KupiProdam.Entities.Entites
             this.Products = new List<Product>();
             this.Addresses = new List<string>();
             this.Phones = new List<string>();
-        }
-
-        string IUser<string>.Id
-        {
-            get { return this.Id.ToString(); }
-        }
-
-        public string UserName
-        {
-            get
-            {
-                return this.Email;
-            }
-            set
-            {
-                this.Email = value;
-            }
         }
     }
 }

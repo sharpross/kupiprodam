@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using KupiProdam.Entities;
 using System.Web.Security;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 
 namespace KupiProdam.Controllers
 {
@@ -36,6 +37,7 @@ namespace KupiProdam.Controllers
         }*/
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(string email, string password)
         {
             var sellRepo = new RepoSeller();
@@ -43,6 +45,7 @@ namespace KupiProdam.Controllers
 
             if (user != null)
             {
+
                 FormsAuthentication.SetAuthCookie(user.Name, false);
 
                 return RedirectToAction("Index", "Home");;
@@ -121,6 +124,7 @@ namespace KupiProdam.Controllers
             return View(seller);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult SellerRegistartion(Seller seller)
         {
