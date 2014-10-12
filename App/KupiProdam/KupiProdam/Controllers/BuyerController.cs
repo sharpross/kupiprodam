@@ -13,7 +13,7 @@ namespace KupiProdam.Controllers
     {
         public string Title
         {
-            get { return Constants.Cotrollers.Title_Buyers; }
+            get { return ConstantsKP.Cotrollers.Title_Buyers; }
         }
 
         [HttpGet]
@@ -29,7 +29,7 @@ namespace KupiProdam.Controllers
         /// Каталог покупателя
         /// </summary>
         /// <returns></returns>
-        public ActionResult Catalog()
+        public ActionResult AddTender()
         {
             return View();
         }

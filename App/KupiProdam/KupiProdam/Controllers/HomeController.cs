@@ -6,17 +6,17 @@
     using System.Web.Mvc;
     using System.Linq;
 
+    [Authorize]
     public class HomeController : Controller, IBaseController
     {
         public string Title 
         { 
             get 
             {
-                return Constants.Cotrollers.Title_Home; 
+                return ConstantsKP.Cotrollers.Title_Home; 
             } 
         }
 
-        [Authorize]
         [HttpGet]
         public ActionResult Index()
         {
@@ -27,7 +27,6 @@
             return View();
         }
 
-        [Authorize]
         [HttpGet]
         public ActionResult About()
         {

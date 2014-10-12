@@ -15,27 +15,27 @@ namespace KupiProdam.Entities
 {
     public class RepoSeller
     {
-        public IList<Seller> GetAll()
+        public IList<User> GetAll()
         {
-            IList<Seller> Sellers;
+            IList<User> Sellers;
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                Sellers = session.CreateQuery("from " + typeof(Seller)).List<Seller>();;
+                Sellers = session.CreateQuery("from " + typeof(User)).List<User>();;
             }
             return Sellers;
         }
 
-        public Seller GetById(int Id)
+        public User GetById(int Id)
         {
-            Seller seller = new Seller();
+            User seller = new User();
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                seller = session.Get<Seller>(Id);
+                seller = session.Get<User>(Id);
             }
             return seller;
         }
 
-        public int Create(Seller seller)
+        public int Create(User seller)
         {
             int sellNom = 0;
             using (ISession session = NHibernateHelper.OpenSession())
@@ -50,7 +50,7 @@ namespace KupiProdam.Entities
             return sellNom;
         }
 
-        public void Update(Seller seller)
+        public void Update(User seller)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -62,7 +62,7 @@ namespace KupiProdam.Entities
             }
         }
 
-        public void Delete(Seller seller) 
+        public void Delete(User seller) 
         {
             using (ISession session = NHibernateHelper.OpenSession()) 
             { 

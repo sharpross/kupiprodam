@@ -24,6 +24,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\EntityFramework.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\EntityFramework.xml
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\MySql.Data.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\MySql.Data.Entity.EF6.dll

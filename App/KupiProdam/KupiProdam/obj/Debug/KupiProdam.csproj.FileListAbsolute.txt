@@ -64,8 +64,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll.config
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Antlr3.Runtime.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\EntityFramework.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\EntityFramework.SqlServer.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Entities.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Utils.dll
@@ -98,8 +96,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Iesi.Collections.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Core.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Entities.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\KupiProdam.Utils.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\EntityFramework.xml
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\EntityFramework.SqlServer.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Microsoft.AspNet.Identity.Owin.xml
@@ -126,3 +122,5 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\NHibernate.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\Iesi.Collections.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\obj\Debug\KupiProdam.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\obj\Debug\KupiProdam.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\MySql.Data.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam\bin\MySql.Data.Entity.EF6.dll

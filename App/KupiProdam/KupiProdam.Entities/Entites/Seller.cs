@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Security.Claims;
 
 namespace KupiProdam.Entities.Entites
 {
     /// <summary>
     /// Продавец
     /// </summary>
-    public class Seller : IdentityUser
+    public class User : IdentityUser
     {
         /// <summary>
         /// Идентификатор
         /// </summary>
-        public virtual int Id { get; set; }
+        //public virtual int Id { get; set; }
 
         /// <summary>
         /// Наименование
@@ -114,9 +115,9 @@ namespace KupiProdam.Entities.Entites
         /// <summary>
         /// Конструктор
         /// </summary>
-        public Seller()
+        public User()
         {
-            this.Id = new int();
+            //this.Id = new int();
             this.Email = string.Empty;
             this.About = string.Empty;
             this.Name = string.Empty;
@@ -129,6 +130,14 @@ namespace KupiProdam.Entities.Entites
             this.Products = new List<Product>();
             this.Addresses = new List<string>();
             this.Phones = new List<string>();
+        }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
         }
     }
 }

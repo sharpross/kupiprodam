@@ -7,8 +7,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Util
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll.config
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Utils.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\EntityFramework.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\FluentNHibernate.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Iesi.Collections.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Entities.dll
@@ -23,8 +21,6 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Newtonsoft.Json
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\NHibernate.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Owin.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\KupiProdam.Entities.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\EntityFramework.xml
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\FluentNHibernate.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Iesi.Collections.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Microsoft.AspNet.Identity.Core.xml
@@ -38,3 +34,5 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\Newtonsoft.Json
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\NHibernate.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\obj\Debug\KupiProdam.Utils.pdb
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\MySql.Data.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Utils\bin\Debug\MySql.Data.Entity.EF6.dll

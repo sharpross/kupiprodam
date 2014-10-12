@@ -10,51 +10,75 @@ using KupiProdam.Entities;
 using System.Web.Security;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
+using Microsoft.Owin.Security;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System.Threading.Tasks;
 
 namespace KupiProdam.Controllers
 {
     public class AccountController : Controller, IBaseController
     {
-        public  string Title
+        private ApplicationUserManager _userManager;
+
+        public AccountController()
         {
-            get { return Constants.Cotrollers.Title_Account; }
         }
 
-        /*/[HttpPost]
-        public ActionResult Login(LogInModel model)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
-            var sellRepo = new RepoSeller();
-            var user = sellRepo.GetAll().Where(x => x.Email == model.Email && x.Password == model.Password).FirstOrDefault();
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
 
-            if (user != null)
+        public ApplicationUserManager UserManager
+        {
+            get
             {
-                FormsAuthentication.SetAuthCookie(user.Name, false);
-
-                return Redirect("Index");
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
+            private set
+            {
+                _userManager = value;
+            }
+        }
 
-            return View();
-        }*/
+        private ApplicationSignInManager _signInManager;
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set { _signInManager = value; }
+        }
+
+        public  string Title
+        {
+            get { return ConstantsKP.Cotrollers.Title_Account; }
+        }
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(string email, string password)
+        public async Task<ActionResult> Login(string email, string password)
         {
-            var sellRepo = new RepoSeller();
+           
+
+            /*var sellRepo = new RepoSeller();
             var user = sellRepo.GetAll().Where(x => x.Email == email && x.Password == password).FirstOrDefault();
 
             if (user != null)
             {
 
-                FormsAuthentication.SetAuthCookie(user.Name, false);
+                FormsAuthentication.SetAuthCookie(user.Email, false);
 
                 return RedirectToAction("Index", "Home");;
-            }
+            }*/
 
             return Redirect("Registration");
         }
 
-        //[Authorize]
         [OutputCache(Duration=10)]
         public ActionResult Index(bool? isSeller)
         {
@@ -62,7 +86,7 @@ namespace KupiProdam.Controllers
             //this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Account", "Index");
             this.ViewBag.IsSeller = isSeller;
 
-            switch (isSeller)
+            /*switch (isSeller)
             {
                 case true:
                     var seller = this.GetSellerProfile();
@@ -70,7 +94,7 @@ namespace KupiProdam.Controllers
                 case false:
                    var buyer = this.GetBuyerProfile();
                    return View(buyer);
-            }
+            }*/
 
             return Redirect("Registration");
         }
@@ -78,11 +102,11 @@ namespace KupiProdam.Controllers
         [HttpPost]
         public ActionResult Update(object profileData)
         {
-            if (profileData is Seller)
+            if (profileData is User)
             {
                 var repo = new RepoSeller();
 
-                repo.Update(profileData as Seller);
+                repo.Update(profileData as User);
             }
 
             return null;
@@ -117,20 +141,35 @@ namespace KupiProdam.Controllers
         [OutputCache(Duration = 10)]
         public ActionResult SellerRegistartion()
         {
-            var seller = new Seller();
+            var seller = new User();
 
-            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, Constants.Cotrollers.Title_Sallers);
+            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, ConstantsKP.Cotrollers.Title_Sallers);
 
             return View(seller);
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult SellerRegistartion(Seller seller)
+        public async Task<ActionResult> SellerRegistartion(User seller)
         {
-            var repo = new RepoSeller();
+            var user = new User { UserName = seller.Email, Password = seller.Password, Name = seller.Name };
+            var result = await UserManager.CreateAsync(user, seller.Password);
+            if (result.Succeeded)
+            {
+                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-            repo.Create(seller);
+                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                // Send an email with this link
+                // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            /*var repo = new RepoSeller();
+
+            repo.Create(seller);*/
 
             return Redirect("Index");
         }
@@ -139,17 +178,17 @@ namespace KupiProdam.Controllers
         [OutputCache(Duration = 10)]
         public ActionResult BuyerRegistartion()
         {
-            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, Constants.Cotrollers.Title_Buyers);
+            this.ViewBag.Titile = string.Format("{0} - {1}", this.Title, ConstantsKP.Cotrollers.Title_Buyers);
             this.ViewBag.HideRigthSide = true;
 
             return View();
         }
 
-        private Seller GetSellerProfile()
+        /*private User GetSellerProfile()
         {
             var repo = new RepoSeller();
             return repo.GetAll().Where(x => x.Id == 1).FirstOrDefault();
-        }
+        }*/
 
         private Buyer GetBuyerProfile()
         {
@@ -164,7 +203,7 @@ namespace KupiProdam.Controllers
         private void SetCurrentUser(object user)
         {
 
-            if (user is Seller)
+            if (user is User)
             {
                     
             }

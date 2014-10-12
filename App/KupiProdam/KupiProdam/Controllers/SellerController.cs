@@ -10,9 +10,10 @@ using System.Web.Mvc;
 
 namespace KupiProdam.Controllers
 {
+    [Authorize]
     public class SellerController : Controller, IBaseController
     {
-        private List<Seller> Sellers { get; set; }
+        private List<User> Sellers { get; set; }
 
         public SellerController()
             : base()
@@ -24,10 +25,10 @@ namespace KupiProdam.Controllers
 
         public string Title
         {
-            get { return Constants.Cotrollers.Title_Sallers; }
+            get { return ConstantsKP.Cotrollers.Title_Sallers; }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult Index(int? page)
         {
@@ -43,7 +44,7 @@ namespace KupiProdam.Controllers
         /// Каталог покупателя
         /// </summary>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult Catalog()
         {
@@ -55,7 +56,7 @@ namespace KupiProdam.Controllers
         /// </summary>
         /// <param name="id">Идентификатор</param>
         /// <returns></returns>
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult Card(int? id)
         {

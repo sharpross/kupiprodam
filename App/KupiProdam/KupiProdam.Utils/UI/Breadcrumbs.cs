@@ -21,7 +21,7 @@ namespace KupiProdam.Utils
                     {
                         Controller = controller,
                         Method = index,
-                        Title = Constants.Cotrollers.Title_Home
+                        Title = ConstantsKP.Cotrollers.Title_Home
                     });
                     switch (method)
                     {
@@ -30,7 +30,7 @@ namespace KupiProdam.Utils
                             {
                                 Controller = controller,
                                 Method = "About",
-                                Title = Constants.Cotrollers.Title_About,
+                                Title = ConstantsKP.Cotrollers.Title_About,
                                 IsActive = true
                             });
                             break;
@@ -41,7 +41,7 @@ namespace KupiProdam.Utils
                     {
                         Controller = controller,
                         Method = index,
-                        Title = Constants.Cotrollers.Title_Account
+                        Title = ConstantsKP.Cotrollers.Title_Account
                     });
                     break;
                 case "Seller":
@@ -49,13 +49,13 @@ namespace KupiProdam.Utils
                     {
                         Controller = controller,
                         Method = index,
-                        Title = Constants.Cotrollers.Title_Sallers
+                        Title = ConstantsKP.Cotrollers.Title_Sallers
                     });
                     result.Add(new BreadcrumbsItem()
                     {
                         Controller = controller,
                         Method = "Index",
-                        Title = Constants.Common.Catalog,
+                        Title = ConstantsKP.Common.Catalog,
                         IsActive = true
                     });
                     break;
@@ -64,13 +64,13 @@ namespace KupiProdam.Utils
                     {
                         Controller = controller,
                         Method = index,
-                        Title = Constants.Cotrollers.Title_Buyers
+                        Title = ConstantsKP.Cotrollers.Title_Buyers
                     });
                     result.Add(new BreadcrumbsItem()
                     {
                         Controller = controller,
                         Method = "Index",
-                        Title = Constants.Common.Catalog,
+                        Title = ConstantsKP.Common.Catalog,
                         IsActive = true
                     });
                     break;

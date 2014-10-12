@@ -16,15 +16,15 @@
             this.Rnd = new Random(DateTime.Now.Millisecond);
         }
 
-        public List<Seller> Get()
+        public List<User> Get()
         {
-            var sellers = new List<Seller>();
+            var sellers = new List<User>();
 
             for (var i = 0; i <= 30; i++)
             {
-                var seller = new Seller() 
+                var seller = new User() 
                 {
-                    Id = i,
+                    //Id = i,
                     Name = this.GetName(),
                     //Photo = this.GetPhotos(),
                     Email = "mail@yandex.ru",

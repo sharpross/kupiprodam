@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KupiProdam.Utils
 {
-    public static class Constants
+    public static class ConstantsKP
     {
         public static class Cotrollers
         {

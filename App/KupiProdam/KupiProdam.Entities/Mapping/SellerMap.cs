@@ -8,7 +8,7 @@ using KupiProdam.Entities.Entites;
 
 namespace KupiProdam.Entities.Mapping
 {
-    public class SellerMap : ClassMap<Seller>
+    public class SellerMap : ClassMap<User>
     {
         public SellerMap()
         {
