@@ -25,13 +25,72 @@ namespace KupiProdam.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Каталог покупателя
-        /// </summary>
-        /// <returns></returns>
+        /*public ActionResult Create()
+        {
+            var newTender = new Tender();
+
+            return View(newTender);
+        }*/
+
+        public ActionResult Create(string theme, string subTheme)
+        {
+            if(theme == null)
+            {
+                theme = string.Empty;
+            }
+
+            if(subTheme == null)
+            {
+                subTheme = string.Empty;
+            }
+
+            var newTender = new Tender() {
+                Theme = theme.ToString(),
+                SubTheme = subTheme.ToString()
+            };
+
+            return View(newTender);
+        }
+
         public ActionResult AddTender()
         {
             return View();
+        }
+
+        public ActionResult Details()
+        {
+            return View(new Tender()
+            {
+                Messaget = "Хочу это",
+                Statuse = 1,
+                Theme = "Праздник",
+                Title = "тамада",
+                WriteMe = true
+            });
+        }
+
+        public ActionResult List()
+        {
+            var list = new List<Tender>();
+
+            list.Add(new Tender() {
+                Messaget = "Хочу это",
+                Statuse = 1,
+                Theme = "Праздник",
+                Title = "тамада",
+                WriteMe = true
+            });
+
+            list.Add(new Tender()
+            {
+                Messaget = "Хочу это",
+                Statuse = 1,
+                Theme = "Праздник",
+                Title = "тамада",
+                WriteMe = true
+            });
+
+            return View(list);
         }
 
         /// <summary>

@@ -34,3 +34,4 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Debug\KupiProdam.E
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Debug\KupiProdam.Entities.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\bin\Debug\MySql.Data.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Entities\obj\Debug\KupiProdam.Entities.csprojResolveAssemblyReference.cache

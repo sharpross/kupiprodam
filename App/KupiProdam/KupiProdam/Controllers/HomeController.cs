@@ -6,7 +6,6 @@
     using System.Web.Mvc;
     using System.Linq;
 
-    [Authorize]
     public class HomeController : Controller, IBaseController
     {
         public string Title 

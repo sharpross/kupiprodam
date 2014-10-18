@@ -16,12 +16,12 @@ namespace KupiProdam.Entities.Entites
         /// <summary>
         /// Тема
         /// </summary>
-        public int Theme { get; set; }
+        public string Theme { get; set; }
 
         /// <summary>
         /// Подтема
         /// </summary>
-        public int SubTheme { get; set; }
+        public string SubTheme { get; set; }
 
         /// <summary>
         /// Сообщение

@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entites\AdWords.cs" />
     <Compile Include="Entites\Buyer.cs" />
     <Compile Include="Entites\Product.cs" />
     <Compile Include="Entites\Seller.cs" />

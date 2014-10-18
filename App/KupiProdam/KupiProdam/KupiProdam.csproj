@@ -621,6 +621,8 @@
     <Content Include="Views\Seller\Index.cshtml" />
     <Content Include="Views\Seller\Card.cshtml" />
     <Content Include="Views\Buyer\AddTender.cshtml" />
+    <Content Include="Views\Buyer\List.cshtml" />
+    <Content Include="Views\Buyer\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

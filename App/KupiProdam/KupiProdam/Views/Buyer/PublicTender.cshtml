@@ -1,0 +1,69 @@
+﻿@model IEnumerable<KupiProdam.Entities.Entites.Tender>
+
+@{
+    ViewBag.Title = "Мои тендеры";
+}
+
+<h2>Мои тендеры</h2>
+
+<p>
+    @Html.ActionLink("Создать новую", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Theme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTheme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Messaget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WriteMe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Statuse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Theme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubTheme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Messaget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WriteMe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Statuse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowTime)
+        </td>
+        <td>
+            <!-- Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) | -->
+            @Html.ActionLink("Подробно", "Details", "Buyer") |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
