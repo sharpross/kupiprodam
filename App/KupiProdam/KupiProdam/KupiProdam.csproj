@@ -200,6 +200,9 @@
     <Content Include="Content\images\need_help_act.png" />
     <Content Include="Content\images\need_help_std.png" />
     <Content Include="Content\images\logo.jpg" />
+    <Content Include="Content\images\молоток наведение.png" />
+    <Content Include="Content\images\молоток нажим.png" />
+    <Content Include="Content\images\молоток статичное.png" />
     <Content Include="Content\static\jquery\jquery.js" />
     <Content Include="Content\static\jquery\jquery.min.js" />
     <Content Include="Content\static\svgjs\svg.js" />
@@ -627,6 +630,8 @@
     <Content Include="Views\Account\SellerProfile.cshtml" />
     <Content Include="Views\Seller\ShowOpenTenders.cshtml" />
     <Content Include="Views\Seller\ShowOpenTender.cshtml" />
+    <Content Include="Views\Buyer\Details.cshtml" />
+    <Content Include="Views\Buyer\PublicTender.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
