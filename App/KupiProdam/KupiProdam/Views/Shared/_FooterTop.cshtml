@@ -8,8 +8,8 @@
                 <nav class="top-header-menu">
                     <ul class="menu">
                         <li><a href="#" id="login">Вход</a></li>
-                        <li>@Html.ActionLink("Профиль продавца", "Index", "Account", new { @isSeller = true }, null)</li>
-                        <li>@Html.ActionLink("Профиль покупателя", "Index", "Account", new { @isSeller = false }, null)</li>
+                        <li>@Html.ActionLink("Профиль продавца", "SellerProfile", "Account")</li>
+                        <li>@Html.ActionLink("Профиль покупателя", "BuyerProfile", "Account")</li>
                     </ul>
                 </nav>
             </div>

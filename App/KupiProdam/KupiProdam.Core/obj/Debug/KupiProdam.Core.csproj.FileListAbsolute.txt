@@ -14,16 +14,12 @@ D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Iesi.Collections
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\NHibernate.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Entities.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Utils.pdb
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\FluentNHibernate.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Iesi.Collections.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\NHibernate.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\KupiProdam.Entities.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\obj\Debug\KupiProdam.Core.pdb
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\MySql.Data.dll
 D:\Projects\kupiprodam\App\KupiProdam\KupiProdam.Core\bin\Debug\MySql.Data.Entity.EF6.dll

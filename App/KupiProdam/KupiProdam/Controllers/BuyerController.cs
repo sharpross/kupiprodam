@@ -25,13 +25,6 @@ namespace KupiProdam.Controllers
             return View();
         }
 
-        /*public ActionResult Create()
-        {
-            var newTender = new Tender();
-
-            return View(newTender);
-        }*/
-
         public ActionResult Create(string theme, string subTheme)
         {
             if(theme == null)

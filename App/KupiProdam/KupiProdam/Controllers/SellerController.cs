@@ -10,7 +10,6 @@ using System.Web.Mvc;
 
 namespace KupiProdam.Controllers
 {
-    [Authorize]
     public class SellerController : Controller, IBaseController
     {
         private List<User> Sellers { get; set; }
@@ -19,8 +18,22 @@ namespace KupiProdam.Controllers
             : base()
         {
             
-            var generator = new KupiProdam.Utils.Generators.Sellers(); 
+            var generator = new KupiProdam.Utils.Generators.UserGenerstor(); 
             this.Sellers = generator.Get();
+        }
+
+        public ActionResult ShowOpenTenders()
+        {
+            var generator = new Utils.Generators.TenderGenerator();
+
+            return View(generator.Get());
+        }
+
+        public ActionResult ShowOpenTender(int? id)
+        {
+            var generator = new Utils.Generators.TenderGenerator();
+
+            return View(generator.Get().Where(x => x.Id == id).FirstOrDefault());
         }
 
         public string Title
@@ -28,16 +41,14 @@ namespace KupiProdam.Controllers
             get { return ConstantsKP.Cotrollers.Title_Sallers; }
         }
 
-        //[Authorize]
         [HttpGet]
         public ActionResult Index(int? page)
         {
             this.ViewBag.Title = this.Title;
-            this.ViewBag.Breadcrumbs = Breadcrumbs.Get("Seller", "Index");
 
-            var repo = new RepoSeller();
+            var generator = new Utils.Generators.UserGenerstor();
 
-            return View(repo.GetAll());
+            return View(generator.Get());
         }
 
         /// <summary>
@@ -60,19 +71,16 @@ namespace KupiProdam.Controllers
         [HttpGet]
         public ActionResult Card(int? id)
         {
-            if (!id.HasValue)
-            {
-                return Redirect("Index");
-            }
+            var generator = new Utils.Generators.UserGenerstor();
 
-            var seller = new RepoSeller().GetById(id.Value);
+            return View(generator.Get().Where(x => x.Id == id ).FirstOrDefault());
+        }
 
-            if (seller == null)
-            {
-                return Redirect("Index");
-            }
+        public List<User> GetListUsers()
+        {
+            var list = new List<User>();
 
-            return View(seller);
+            return list;
         }
     }
 }

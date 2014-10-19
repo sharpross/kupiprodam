@@ -1,0 +1,113 @@
+﻿@model KupiProdam.Entities.Entites.Tender
+
+@{
+    ViewBag.Title = "Открытые тендеры";
+}
+
+<h2>Открытые тендеры</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Theme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Theme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTheme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTheme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubTheme2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubTheme2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Messaget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Messaget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WriteMe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WriteMe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statuse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Statuse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowTime)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12 col-md-offset-0">
+        <form role="form">
+            <div class="form-group">
+                <label for="message">Ваше сообщение:</label>
+                <textarea id="message" rows="5" class="form-control"></textarea>
+            </div>
+
+            <div style="width: 100%; text-align: center;">
+                <button type="submit" class="btn btn-four">Заявить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<p><h4>Откликнувшиеся:</h4></p>
+<table style="width: 100%" cellpadding="10" cellspacing="10">
+    <tr>
+        <td width="150">
+            <p>От <strong>Васи</strong>:</p>
+            <p><img src='@Url.Content("~/Content/images/fish/1.png")' style="width: 100px; height: 100px;" /></p>
+        </td>
+        <td style="vertical-align: top">
+            Я это сделаю за 500 рэксов за неделю
+        </td>
+    </tr>
+    <tr>
+        <td width="100">
+            <p>От <strong>Васи</strong>:</p>
+            <p><img src='@Url.Content("~/Content/images/fish/1.png")' style="width: 100px; height: 100px;" /></p>
+        </td>
+        <td style="vertical-align: top">
+            Да не, это дешевле типа и быстрее
+        </td>
+    </tr>
+</table>

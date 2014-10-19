@@ -10,7 +10,7 @@ namespace KupiProdam.Entities.Mapping
 {
     public class SellerMap : ClassMap<User>
     {
-        public SellerMap()
+        /*public SellerMap()
         {
             Id(x => x.Id);
             Map(x => x.Name)
@@ -29,6 +29,6 @@ namespace KupiProdam.Entities.Mapping
             Map(x => x.Skype);
             Map(x => x.VKontakte);
             Map(x => x.Facebook);
-        }
+        }*/
     }
 }

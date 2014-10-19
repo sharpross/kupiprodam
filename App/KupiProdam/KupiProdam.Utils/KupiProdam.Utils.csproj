@@ -91,7 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Generators\Sellers.cs" />
+    <Compile Include="Generators\TenderGenerator.cs" />
+    <Compile Include="Generators\UserGenerstor.cs" />
     <Compile Include="UI\Breadcrumbs.cs" />
     <Compile Include="UI\MenuItem.cs" />
     <Compile Include="UI\BreadcrumbsItem.cs" />

@@ -13,12 +13,12 @@ namespace KupiProdam.Entities.Entites
     /// <summary>
     /// Продавец
     /// </summary>
-    public class User : IdentityUser
+    public class User
     {
         /// <summary>
         /// Идентификатор
         /// </summary>
-        //public virtual int Id { get; set; }
+        public virtual int Id { get; set; }
 
         /// <summary>
         /// Наименование
@@ -113,6 +113,11 @@ namespace KupiProdam.Entities.Entites
         public virtual List<Product> Products { get; set; }
 
         /// <summary>
+        /// Является продавцом
+        /// </summary>
+        public virtual bool IsSeller { get; set; }
+
+        /// <summary>
         /// Конструктор
         /// </summary>
         public User()
@@ -130,14 +135,8 @@ namespace KupiProdam.Entities.Entites
             this.Products = new List<Product>();
             this.Addresses = new List<string>();
             this.Phones = new List<string>();
+            this.IsSeller = false;
         }
 
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
     }
 }

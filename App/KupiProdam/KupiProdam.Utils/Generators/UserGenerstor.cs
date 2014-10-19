@@ -7,11 +7,11 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Sellers
+    public class UserGenerstor
     {
         private Random Rnd { get; set; }
 
-        public Sellers()
+        public UserGenerstor()
         {
             this.Rnd = new Random(DateTime.Now.Millisecond);
         }
@@ -24,7 +24,7 @@
             {
                 var seller = new User() 
                 {
-                    //Id = i,
+                    Id = i,
                     Name = this.GetName(),
                     //Photo = this.GetPhotos(),
                     Email = "mail@yandex.ru",
