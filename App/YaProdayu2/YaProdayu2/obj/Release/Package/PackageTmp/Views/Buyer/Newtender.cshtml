@@ -1,0 +1,19 @@
+﻿@model List<YaProdayu2.Sysyem.Utils.Theme>
+
+<div class="tenderRow" style="padding-top:40px">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div style="text-align: center">
+                <div class="col-md-4">
+                    <p>
+                        <a href="~/Buyer/AddNewTender"><img src="~/Content/images/kats/@item.Image" class="tenderImg" width="100" height="100" /></a>
+                    </p>
+                    <p>
+                        <strong>@Html.ActionLink(item.Key, "CreateTender", "Buyer", new { @theme = item.Key }, new { @style = "color:#660066;" })</strong>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

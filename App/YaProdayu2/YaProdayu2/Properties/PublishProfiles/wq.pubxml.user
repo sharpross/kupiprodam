@@ -1,0 +1,1294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\sharpross\Desktop\YaProdayu</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/24/2014 17:37:59</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.dll">
+      <publishTime>10/30/2014 16:46:39</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>10/30/2014 16:46:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/24/2014 17:38:11</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/24/2014 17:38:13</publishTime>
+    </File>
+    <File Include="bin/NHibernate.dll">
+      <publishTime>10/30/2014 16:46:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/24/2014 17:38:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/24/2014 17:38:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/24/2014 17:38:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/24/2014 17:38:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/24/2014 17:38:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/24/2014 17:38:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/24/2014 17:38:10</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/24/2014 17:38:16</publishTime>
+    </File>
+    <File Include="bin/YaProdayu2.dll">
+      <publishTime>12/03/2014 21:26:49</publishTime>
+    </File>
+    <File Include="Content/app/scripts/common.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/app/styles/styles.css">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/images/cart_buy.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/cart_sell.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/fish/1.jpg">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/fish/2.jpg">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/fish/3.jpg">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/fish/4.jpg">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/fish/45.png">
+      <publishTime>11/30/2014 18:45:21</publishTime>
+    </File>
+    <File Include="Content/images/kats/1.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/10.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/11.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/12.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/13.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/14.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/2.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/3.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/4.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/5.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/6.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/7.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/8.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/kats/9.png">
+      <publishTime>11/23/2014 13:56:03</publishTime>
+    </File>
+    <File Include="Content/images/logo.jpg">
+      <publishTime>11/10/2014 19:59:20</publishTime>
+    </File>
+    <File Include="Content/images/need_help_act.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/need_help_std.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/NewTender.png">
+      <publishTime>11/30/2014 18:14:21</publishTime>
+    </File>
+    <File Include="Content/images/top_logo.jpg">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/молоток наведение.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/молоток нажим.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/images/молоток статичное.png">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/jquery/jquery.js">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/jquery/jquery.min.js">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/jquery/jquery.min.map">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/svgjs/svg.js">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/svgjs/svg.min.js">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/animate/animate.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/animate/animate.min.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/animate/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap-theme.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap-theme.css.map">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap-theme.min.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap.css.map">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/css/bootstrap.min.css">
+      <publishTime>10/25/2014 17:42:15</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/js/bootstrap.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/bootstrap/js/bootstrap.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/angular.easypiechart.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/angular.easypiechart.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/easypiechart.css">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/easypiechart.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/easypiechart.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/jquery.easypiechart.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/jquery.easypiechart.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/easy-pie-chart/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/blank.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/fancybox_loading%402x.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/fancybox_loading.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/fancybox_overlay.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/fancybox_sprite%402x.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/fancybox_sprite.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/jquery.fancybox.css">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/jquery.fancybox.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/jquery.fancybox.pack.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fancybox/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fraction/fractionslider.css">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fraction/jquery.fractionslider.init.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fraction/jquery.fractionslider.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fraction/jquery.fractionslider.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/fraction/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/hover-dropdown/bootstrap-hover-dropdown.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/hover-dropdown/bootstrap-hover-dropdown.min.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/hover-dropdown/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/css/blank.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/css/layerslider.css">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/css/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/js/greensock.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/js/jquery.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/js/layerslider.kreaturamedia.jquery.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/js/layerslider.transitions.js">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/js/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/loading.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/nothumb.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/shadow.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/skin.css">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/skin.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/loading.gif">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/nothumb.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/shadow.png">
+      <publishTime>10/25/2014 17:42:16</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlessdark3d/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/shadow.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/shadow.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/borderlesslight3d/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/carousel/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/carousel/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/carousel/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/carousel/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/carousel/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/darkskin/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/darkskin/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/darkskin/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/darkskin/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/darkskin/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/defaultskin/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/defaultskin/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/defaultskin/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/defaultskin/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/defaultskin/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidth/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidth/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidth/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidth/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidth/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidthdark/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidthdark/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidthdark/skin.css">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidthdark/skin.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/fullwidthdark/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/loading.gif">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/nothumb.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/shadow.png">
+      <publishTime>10/25/2014 17:42:17</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/skin.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/skin.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/glass/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/lightskin/loading.gif">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/lightskin/nothumb.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/lightskin/skin.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/lightskin/skin.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/lightskin/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/minimal/loading.gif">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/minimal/nothumb.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/minimal/skin.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/minimal/skin.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/minimal/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/noskin/loading.gif">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/noskin/nothumb.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/noskin/skin.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/noskin/skin.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/noskin/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/v5/loading.gif">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/v5/nothumb.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/v5/skin.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/v5/skin.png">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/skins/v5/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/layerslider/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/masonry/masonry.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/masonry/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/mixitup/jquery.mixitup.init.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/mixitup/jquery.mixitup.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/mixitup/mixitup.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/mixitup/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/page-scroller/jquery.ui.totop.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/page-scroller/jquery.ui.totop.min.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/page-scroller/ui.totop.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/page-scroller/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/jquery.sequence-min.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/jquery.sequence.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/themes/apple-style/apple-style-theme.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/themes/apple-style/apple-style.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/themes/apple-style/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sequence/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sticky/jquery.sticky.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/sticky/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/timeline/timeline.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/timeline/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/waypoints/waypoints.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/waypoints/waypoints.min.js">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/assets/waypoints/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/buttons.less">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/global-style.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/global-style.less">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/shortcodes.less">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/themes.less">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/css/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/css/font-awesome.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/css/font-awesome.min.css">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/css/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>10/25/2014 17:42:18</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/fonts/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/bordered-pulled.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/core.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/fixed-width.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/font-awesome.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/icons.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/larger.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/list.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/mixins.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/path.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/rotated-flipped.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/spinning.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/stacked.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/variables.less">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/less/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/font-awesome.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_bordered-pulled.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_core.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_fixed-width.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_icons.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_larger.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_list.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_mixins.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_path.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_rotated-flipped.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_spinning.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_stacked.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/font-awesome/scss/_variables.scss">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/bg-img-1.jpg">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/bg-img-2.jpg">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/blackorchid.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/diagmonds.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/grey_wash_wall.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/mooning.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/purty_wood.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/slash_it.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/squairy_light.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/subtle_carbon.png">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/background/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:19</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/boomerang-logo-dark.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/boomerang-logo-white.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/boomerang-logo.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-1.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-11.jpg">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-2.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-3.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-4.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-5.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-6.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-7.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/carousel-img-9.jpg">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/carousel/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-1.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-10.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-2.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-3.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-4.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-5.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-6.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-7.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-8.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/client-9.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/clients/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/favicon.png">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/about-img-1.jpg">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/about-img-2.jpg">
+      <publishTime>10/25/2014 17:42:20</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/banner-img-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/banner-img-2.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/banner-img-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/banner-img-4.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-2.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-4.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-5.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-6.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-7.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/col-img-8.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/device-1.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/device-2.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/device-3.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/device-4.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/human-img-1.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/human-img-2.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/human-img-3.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/human-img-4.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-1.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-2.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-2.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-3.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-4.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/product-4.png">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/s-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/s-2.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/s-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/skp-img-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/tall-img-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/team-img-1.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/team-img-2.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/team-img-3.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/team-img-4.jpg">
+      <publishTime>10/25/2014 17:42:21</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/team-img-5.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/tmp-img-1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/tmp-img-2.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/tmp-img-3.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/tmp-img-4.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-2.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-3.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-4.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-5.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-6.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-7.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-big-img-8.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-2.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-3.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-4.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-5.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-6.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-7.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wk-img-8.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wkp-img-1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/wkp-img-2.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/prv/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/bg5.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/d1.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/d2.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/fs-spinner.gif">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/fw-1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/ipad-shadow.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/ipad.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/iphone-shadow.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/iphone.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/jellyfish-blur.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/jellyfish.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/l1.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/l2.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/l3.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/ladybug.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/left.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/mac-book.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/phone.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/right.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/s1.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/s1.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/s2.jpg">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/s2.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-1.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-2.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-3.png">
+      <publishTime>10/25/2014 17:42:22</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-4.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-5.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-a-6.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-1.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-2.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-3.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-4.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-5.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/slide-b-bg.jpg">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/vimeo-color.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/youtube-color.png">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/slider/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/images/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/html5shiv.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.cookie.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.easing.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.mousewheel-3.0.6.pack.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.nod.validation.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.wp.custom.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/jquery.wp.switcher.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/less.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/modernizr.custom.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/respond.min.js">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="Content/static/theme/js/_notes/dwsync.xml">
+      <publishTime>10/25/2014 17:42:23</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/24/2014 17:38:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/24/2014 17:38:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/24/2014 17:38:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/24/2014 17:38:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/24/2014 17:38:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/24/2014 17:38:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/30/2014 16:46:41</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/24/2014 17:38:21</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/24/2014 17:38:21</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>10/24/2014 17:38:21</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>10/25/2014 17:42:24</publishTime>
+    </File>
+    <File Include="Views/Account/Buyer.cshtml">
+      <publishTime>10/25/2014 20:10:20</publishTime>
+    </File>
+    <File Include="Views/Account/RegBuyer.cshtml">
+      <publishTime>10/25/2014 20:04:38</publishTime>
+    </File>
+    <File Include="Views/Account/Registration.cshtml">
+      <publishTime>10/25/2014 20:05:33</publishTime>
+    </File>
+    <File Include="Views/Account/RegSeller.cshtml">
+      <publishTime>10/25/2014 20:03:08</publishTime>
+    </File>
+    <File Include="Views/Buyer/CreateTender.cshtml">
+      <publishTime>02/12/2014 00:08:05</publishTime>
+    </File>
+    <File Include="Views/Buyer/Index.cshtml">
+      <publishTime>10/30/2014 18:38:57</publishTime>
+    </File>
+    <File Include="Views/Buyer/Newtender.cshtml">
+      <publishTime>12/03/2014 21:24:58</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/03/2014 21:25:53</publishTime>
+    </File>
+    <File Include="Views/Shared/_Breadcrumbs.cshtml">
+      <publishTime>10/25/2014 19:27:54</publishTime>
+    </File>
+    <File Include="Views/Shared/_FooterBottom.cshtml">
+      <publishTime>10/25/2014 19:27:54</publishTime>
+    </File>
+    <File Include="Views/Shared/_FooterTop.cshtml">
+      <publishTime>11/30/2014 19:32:09</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/30/2014 19:18:50</publishTime>
+    </File>
+    <File Include="Views/Shared/_LeftSide.cshtml">
+      <publishTime>11/30/2014 19:24:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginForm.cshtml">
+      <publishTime>10/25/2014 19:27:54</publishTime>
+    </File>
+    <File Include="Views/Shared/_MainMenu.cshtml">
+      <publishTime>10/25/2014 19:27:54</publishTime>
+    </File>
+    <File Include="Views/Shared/_RigthSide.cshtml">
+      <publishTime>11/30/2014 18:50:31</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/24/2014 17:38:22</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/24/2014 17:38:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/27/2014 23:18:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

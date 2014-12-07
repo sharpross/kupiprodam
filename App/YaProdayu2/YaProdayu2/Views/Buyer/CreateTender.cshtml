@@ -1,0 +1,100 @@
+﻿@model YaProdayu2.Models.Views.NewTenderView
+
+@{
+    ViewBag.Title = "Новая заявка";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Новая заявка - @Model.Themne</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <input hidden="hidden" value="@Model.Themne" id="theme" />
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Выберите категорию</label>
+            <div class="col-md-4">
+                <select class="form-control" name="SubTheme" id="SubTheme">
+                    @foreach (var item in Model.ListSubThemes)
+                    {
+                        <option selected="selected">@item</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Город</label>
+            <div class="col-md-4">
+                <select class="form-control" name="City" id="City">
+                    @foreach (var item in Model.Citys)
+                    {
+                        <option selected="selected">@item.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Тип заявки</label>
+            <div class="col-md-4">
+                <select class="form-control" name="TypeTender" id="TypeTender" >
+                    <option selected="selected">Открытые торги</option>
+                    <option>Закрытые торги</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Название торгов</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" placeholder="" name="Title" id="Title" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Сообщение</label>
+            <div class="col-md-8">
+                <textarea class="form-control" rows="7" name="Message" id="Message" placeholder="Максимально подробно опишите детали и условия вашей заявки"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Препологаемый бюджет (&#8381;)</label>
+            <div class="col-md-5">
+                <input type="number" class="form-control" name="Cost" id="Cost" placeholder="Средняя цена" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Разрешить писать мне от участников торгов</label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <input type="checkbox" id="AllowWriteMe" value="@Model.AllowWriteMe" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Время активности</label>
+            <div class="col-md-4">
+                <select class="form-control">
+                    <option selected="selected">3 дня</option>
+                    <option>1 неделя</option>
+                    <option>2 неделя</option>
+                    <option>3 неделя</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-4">
+                <button type="submit">Добавить</button>
+            </div>
+        </div>
+    </div>
+}
