@@ -576,6 +576,7 @@
     <Content Include="Views\Buyer\Index.cshtml" />
     <Content Include="Views\Buyer\Newtender.cshtml" />
     <Content Include="Views\Buyer\CreateTender.cshtml" />
+    <Content Include="Views\Buyer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

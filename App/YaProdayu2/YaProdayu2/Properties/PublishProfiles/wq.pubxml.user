@@ -52,7 +52,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/24/2014 17:38:16</publishTime>
     </File>
     <File Include="bin/YaProdayu2.dll">
-      <publishTime>12/03/2014 21:26:49</publishTime>
+      <publishTime>12/15/2014 00:28:14</publishTime>
     </File>
     <File Include="Content/app/scripts/common.js">
       <publishTime>10/25/2014 17:42:23</publishTime>
@@ -124,7 +124,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/23/2014 13:56:03</publishTime>
     </File>
     <File Include="Content/images/logo.jpg">
-      <publishTime>11/10/2014 19:59:20</publishTime>
+      <publishTime>10/11/2014 19:59:20</publishTime>
     </File>
     <File Include="Content/images/need_help_act.png">
       <publishTime>10/25/2014 17:42:15</publishTime>
@@ -1246,16 +1246,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/25/2014 20:03:08</publishTime>
     </File>
     <File Include="Views/Buyer/CreateTender.cshtml">
-      <publishTime>02/12/2014 00:08:05</publishTime>
+      <publishTime>12/15/2014 00:27:09</publishTime>
+    </File>
+    <File Include="Views/Buyer/Details.cshtml">
+      <publishTime>07/12/2014 14:58:38</publishTime>
     </File>
     <File Include="Views/Buyer/Index.cshtml">
-      <publishTime>10/30/2014 18:38:57</publishTime>
+      <publishTime>07/12/2014 15:22:40</publishTime>
     </File>
     <File Include="Views/Buyer/Newtender.cshtml">
-      <publishTime>12/03/2014 21:24:58</publishTime>
+      <publishTime>12/15/2014 00:16:19</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/03/2014 21:25:53</publishTime>
+      <publishTime>03/12/2014 21:25:53</publishTime>
     </File>
     <File Include="Views/Shared/_Breadcrumbs.cshtml">
       <publishTime>10/25/2014 19:27:54</publishTime>
@@ -1264,16 +1267,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/25/2014 19:27:54</publishTime>
     </File>
     <File Include="Views/Shared/_FooterTop.cshtml">
-      <publishTime>11/30/2014 19:32:09</publishTime>
+      <publishTime>07/12/2014 16:00:04</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>11/30/2014 19:18:50</publishTime>
     </File>
     <File Include="Views/Shared/_LeftSide.cshtml">
-      <publishTime>11/30/2014 19:24:33</publishTime>
+      <publishTime>07/12/2014 14:52:19</publishTime>
     </File>
     <File Include="Views/Shared/_LoginForm.cshtml">
-      <publishTime>10/25/2014 19:27:54</publishTime>
+      <publishTime>12/14/2014 19:25:58</publishTime>
     </File>
     <File Include="Views/Shared/_MainMenu.cshtml">
       <publishTime>10/25/2014 19:27:54</publishTime>

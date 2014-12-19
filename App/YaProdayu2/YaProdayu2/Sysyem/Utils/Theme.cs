@@ -12,5 +12,15 @@ namespace YaProdayu2.Sysyem.Utils
         public List<string> SubThemes { get; set; }
 
         public string Image { get; set; }
+
+        public int Width { get; set; }
+
+        public int Heigth { get; set; }
+
+        public Theme()
+        {
+            this.Width = 120;
+            this.Heigth = 100;
+        }
     }
 }

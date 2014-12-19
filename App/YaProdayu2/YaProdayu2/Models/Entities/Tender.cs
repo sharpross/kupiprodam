@@ -9,7 +9,7 @@ namespace YaProdayu2.Models.Entities
     {
         public virtual int Id { get; set; }
 
-        public virtual int From { get; set; }
+        public virtual int UserId { get; set; }
 
         public virtual string Title { get; set; }
 
@@ -17,7 +17,7 @@ namespace YaProdayu2.Models.Entities
 
         public virtual DateTime DateCreation { get; set; }
 
-        public virtual int Statuse { get; set; }
+        public virtual int Status { get; set; }
 
         public virtual string Theme { get; set; }
 

@@ -12,10 +12,9 @@ namespace YaProdayu2.Models.Mapping
         public TenderMap()
         {
             Id(x => x.Id);
-            Map(x => x.Id);
             Map(x => x.Title);
             Map(x => x.Message);
-            Map(x => x.From);
+            Map(x => x.UserId);
             Map(x => x.Theme);
             Map(x => x.SubTheme);
             Map(x => x.DateCreation);
@@ -24,6 +23,7 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.AllowWriteMe);
             Map(x => x.Cost);
             Map(x => x.TypeTender);
+            Map(x => x.Status);
             Table("Tender");
         }
     }

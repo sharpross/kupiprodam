@@ -9,19 +9,28 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Новая заявка - @Model.Themne</h4>
+        <h4>Новая заявка - @Model.Theme</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <input hidden="hidden" value="@Model.Themne" id="theme" />
+        <input hidden="hidden"  value="@Model.Theme" name="Theme" />
 
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Выберите категорию</label>
-            <div class="col-md-4">
-                <select class="form-control" name="SubTheme" id="SubTheme">
+            <div class="col-md-8">
+                <select class="form-control" name="SubTheme">
+                    <option selected="selected" disabled="disabled">Выберите категорию</option>
                     @foreach (var item in Model.ListSubThemes)
                     {
-                        <option selected="selected">@item</option>
+                        if (item.ToString().Contains("<d>"))
+                        {
+                            <option disabled="disabled" style="background-color: #000066; color: white;">--- @item.Replace("<d>", string.Empty) ---</option>
+                        }
+                        else
+                        {
+                            <option>@item</option>
+                        }
+
                     }
                 </select>
             </div>
@@ -30,7 +39,7 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Город</label>
             <div class="col-md-4">
-                <select class="form-control" name="City" id="City">
+                <select class="form-control" name="City">
                     @foreach (var item in Model.Citys)
                     {
                         <option selected="selected">@item.Name</option>
@@ -42,7 +51,7 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Тип заявки</label>
             <div class="col-md-4">
-                <select class="form-control" name="TypeTender" id="TypeTender" >
+                <select class="form-control" name="TenderType">
                     <option selected="selected">Открытые торги</option>
                     <option>Закрытые торги</option>
                 </select>
@@ -52,21 +61,21 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Название торгов</label>
             <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="" name="Title" id="Title" />
+                <input type="text" class="form-control" placeholder="" name="Title" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Сообщение</label>
             <div class="col-md-8">
-                <textarea class="form-control" rows="7" name="Message" id="Message" placeholder="Максимально подробно опишите детали и условия вашей заявки"></textarea>
+                <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашей заявки"></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Препологаемый бюджет (&#8381;)</label>
             <div class="col-md-5">
-                <input type="number" class="form-control" name="Cost" id="Cost" placeholder="Средняя цена" />
+                <input type="number" class="form-control" name="Coste" placeholder="Средняя цена" />
             </div>
         </div>
 
@@ -74,7 +83,7 @@
             <label for="SubTheme2" class="control-label col-md-4">Разрешить писать мне от участников торгов</label>
             <div class="col-md-4">
                 <div class="checkbox">
-                    <input type="checkbox" id="AllowWriteMe" value="@Model.AllowWriteMe" />
+                    <input type="checkbox" name="AllowWriteMe" value="@Model.AllowWriteMe" />
                 </div>
             </div>
         </div>
@@ -82,7 +91,7 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Время активности</label>
             <div class="col-md-4">
-                <select class="form-control">
+                <select class="form-control" name="ActiveTime">
                     <option selected="selected">3 дня</option>
                     <option>1 неделя</option>
                     <option>2 неделя</option>

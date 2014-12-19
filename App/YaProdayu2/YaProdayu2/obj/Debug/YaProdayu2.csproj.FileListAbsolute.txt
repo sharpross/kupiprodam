@@ -29,4 +29,3 @@ D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentNHibernate.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Iesi.Collections.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.xml
-D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.csprojResolveAssemblyReference.cache

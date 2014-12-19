@@ -1,0 +1,138 @@
+﻿@model YaProdayu2.Models.Entities.Tender
+@{
+    ViewBag.Title = "Тенедер";
+}
+<div class="row" style="border: 1px; border-bottom: 0px; border-color: #D8D8D8; border-style: solid;">
+    <div class="col-md-12" style="text-align: center;">
+        <h4>З а я в к а</h4>
+    </div>
+</div>
+<div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px; ">
+    <div class="col-md-12">
+        <div class="row" style="font-size: 16px; padding-top: 0px;">
+            <div class="col-md-3" style="text-align: right;">
+                <p>
+                    <strong>Тема: </strong>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.Theme
+                </p>
+            </div>
+        </div>
+        <div class="row" style="font-size: 16px;">
+            <div class="col-md-3" style="text-align: right;">
+                <p>
+                    <strong>Категория: </strong>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.SubTheme
+                </p>
+            </div>
+        </div>
+        <div class="row" style="font-size: 16px;">
+            <div class="col-md-3" style="text-align: right;">
+                <p>
+                    <strong>Регион/Город: </strong>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.City
+                </p>
+            </div>
+        </div>
+        <div class="row" style="font-size: 16px;">
+            <div class="col-md-3" style="text-align: right;">
+                <p>
+                    <strong>Заголовок: </strong>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.Title
+                </p>
+            </div>
+        </div>
+        <div class="row" style="font-size: 16px; padding-bottom: 20px;">
+            <div class="col-md-3" style="text-align: right;">
+                <p>
+                    <strong>Сообщение: </strong>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.Message
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px;">
+    <div class="col-md-12">
+        <p>
+            <h4>Вам предлагают:</h4>
+        </p>
+    </div>
+</div>
+<div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
+    <div class="col-md-3">
+        <div style="width: 100%; text-align: center;">
+            <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink("Вася", "Card", "Seller", new { id = 1 }, null)</strong></div></p>
+            <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style="padding-top: 35px;">
+            <p>Я это сделаю за 500 рэксов за неделю</p>
+            <p>Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю.</p>
+            <p>Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю.</p>
+            <p>Я это сделаю за 500 рэксов за неделю</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div style="text-align: center; padding-top: 35px; font-size: 18px;">
+            <p style="color: #04B45F;">
+                <strong>500 </strong><strong style="color: black">&#8381;</strong>
+            </p>
+            <p>
+                <a><img src='@Url.Content("~/Content/images/молоток статичное.png")' width="100" height="100" /></a>
+            </p>
+            <p>
+                Подробнее...
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
+    <div class="col-md-3">
+        <div style="width: 100%; text-align: center;">
+            <p><div style="color: blue; width:100%; text-align: center;">@Html.ActionLink("Вася", "Card", "Seller", new { id = 1 }, null)</div></p>
+            <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style="padding-top: 35px;">
+            <p>Я это сделаю за 500 рэксов за неделю</p>
+            <p>Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю.</p>
+            <p>Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю. Я это сделаю за 500 рэксов за неделю.</p>
+            <p>Я это сделаю за 500 рэксов за неделю</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div style="text-align: center; padding-top: 35px; font-size: 18px;">
+            <p style="color: #04B45F;">
+                <strong>500 </strong><strong style="color: black">&#8381;</strong>
+            </p>
+            <p>
+                <a><img src='@Url.Content("~/Content/images/молоток статичное.png")' width="100" height="100" /></a>
+            </p>
+            <p>
+                Подробнее...
+            </p>
+        </div>
+    </div>
+</div>

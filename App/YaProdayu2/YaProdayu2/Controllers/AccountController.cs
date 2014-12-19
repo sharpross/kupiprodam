@@ -149,10 +149,10 @@ namespace YaProdayu2.Controllers
         public ActionResult Login(LoginView loginData)
         {
 
+
             return View();
         }
-
-        [HttpPost]
+        
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

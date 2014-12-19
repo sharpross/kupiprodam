@@ -8,7 +8,7 @@ namespace YaProdayu2.Models.Views
 {
     public class NewTenderView
     {
-        public string Themne { get; set; }
+        public string Theme { get; set; }
 
         public string SubTheme { get; set; }
 

@@ -19,7 +19,7 @@ namespace YaProdayu2.Controllers
             using (var session = DBHelper.OpenSession())
             {
                 var listTenders = session.CreateCriteria<Tender>().List<Tender>()
-                    .Where(x => x.From == 1);
+                    .Where(x => x.UserId == 1);
 
                 return View(listTenders);
             }
@@ -39,7 +39,7 @@ namespace YaProdayu2.Controllers
             var themes = new DictionaryThemes();
 
             var model = new NewTenderView();
-            model.Themne = theme;
+            model.Theme = theme;
             model.ListSubThemes = themes.List.Where(x => x.Key == theme).FirstOrDefault().SubThemes;
             model.Citys = new DictionaryCitys().List;
             model.AllowWriteMe = true;
@@ -53,12 +53,12 @@ namespace YaProdayu2.Controllers
             var tender = new Tender()
             {
                 City = model.City,
-                From = 1,
+                UserId = 1,
                 Message = model.Message,
                 Title = model.Title,
                 DateCreation = DateTime.Now,
                 ActiviteTime = model.ActiveTime == null ? "3 дня" : model.ActiveTime,
-                Theme = model.Themne,
+                Theme = model.Theme,
                 SubTheme = model.SubTheme,
                 AllowWriteMe = model.AllowWriteMe,
                 Cost = model.Coste,
@@ -101,9 +101,26 @@ namespace YaProdayu2.Controllers
             return View();
         }
 
-        public ActionResult ListTender()
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id.HasValue)
+            {
+                var tender = new Tender();
+
+                using (var session = DBHelper.OpenSession())
+                {
+                    tender = session.CreateCriteria<Tender>()
+                        .List<Tender>()
+                        .Where(x => x.Id == id)
+                        .FirstOrDefault();
+                }
+                if (tender != null)
+                {
+                    return View(tender);
+                }
+            }
+
+            return RedirectToAction("Newtender");
         }
 	}
 }
