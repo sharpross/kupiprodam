@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using YaProdayu2.Sysyem.Utils;
+using YaProdayu2.Y2System.Utils;
 
 namespace YaProdayu2.Models.Views
 {
     public class NewTenderView
     {
         public string Theme { get; set; }
+
+        public string IconTheme { get; set; }
+
+        public int IconWidth { get; set; }
+
+        public int IconHeight { get; set; }
 
         public string SubTheme { get; set; }
 

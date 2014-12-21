@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using YaProdayu2.Models.Entities;
 using YaProdayu2.Models.Views;
-using YaProdayu2.Sysyem.System;
-using YaProdayu2.Sysyem.Utils;
+using YaProdayu2.Y2System;
+using YaProdayu2.Y2System.Utils;
+using YaProdayu2.Y2System.System;
 
 namespace YaProdayu2.Controllers
 {
-    public class BuyerController : Controller
+    public class BuyerController : BaseController
     {
         //
         // GET: /Buyer/
@@ -40,6 +41,9 @@ namespace YaProdayu2.Controllers
 
             var model = new NewTenderView();
             model.Theme = theme;
+            model.IconTheme = themes.List.Where(x => x.Key == theme).FirstOrDefault().Image;
+            model.IconWidth = themes.List.Where(x => x.Key == theme).FirstOrDefault().Width;
+            model.IconHeight = themes.List.Where(x => x.Key == theme).FirstOrDefault().Heigth;
             model.ListSubThemes = themes.List.Where(x => x.Key == theme).FirstOrDefault().SubThemes;
             model.Citys = new DictionaryCitys().List;
             model.AllowWriteMe = true;

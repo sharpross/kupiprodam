@@ -11,11 +11,12 @@ using YaProdayu2.Models.Views.Buyer;
 using YaProdayu2.Models.Views.Seller;
 using YaProdayu2.Models.Views.Tender;
 using YaProdayu2.Models.Views.Theme;
-using YaProdayu2.Sysyem.System;
+using YaProdayu2.Y2System;
+using YaProdayu2.Y2System.System;
 
 namespace YaProdayu2.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         public ActionResult Index()
         {

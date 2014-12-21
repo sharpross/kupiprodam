@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using YaProdayu2.Sysyem.Utils;
+using YaProdayu2.Y2System.Utils;
+using YaProdayu2.Y2System;
 
 namespace YaProdayu2.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

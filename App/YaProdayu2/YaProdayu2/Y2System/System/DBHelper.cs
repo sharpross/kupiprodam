@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using YaProdayu2.Models.Entities;
 
-namespace YaProdayu2.Sysyem.System
+namespace YaProdayu2.Y2System.System
 {
     public class DBHelper
     {
