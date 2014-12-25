@@ -29,3 +29,4 @@ D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Newtonsoft.Json.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Antlr3.Runtime.pdb
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.pdb
+D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.csprojResolveAssemblyReference.cache

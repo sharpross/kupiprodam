@@ -52,7 +52,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/24/2014 17:38:16</publishTime>
     </File>
     <File Include="bin/YaProdayu2.dll">
-      <publishTime>12/15/2014 00:28:14</publishTime>
+      <publishTime>12/25/2014 01:10:02</publishTime>
     </File>
     <File Include="Content/app/scripts/common.js">
       <publishTime>10/25/2014 17:42:23</publishTime>
@@ -82,46 +82,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 18:45:21</publishTime>
     </File>
     <File Include="Content/images/kats/1.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:17</publishTime>
     </File>
     <File Include="Content/images/kats/10.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:17</publishTime>
     </File>
     <File Include="Content/images/kats/11.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:18</publishTime>
     </File>
     <File Include="Content/images/kats/12.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:19</publishTime>
     </File>
     <File Include="Content/images/kats/13.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:19</publishTime>
     </File>
     <File Include="Content/images/kats/14.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:19</publishTime>
     </File>
     <File Include="Content/images/kats/2.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:20</publishTime>
     </File>
     <File Include="Content/images/kats/3.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:21</publishTime>
     </File>
     <File Include="Content/images/kats/4.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:21</publishTime>
     </File>
     <File Include="Content/images/kats/5.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:21</publishTime>
     </File>
     <File Include="Content/images/kats/6.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:23</publishTime>
     </File>
     <File Include="Content/images/kats/7.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:24</publishTime>
     </File>
     <File Include="Content/images/kats/8.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:25</publishTime>
     </File>
     <File Include="Content/images/kats/9.png">
-      <publishTime>11/23/2014 13:56:03</publishTime>
+      <publishTime>12/21/2014 16:56:25</publishTime>
     </File>
     <File Include="Content/images/logo.jpg">
       <publishTime>10/11/2014 19:59:20</publishTime>
@@ -1246,7 +1246,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/25/2014 20:03:08</publishTime>
     </File>
     <File Include="Views/Buyer/CreateTender.cshtml">
-      <publishTime>12/15/2014 00:27:09</publishTime>
+      <publishTime>12/25/2014 00:14:37</publishTime>
     </File>
     <File Include="Views/Buyer/Details.cshtml">
       <publishTime>07/12/2014 14:58:38</publishTime>
@@ -1255,10 +1255,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/12/2014 15:22:40</publishTime>
     </File>
     <File Include="Views/Buyer/Newtender.cshtml">
-      <publishTime>12/15/2014 00:16:19</publishTime>
+      <publishTime>12/21/2014 16:58:15</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>03/12/2014 21:25:53</publishTime>
+    </File>
+    <File Include="Views/Seller/Details.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Seller/List.cshtml">
+      <publishTime>12/24/2014 23:44:35</publishTime>
     </File>
     <File Include="Views/Shared/_Breadcrumbs.cshtml">
       <publishTime>10/25/2014 19:27:54</publishTime>
@@ -1273,7 +1279,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2014 19:18:50</publishTime>
     </File>
     <File Include="Views/Shared/_LeftSide.cshtml">
-      <publishTime>07/12/2014 14:52:19</publishTime>
+      <publishTime>12/24/2014 23:42:03</publishTime>
     </File>
     <File Include="Views/Shared/_LoginForm.cshtml">
       <publishTime>12/14/2014 19:25:58</publishTime>

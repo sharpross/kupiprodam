@@ -118,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Image\" />
-    <Folder Include="Views\Seller\" />
     <Folder Include="Y2System\Generators\" />
   </ItemGroup>
   <ItemGroup>
@@ -134,17 +133,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Image.cs" />
-    <Compile Include="Models\Entities\Message.cs" />
+    <Compile Include="Models\Entities\TenderMessages.cs" />
+    <Compile Include="Models\Entities\UserMessage.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\Tender.cs" />
     <Compile Include="Models\Entities\UserSystem.cs" />
     <Compile Include="Models\Mapping\TenderMap.cs" />
+    <Compile Include="Models\Mapping\TenderMessageMap.cs" />
     <Compile Include="Models\Mapping\UserSystemMap.cs" />
     <Compile Include="Models\Views\Account\LoginView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerProfileView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerRegistrationView.cs" />
     <Compile Include="Models\Views\Seller\SellerProfileView.cs" />
     <Compile Include="Models\Views\Seller\SellerRegistrationView.cs" />
+    <Compile Include="Models\Views\Seller\SellerTenderDetailsView.cs" />
+    <Compile Include="Models\Views\Seller\TenderAddMessageView.cs" />
     <Compile Include="Models\Views\Tender\DetailsTenderView.cs" />
     <Compile Include="Models\Views\Tender\ListTenderView.cs" />
     <Compile Include="Models\Views\Tender\NewTenderView.cs" />
@@ -579,6 +582,8 @@
     <Content Include="Views\Buyer\Newtender.cshtml" />
     <Content Include="Views\Buyer\CreateTender.cshtml" />
     <Content Include="Views\Buyer\Details.cshtml" />
+    <Content Include="Views\Seller\List.cshtml" />
+    <Content Include="Views\Seller\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

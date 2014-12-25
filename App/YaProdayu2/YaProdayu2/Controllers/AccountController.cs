@@ -6,11 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using YaProdayu2.Models.Entities;
-using YaProdayu2.Models.Views.Account;
-using YaProdayu2.Models.Views.Buyer;
-using YaProdayu2.Models.Views.Seller;
-using YaProdayu2.Models.Views.Tender;
-using YaProdayu2.Models.Views.Theme;
+using YaProdayu2.Models.Views;
 using YaProdayu2.Y2System;
 using YaProdayu2.Y2System.System;
 

@@ -9,7 +9,9 @@ namespace YaProdayu2.Models.Entities
     {
         public int Id { get; set; }
 
-        public string FromId { get; set; }
+        public int FromUserId { get; set; }
+
+        public int ToUserId { get; set; }
 
         public string Title { get; set; }
 
