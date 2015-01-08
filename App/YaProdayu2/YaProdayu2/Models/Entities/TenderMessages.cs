@@ -18,5 +18,30 @@ namespace YaProdayu2.Models.Entities
         public virtual DateTime CreationTime { get; set; }
 
         public virtual decimal Coste { get; set; }
+
+        public virtual string ShortMessage 
+        {
+            get
+            {
+                var maxWords = 10;
+                var i = 0;
+                var words = this.Message.Split(' ');
+                var shortMessage = string.Empty;
+
+                foreach (var word in words)
+                {
+                    if (i == maxWords) 
+                    {
+                        shortMessage += "...";
+                        break;
+                    }
+
+                    shortMessage += word;
+                    i++;
+                }
+
+                return shortMessage;
+            }
+        }
     }
 }

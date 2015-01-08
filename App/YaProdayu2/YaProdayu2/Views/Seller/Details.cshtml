@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-9">
                 <p>
-                    @Model.TenderInfo.Theme
+                     @Model.TenderInfo.Theme
                 </p>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 </p>
             </div>
         </div>
-        <div class="row" style="font-size: 16px; padding-bottom: 20px;">
+        <div class="row" style="font-size: 16px; padding-bottom: 10px;">
             <div class="col-md-3" style="text-align: right;">
                 <p>
                     <strong>Сообщение: </strong>
@@ -69,70 +69,82 @@
                 </p>
             </div>
         </div>
+
+        @if (Model.TenderInfo.Photos != null && Model.TenderInfo.Photos.Length > 0)
+        {
+            <div class="row" style="padding-bottom: 10px;">
+                @foreach (var item in Model.TenderInfo.Photos)
+                {
+                    <div class="col-md-3">
+                        <a href="~/Image/Get?id=@item" data-lightbox="@item">
+                            <img src="~/Image/Get?id=@item" width="100" height="100">
+                        </a>
+                    </div>
+                }
+            </div>
+        }
     </div>
 </div>
-@if (Model.Message == null)
+<div style="padding-top: 15px;"></div>
+@if (Model.HaveMyMessages == false)
 {
-    using (Html.BeginForm())
-    {
-        <hr />
-        <input hidden="hidden" name="UserId" value="1" />
-        <input hidden="hidden" name="TenderId" value="@Model.TenderInfo.Id" />
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label for="SubTheme2" class="control-label col-md-2">Сообщение</label>
-                <div class="col-md-10">
-                    <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            <input hidden="hidden" name="UserLogin" value="@ViewBag.UserLogin" />
+            <input hidden="hidden" name="TenderId" value="@Model.TenderInfo.Id" />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="SubTheme2" class="control-label col-md-2">Сообщение</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label for="Cost" class="control-label col-md-2">Сумма</label>
-                <div class="col-md-4">
-                    <input type="number" class="form-control" name="Cost" placeholder="Средняя цена" />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="Cost" class="control-label col-md-2">Сумма</label>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" name="Cost" placeholder="Средняя цена" />
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-4">
-                <button type="submit">Добавить</button>
+
+            <div class="form-group">
+                <div class="" style="text-align: center;">
+                    <button type="submit" class="btn btn-two">Добавить</button>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 }
-else
+
+@if (Model.Messages != null)
 {
-    <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px;">
+    <div style="padding-top: 15px;"></div>
+    <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid;">
         <div class="col-md-12">
             <p>
-                <h4>Моё предолжение:</h4>
+                <h4>Предложения:</h4>
             </p>
         </div>
     </div>
-    <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
-        <div class="col-md-3">
-            <div style="width: 100%; text-align: center;">
-                <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink(Model.User.Name, "Card", "Account", new { id = Model.User.Id }, null)</strong></div></p>
-                <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
+    
+    foreach (var message in Model.Messages)
+    {
+        <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
+            <div class="col-md-3">
+                <div style="width: 100%; text-align: center;">
+                    <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink(message.User.Name, "Card", "Account", new { email = message.User.Email }, null)</strong></div></p>
+                    <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div style="padding-top: 35px;">
+                    @message.Messages.ShortMessage
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div style="padding-top: 35px;">
-                @Model.Message.Message
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div style="text-align: center; padding-top: 35px; font-size: 18px;">
-                <p style="color: #04B45F;">
-                    <strong>500 </strong><strong style="color: black">&#8381;</strong>
-                </p>
-                <p>
-                    <a><img src='@Url.Content("~/Content/images/молоток статичное.png")' width="100" height="100" /></a>
-                </p>
-            </div>
-        </div>
-    </div>
+    }
 }

@@ -11,7 +11,7 @@ namespace YaProdayu2.Y2System.Security
         /// <summary>
         /// Конекст (тут мы получаем доступ к запросу и кукисам)
         /// </summary>
-        HttpContext HttpContext { get; set; }
+        HttpContextBase HttpContext { get; set; }
 
         UserSystem Login(string login, string password, bool isPersistent);
 

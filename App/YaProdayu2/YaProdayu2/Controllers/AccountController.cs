@@ -19,20 +19,51 @@ namespace YaProdayu2.Controllers
             return RedirectToAction("Registration");
         }
 
-        /// <summary>
-        /// Профиль продавца
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult Seller()
+        [HttpGet]
+        public ActionResult Profile(string login)
         {
-            return View();
+            return View(this.Auth.CurrentUser);
+        }
+
+        [HttpPost]
+        public ActionResult Profile(UserSystem userData)
+        {
+
+
+            return View(this.Auth.CurrentUser);
         }
 
         /// <summary>
-        /// Профиль покупателя
+        /// Визитка
         /// </summary>
         /// <returns></returns>
-        public ActionResult Buyer()
+        public ActionResult Card(string email)
+        {
+            UserSystem user = null;
+
+            using (var session = DBHelper.OpenSession())
+            {
+                user = session.CreateCriteria<UserSystem>().List<UserSystem>()
+                    .Where(rec => rec.Email == email)
+                    .FirstOrDefault();
+            }
+
+            if (user == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(user);
+        }
+
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            return View(this.Auth.CurrentUser);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int? model)
         {
             return View();
         }
@@ -44,6 +75,11 @@ namespace YaProdayu2.Controllers
         [AllowAnonymous]
         public ActionResult Registration()
         {
+            if (this.Auth.CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -55,6 +91,11 @@ namespace YaProdayu2.Controllers
         [HttpGet]
         public ActionResult RegSeller()
         {
+            if (this.Auth.CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var model = new SellerRegistrationView();
 
             return View(model);
@@ -68,10 +109,17 @@ namespace YaProdayu2.Controllers
         [HttpPost]
         public ActionResult RegSeller(SellerRegistrationView model)
         {
+            if (this.Auth.CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var user = new UserSystem() {
                 Name = model.Name,
                 Email = model.Email,
                 Password = model.Password,
+                Organization = model.Organization,
+                Post = model.Post,
                 Phone = model.Phone,
                 IsSeller = true,
                 CreationTime = DateTime.Now
@@ -97,6 +145,11 @@ namespace YaProdayu2.Controllers
         [HttpGet]
         public ActionResult RegBuyer()
         {
+            if (this.Auth.CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var model = new BuyerRegistrationView();
 
             return View(model);
@@ -110,6 +163,11 @@ namespace YaProdayu2.Controllers
         [HttpPost]
         public ActionResult RegBuyer(BuyerRegistrationView model)
         {
+            if (this.Auth.CurrentUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             var user = new UserSystem() {
                 Name = model.Name,
                 Email = model.Email,
@@ -130,31 +188,45 @@ namespace YaProdayu2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        /*[AllowAnonymous]
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View();
-        }*/
-
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login(LoginView loginData)
+        public JsonResult Login(string login, string password, bool? remembeMe)
         {
+            UserSystem user = null;
 
+            if (!string.IsNullOrEmpty(login) &&
+                !string.IsNullOrEmpty(password))
+            {
+                user = this.Auth.Login(login, password, remembeMe == null ? false : (bool)remembeMe);
 
-            return View();
+                if (user != null)
+                {
+                    return Json(new
+                    {
+                        Success = true,
+                        Data = "null"
+                    });
+                }
+            }
+
+            var result = new
+            {
+                Success = false,
+                Data = "Логин или пароль указаны не карректно."
+            };
+
+            return Json(result);
         }
-        
-        public ActionResult Logout()
-        {
-            FormsAuthentication.SignOut();
 
-            return View();
+        public JsonResult Logout()
+        {
+            this.Auth.LogOut();
+
+            return Json(new
+            {
+                Success = true,
+                Data = "null"
+            });
         }
 	}
 }

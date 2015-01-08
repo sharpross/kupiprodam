@@ -15,6 +15,10 @@ namespace YaProdayu2.Models.Views
 
         public string Phone { get; set; }
 
+        public string Organization { get; set; }
+
+        public string Post { get; set; }
+
         public bool IsAcceptRules { get; set; }
     }
 }

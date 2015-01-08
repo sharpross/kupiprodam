@@ -4,14 +4,14 @@
     ViewBag.Title = "Новая заявка";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateTender", "Buyer", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
         <div class="row">
             <div class="col-md-4" style="text-align: center">
-                <img src="~/Content/images/kats/@Model.IconTheme" width="@Model.IconWidth" height="@Model.IconHeight" />
+                <img src="~/Content/images/kats/@Model.IconTheme" width="140" height="120" />
             </div>
             <div class="col-md-8">
                 <br/><br />
@@ -19,7 +19,15 @@
             </div>
         </div>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @if (Model.Errors.Count > 0)
+        {
+            <div class="alert alert-danger" role="alert">
+                @foreach (var item in Model.Errors)
+                {
+                    <p>@item</p>
+                }
+            </div>
+        }
 
         <input hidden="hidden"  value="@Model.Theme" name="Theme" />
 
@@ -27,16 +35,34 @@
             <label for="SubTheme2" class="control-label col-md-4">Выберите категорию</label>
             <div class="col-md-8">
                 <select class="form-control" name="SubTheme">
-                    <option selected="selected" disabled="disabled">Выберите категорию</option>
+                    @if (string.IsNullOrEmpty(Model.SubTheme))
+                    {
+                        <option selected="selected" disabled="disabled">Выберите категорию</option>
+                    }
+                    else
+                    {
+                        <option disabled="disabled">Выберите категорию</option>
+                    }
+                    
                     @foreach (var item in Model.ListSubThemes)
                     {
-                        if (item.ToString().Contains("<d>"))
+                        if (item.ToString().Contains("<d>") || item.ToString().Contains("<l>"))
                         {
-                            <option disabled="disabled" style="background-color: #000066; color: white;">--- @item.Replace("<d>", string.Empty) ---</option>
+                            if (item.ToString().Contains("<d>"))
+                            {
+                                <option disabled="disabled" style="background-color: #E0E0E0; color: black;">@item.Replace("<d>", string.Empty)</option>
+                            }
                         }
                         else
                         {
-                            <option>@item</option>
+                            if (Model.SubTheme == item)
+                            {
+                                <option selected="selected">@item</option>
+                            }
+                            else
+                            {
+                                <option>@item</option>
+                            }
                         }
 
                     }
@@ -69,21 +95,28 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Название торгов</label>
             <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="" name="Title" />
+                <input type="text" required class="form-control" placeholder="" name="Title" value="@Model.Title" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Сообщение</label>
             <div class="col-md-8">
-                <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашей заявки"></textarea>
+                <textarea class="form-control" required rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашей заявки"></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Препологаемый бюджет (&#8381;)</label>
             <div class="col-md-5">
-                <input type="number" class="form-control" name="Coste" placeholder="Средняя цена" />
+                <input type="number" min="10" step="10" class="form-control" name="Coste" placeholder="Средняя цена" value="@Model.Coste" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ListPhoto" class="control-label col-md-4">Фото</label>
+            <div class="col-md-5">
+                <input type="file" accept="image/*" multiple class="form-control" name="ListPhoto" value="@Model.ListPhoto" />
             </div>
         </div>
 
@@ -100,17 +133,44 @@
             <label for="SubTheme2" class="control-label col-md-4">Время активности</label>
             <div class="col-md-4">
                 <select class="form-control" name="ActiveTime">
-                    <option selected="selected">3 дня</option>
-                    <option>1 неделя</option>
-                    <option>2 неделя</option>
-                    <option>3 неделя</option>
+                    @if (Model.ActiveTime == "3 дня")
+                    {
+                        <option selected="selected">3 дня</option>
+                    }
+                    else
+                    {
+                        <option>3 дня</option>
+                    }
+                    @if (Model.ActiveTime == "7 дней")
+                    {
+                        <option selected="selected">7 дней</option>
+                    }
+                    else
+                    {
+                        <option>7 дней</option>
+                    }
+                    @if (Model.ActiveTime == "14 дней")
+                    {
+                        <option selected="selected">14 дней</option>
+                    }
+                    else
+                    {
+                        <option>14 дней</option>
+                    }
+                    @if (Model.ActiveTime == "21 дней")
+                    {
+                        <option selected="selected">21 дней</option>
+                    }
+                    else
+                    {
+                        <option>21 дней</option>
+                    }
                 </select>
             </div>
         </div>
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-4">
-                <button type="submit">Добавить</button>
+            <div class="col-md-12" style="text-align: center;">
+                <button type="submit" class="btn btn-two" style="width: 30%">Добавить</button>
             </div>
         </div>
     </div>

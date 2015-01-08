@@ -9,8 +9,12 @@ namespace YaProdayu2.Models.Entities
     {
         public virtual int ID { get; set; }
 
-        public virtual string Title { get; set; }
+        public virtual string Name { get; set; }
 
         public virtual Byte[] Data { get; set; }
+
+        public virtual string Type { get; set; }
+
+        public virtual int ParentId { get; set; }
     }
 }

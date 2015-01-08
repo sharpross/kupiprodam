@@ -28,5 +28,11 @@ namespace YaProdayu2.Models.Entities
         public virtual string Site { get; set; }
 
         public virtual DateTime CreationTime { get; set; }
+
+        public virtual string Skype { get; set; }
+
+        public virtual string Post { get; set; }
+
+        public virtual string Organization { get; set; }
     }
 }

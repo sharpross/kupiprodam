@@ -7,7 +7,7 @@ namespace YaProdayu2.Models.Views
 {
     public class TenderAddMessageView
     {
-        public int UserID { get; set; }
+        public string UserLogin { get; set; }
 
         public int TenderId { get; set; }
 

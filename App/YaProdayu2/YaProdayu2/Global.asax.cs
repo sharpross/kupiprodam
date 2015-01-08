@@ -17,5 +17,27 @@ namespace YaProdayu2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        /*void Application_EndRequest(object sender, EventArgs e)
+        {
+            // if login failed then display user friendly error page.
+            if (Response.StatusCode == 401)
+            {
+                Response.ClearContent();
+                Server.Transfer("~/Error/Unauthorised");
+            }
+
+            if (Response.StatusCode == 404)
+            {
+                Response.ClearContent();
+                Server.Transfer("~/Error/NotFound");
+            }
+
+            if (Response.StatusCode == 500)
+            {
+                Response.ClearContent();
+                Server.Transfer("~/Error/Error");
+            }
+        }*/
     }
 }

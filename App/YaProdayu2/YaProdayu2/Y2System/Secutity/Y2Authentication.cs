@@ -11,11 +11,13 @@ namespace YaProdayu2.Y2System.Secutity
 {
     public class Y2Authentication : IAuthentication
     {
+        private UserSystem CurrentSystemUser { get; set; }
+
         private const string CookieName = "__AUTH_COOKIE";
 
-        public HttpContext HttpContext { get; set; }
+        public HttpContextBase HttpContext { get; set; }
 
-        public UserSystem Login(string login, string password, bool isPersistent)
+        public UserSystem Login(string login, string password, bool isPersistent = false)
         {
             UserSystem user = null;
 
@@ -57,14 +59,20 @@ namespace YaProdayu2.Y2System.Secutity
 
         public void LogOut()
         {
-            throw new NotImplementedException();
+            var httpCookie = this.HttpContext.Response.Cookies[CookieName];
+
+            if (httpCookie != null)
+            {
+                httpCookie.Value = string.Empty;
+                FormsAuthentication.SignOut();
+            }
         }
 
         public UserSystem CurrentUser
         {
             get
             {
-                if (this.CurrentUser == null)
+                if (this.CurrentSystemUser == null)
                 {
                     try
                     {
@@ -75,7 +83,7 @@ namespace YaProdayu2.Y2System.Secutity
                             using (var session = DBHelper.OpenSession())
                             {
                                 
-                                return session.CreateCriteria<UserSystem>().List<UserSystem>()
+                                this.CurrentSystemUser = session.CreateCriteria<UserSystem>().List<UserSystem>()
                                     .Where(rec => rec.Email == ticket.Name)
                                     .FirstOrDefault();
                             }
@@ -87,11 +95,11 @@ namespace YaProdayu2.Y2System.Secutity
                     }
                     catch (Exception ex)
                     {
-                        
+                        throw ex;
                     }
                 }
 
-                return this.CurrentUser;
+                return this.CurrentSystemUser;
             }
         }
 
@@ -101,8 +109,8 @@ namespace YaProdayu2.Y2System.Secutity
                   1,
                   userName,
                   DateTime.Now,
-                  DateTime.Now.Add(FormsAuthentication.Timeout),
-                  isPersistent,
+                  DateTime.Now.AddDays(7),
+                  true,
                   string.Empty,
                   FormsAuthentication.FormsCookiePath);
 
@@ -116,7 +124,9 @@ namespace YaProdayu2.Y2System.Secutity
                 Expires = DateTime.Now.Add(FormsAuthentication.Timeout)
             };
 
-            HttpContext.Response.Cookies.Set(AuthCookie);
+            this.HttpContext.Response.Cookies.Set(AuthCookie);
+
+            FormsAuthentication.SetAuthCookie(userName, true);
         }
     }
 }

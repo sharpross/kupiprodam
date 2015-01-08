@@ -1,8 +1,20 @@
 ﻿<div class="widget">
-    <p>@Html.ActionLink("Мои заявки", "Index", "Home", null, new { @style = "text-transform: ; font-weight: bold; color: #660066;" })</p>
-    <p>@Html.ActionLink("Заявки на торги", "Index", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #660066;" })</p>
-    <p>@Html.ActionLink("Сообщения", "List", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #660066;" })</p>
-    <p>@Html.ActionLink("Активные торги", "Index", "Seller", null, new { @style = "text-transform: ; font-weight: bold; color: #660066;" })</p>
-    <p>@Html.ActionLink("Регистрация", "Registration", "Account", null, new { @style = "text-transform: ; font-weight: bold; color: #660066;" })</p>
-    <p>@Html.ActionLink("Моя визитка", "Card", "Seller", new { id = 0 }, new { @style = "text-transform: ; font-weight: bold; color: #660066" })</p>
+    @if (ViewBag.IsAuth == true)
+    {
+        <p>@Html.ActionLink("На главную", "Index", "Home", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+        <p>@Html.ActionLink("Мои заявки", "MyTenders", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+        if (ViewBag.IsSeller == true)
+        {
+            <p>@Html.ActionLink("Заявки на торги", "Index", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+            <p>@Html.ActionLink("Активные торги", "Index", "Seller", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+            <p>@Html.ActionLink("Сообщения", "List", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+            <p>@Html.ActionLink("Моя визитка", "Card", "Account", new { email = ViewBag.UserLogin }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
+        }
+    }
+    else
+    {
+        <p>@Html.ActionLink("Регистрация", "Registration", "Account", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+        <p>@Html.ActionLink("Как это работает", "HowTo", "Home", new { id = 0 }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
+        <p>@Html.ActionLink("О нас", "About", "Home", new { id = 0 }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
+    }
 </div>

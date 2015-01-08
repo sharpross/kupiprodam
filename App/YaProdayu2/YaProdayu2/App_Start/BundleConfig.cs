@@ -10,7 +10,8 @@ namespace YaProdayu2
         {
             bundles.Add(new StyleBundle("~/Content/static/css").Include(
                         "~/Content/static/theme/css/global-style.css",
-                        "~/Content/static/theme/assets/fancybox/jquery.fancybox.css"));
+                        "~/Content/static/theme/assets/fancybox/jquery.fancybox.css",
+                        "~/Content/static/lightbox/lightbox.css"));
 
             bundles.Add(new ScriptBundle("~/Content/static/js").Include(
                         "~/Content/static/jquery/jquery.js",
@@ -25,6 +26,7 @@ namespace YaProdayu2
                         "~/Content/static/theme/js/less.js",
                         "~/Content/static/theme/js/modernizr.custom.js",
                         "~/Content/static/theme/js/respond.min.js",
+                        "~/Content/static/lightbox/lightbox.min.js",
 
                         "~/Content/static/theme/assets/fancybox/jquery.fancybox.js",
                         "~/Content/static/theme/assets/hover-dropdown/bootstrap-hover-dropdown.min.js",
@@ -43,7 +45,8 @@ namespace YaProdayu2
                         "~/Content/app/styles/styles.css"));
 
             bundles.Add(new ScriptBundle("~/Content/app/js").Include(
-                        "~/Content/app/scripts/common.js"));
+                        "~/Content/app/scripts/common.js",
+                        "~/Scripts/App/Common/login.js"));
 
             BundleTable.EnableOptimizations = false;
         }

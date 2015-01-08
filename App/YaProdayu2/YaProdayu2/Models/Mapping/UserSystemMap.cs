@@ -21,7 +21,10 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.About);
             Map(x => x.IsSeller);
             Map(x => x.Site);
+            Map(x => x.Skype);
+            Map(x => x.Organization);
             Map(x => x.CreationTime);
+            Map(x => x.Post);
             Table("Users");
         }
     }

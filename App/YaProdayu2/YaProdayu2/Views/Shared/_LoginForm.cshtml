@@ -1,4 +1,4 @@
-﻿@if (ViewBag.IdentityAccount == null)
+﻿@if (ViewBag.IsAuth == false)
 {
     <div style="text-align: center;">
         <p><a href="#" id="login" class="btn" style="text-decoration: underline;">Войти</a></p>
@@ -13,8 +13,7 @@
                     <h4 class="modal-title">Войти</h4>
                 </div>
                 <div class="modal-body">
-
-                    <form role="form" method="post" action="Login">
+                    <form name="LoginForm">
                         <div class="form-group">
                             <input type="email" class="form-control" name="Login" placeholder="Email">
                         </div>
@@ -22,11 +21,10 @@
                             <input type="password" class="form-control" name="Password" placeholder="Пароль">
                         </div>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="RememberMe"> Запомнить
-                            </label>
+                            <input type="checkbox" name="RemembeMe"> Запомнить
                         </div>
-                        <button type="submit" class="btn btn-primary">Войти</button>
+                        <div class="LoginError" style="padding-bottom: 10px; color: red;"></div>
+                        <button type="button" class="btn btn-primary" name="LoginButton">Войти</button>
                     </form>
 
                 </div>
@@ -34,6 +32,10 @@
         </div>
     </div>
 }
-else { 
-    <p>Вы вошли как, @ViewBag.IdentityAccount</p>
+@if (ViewBag.IsAuth == true)
+{ 
+    <div style="text-align: center;">
+        <p><strong>@ViewBag.UserName</strong></p>
+        <p><a name="LogoutButton">Выход</a></p>
+    </div>
 }

@@ -42,6 +42,9 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="FluentSecurity">
+      <HintPath>..\packages\FluentSecurity.2.1.0\lib\net40\FluentSecurity.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -122,10 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ExceptionPolicyViolationHandler.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuyerController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
@@ -138,6 +143,7 @@
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\Tender.cs" />
     <Compile Include="Models\Entities\UserSystem.cs" />
+    <Compile Include="Models\Mapping\ImageMap.cs" />
     <Compile Include="Models\Mapping\TenderMap.cs" />
     <Compile Include="Models\Mapping\TenderMessageMap.cs" />
     <Compile Include="Models\Mapping\UserSystemMap.cs" />
@@ -155,6 +161,7 @@
     <Compile Include="Models\Views\Theme\ThemeListView.cs" />
     <Compile Include="Models\Views\Theme\ThemeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Y2System\Secutity\DenyAnonymousAccessPolicyViolationHandler.cs" />
     <Compile Include="Y2System\Secutity\IAuthentication.cs" />
     <Compile Include="Y2System\BaseController.cs" />
     <Compile Include="Y2System\Secutity\Y2Authentication.cs" />
@@ -174,6 +181,7 @@
     <Content Include="Content\images\fish\3.jpg" />
     <Content Include="Content\images\fish\4.jpg" />
     <Content Include="Content\images\fish\45.png" />
+    <Content Include="Content\images\image_not_found.png" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\need_help_act.png" />
     <Content Include="Content\images\need_help_std.png" />
@@ -196,8 +204,16 @@
     <Content Include="Content\images\молоток наведение.png" />
     <Content Include="Content\images\молоток нажим.png" />
     <Content Include="Content\images\молоток статичное.png" />
+    <Content Include="Content\static\img\close.png" />
+    <Content Include="Content\static\img\loading.gif" />
+    <Content Include="Content\static\img\next.png" />
+    <Content Include="Content\static\img\prev.png" />
     <Content Include="Content\static\jquery\jquery.js" />
     <Content Include="Content\static\jquery\jquery.min.js" />
+    <Content Include="Content\static\lightbox\lightbox.css" />
+    <Content Include="Content\static\lightbox\lightbox.js" />
+    <Content Include="Content\static\lightbox\lightbox.min.js" />
+    <Content Include="Content\static\lightbox\screen.css" />
     <Content Include="Content\static\svgjs\svg.js" />
     <Content Include="Content\static\svgjs\svg.min.js" />
     <Content Include="Content\static\theme\assets\animate\animate.css" />
@@ -505,6 +521,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Common\login.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\static\jquery\jquery.min.map" />
@@ -547,6 +564,7 @@
     <Content Include="Content\static\theme\font-awesome\scss\_spinning.scss" />
     <Content Include="Content\static\theme\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\static\theme\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\static\lightbox\lightbox.min.map" />
     <None Include="Properties\PublishProfiles\wq.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -555,14 +573,18 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -584,6 +606,13 @@
     <Content Include="Views\Buyer\Details.cshtml" />
     <Content Include="Views\Seller\List.cshtml" />
     <Content Include="Views\Seller\Details.cshtml" />
+    <Content Include="Views\Account\_BuyerProfileView.cshtml" />
+    <Content Include="Views\Account\_SellerProfileView.cshtml" />
+    <Content Include="Views\Account\Card.cshtml" />
+    <Content Include="Views\Buyer\MyTenders.cshtml" />
+    <Content Include="Views\Error\Unauthorised.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

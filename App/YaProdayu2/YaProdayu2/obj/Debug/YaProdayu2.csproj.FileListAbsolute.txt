@@ -6,7 +6,6 @@ D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentNHibernate.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Iesi.Collections.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Microsoft.Web.Infrastructure.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Newtonsoft.Json.dll
-D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Helpers.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Mvc.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Optimization.dll
@@ -17,7 +16,6 @@ D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.Razor.d
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\WebGrease.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentNHibernate.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Iesi.Collections.xml
-D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Helpers.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Mvc.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Optimization.xml
@@ -29,4 +27,35 @@ D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Newtonsoft.Json.xml
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Antlr3.Runtime.pdb
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.dll
 D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.pdb
-D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.csprojResolveAssemblyReference.cache
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\YaProdayu2.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\YaProdayu2.pdb
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Antlr3.Runtime.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentNHibernate.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentSecurity.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Iesi.Collections.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Newtonsoft.Json.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Helpers.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Mvc.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Optimization.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Razor.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.Razor.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\WebGrease.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentNHibernate.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Iesi.Collections.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\NHibernate.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Helpers.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Mvc.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Optimization.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.Razor.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\System.Web.WebPages.Razor.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Newtonsoft.Json.xml
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\Antlr3.Runtime.pdb
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.dll
+C:\Users\vidrickiy\Documents\Visual Studio 2013\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\obj\Debug\YaProdayu2.pdb
+D:\Projects\kupiprodam\App\YaProdayu2\YaProdayu2\bin\FluentSecurity.dll

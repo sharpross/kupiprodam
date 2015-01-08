@@ -34,8 +34,45 @@ namespace YaProdayu2.Models.Views
 
         public List<string> ListSubThemes { get; set; }
 
-        public string Errors { get; set; }
-
         public List<City> Citys { get; set; }
+
+        public List<string> Errors { get; set; }
+
+        public int[] Photo { get; set; }
+
+        public HttpPostedFileBase[] ListPhoto { get; set; }
+
+        public NewTenderView()
+        {
+            this.Errors = new List<string>();
+        }
+
+        public bool IsValid()
+        {
+            var isValid = true;
+
+            this.GetErrors();
+
+            if (this.Errors.Count > 0)
+            {
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        public void GetErrors()
+        {
+            this.Errors.Clear();
+
+            if (string.IsNullOrEmpty(this.Theme)) Errors.Add("Укажите категорию");
+            if (string.IsNullOrEmpty(this.SubTheme)) Errors.Add("Укажите подтему тендера");
+            if (string.IsNullOrEmpty(this.City)) Errors.Add("Укажите город");
+            if (string.IsNullOrEmpty(this.Title)) Errors.Add("Укажите заголовок тендера");
+            if (string.IsNullOrEmpty(this.Message)) Errors.Add("Опишите подробнее тендер");
+            if (string.IsNullOrEmpty(this.ActiveTime)) Errors.Add("Укажите время активности тендера");
+            if (string.IsNullOrEmpty(this.TenderType)) Errors.Add("Укажите тип тендера");
+            if (this.Coste == 0 || this.Coste < 0) Errors.Add("Укажите сумму тендера");
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace YaProdayu2.Y2System.System
         public static ISession OpenSession()
         {
             ISessionFactory sessionFactory = Fluently.Configure()
-                .Database(MySQLConfiguration.Standard.ConnectionString(@"Database=kupiprodam; Data Source=localhost; User Id=admin;Password=admin;").ShowSql())
+                .Database(MySQLConfiguration.Standard.ConnectionString(@"CharSet=utf8; Database=kupiprodam; Data Source=localhost; User Id=root;Password=cnhflbdfhb2;").ShowSql())
                 .Mappings(m =>
                     m.FluentMappings
                     .AddFromAssemblyOf<UserSystem>()

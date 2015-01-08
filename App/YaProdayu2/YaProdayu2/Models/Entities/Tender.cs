@@ -32,5 +32,8 @@ namespace YaProdayu2.Models.Entities
         public virtual string TypeTender { get; set; }
 
         public virtual int Cost { get; set; }
+
+        public virtual int[] Photos { get; set; }
+
     }
 }
