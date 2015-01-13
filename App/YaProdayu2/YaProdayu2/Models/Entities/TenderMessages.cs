@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using YaProdayu2.Y2System.System;
 
 namespace YaProdayu2.Models.Entities
 {
     public class TenderMessage
     {
+        private UserSystem _userInfo;
+
         public virtual int Id { get; set; }
 
         public virtual int TenderId { get; set; }
+
+        public virtual int ParentMessageId { get; set; }
 
         public virtual int FromUserId { get; set; }
 
@@ -18,6 +23,29 @@ namespace YaProdayu2.Models.Entities
         public virtual DateTime CreationTime { get; set; }
 
         public virtual decimal Coste { get; set; }
+
+        public virtual UserSystem UserInfo 
+        {
+            get 
+            {
+                if (_userInfo == null)
+                {
+                    using (var session = DBHelper.OpenSession())
+                    {
+                        _userInfo = session.CreateCriteria<UserSystem>()
+                            .List<UserSystem>()
+                            .Where(x => x.Id == this.FromUserId)
+                            .FirstOrDefault();
+                    }
+
+                    return _userInfo;
+                }
+                else 
+                {
+                    return _userInfo;
+                }
+            }
+        }
 
         public virtual string ShortMessage 
         {

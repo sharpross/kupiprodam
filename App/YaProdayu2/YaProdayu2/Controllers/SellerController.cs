@@ -111,6 +111,7 @@ namespace YaProdayu2.Controllers
                 var tender = session.CreateCriteria<Tender>()
                     .List<Tender>()
                     .Where(x => x.Id == messageId)
+                    .OrderByDescending(x => x.DateCreation)
                     .FirstOrDefault();
 
                 if (tender != null)
@@ -127,6 +128,7 @@ namespace YaProdayu2.Controllers
                     listMessages = session.CreateCriteria<TenderMessage>()
                         .List<TenderMessage>()
                         .Where(x => x.TenderId == tender.Id)
+                        .OrderByDescending(x => x.CreationTime)
                         .ToList();
 
                     if (listMessages != null && listMessages.Count > 0)

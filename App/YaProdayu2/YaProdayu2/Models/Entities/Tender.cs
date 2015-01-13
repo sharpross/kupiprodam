@@ -33,7 +33,13 @@ namespace YaProdayu2.Models.Entities
 
         public virtual int Cost { get; set; }
 
+        public virtual bool IsClose { get; set; }
+
         public virtual int[] Photos { get; set; }
 
+        public Tender()
+        {
+            this.IsClose = false;
+        }
     }
 }

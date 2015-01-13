@@ -1,0 +1,25 @@
+﻿@model YaProdayu2.Models.Views.TenderMessageDetails
+
+@{
+    ViewBag.Title = "Сообщение продвца";
+}
+
+<div>
+    <h4>TenderMessageDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+
+<dl>
+    <dt>@Model.Message.FromUserId</dt>
+    <dd>@Model.Message.Message</dd>
+</dl>
+
+<dl>
+    @foreach (var message in Model.SubMessages)
+    {
+        <dt>@message.UserInfo.Name</dt>
+        <dd>@message.Message</dd>
+    }
+</dl>

@@ -109,7 +109,7 @@ namespace YaProdayu2.Y2System.Secutity
                   1,
                   userName,
                   DateTime.Now,
-                  DateTime.Now.AddDays(7),
+                  DateTime.Now.AddMinutes(600),
                   true,
                   string.Empty,
                   FormsAuthentication.FormsCookiePath);

@@ -1,6 +1,6 @@
 ﻿@model YaProdayu2.Models.Views.SellerTenderDetailsView
 @{
-    ViewBag.Title = "Тенедер";
+    ViewBag.Title = "Тендер";
 }
 <div class="row" style="border: 1px; border-bottom: 0px; border-color: #D8D8D8; border-style: solid;">
     <div class="col-md-12" style="text-align: center;">
@@ -142,7 +142,15 @@
             </div>
             <div class="col-md-9">
                 <div style="padding-top: 35px;">
-                    @message.Messages.ShortMessage
+                    <p>@message.Messages.ShortMessage</p>
+                    <p>
+                        @Html.ActionLink("Подробнее...", "SellerMessages", "Buyer", new { id = message.Messages.Id }, null)
+                        
+                        @if (Model.TenderInfo.IsClose == false)
+                        {
+                            @Html.ActionLink("Выбрать!", "CloseTender", "Buyer", new { tenderId = @Model.TenderInfo.Id }, new { @style = "padding-left: 100px;" })
+                        }
+                    </p>
                 </div>
             </div>
         </div>

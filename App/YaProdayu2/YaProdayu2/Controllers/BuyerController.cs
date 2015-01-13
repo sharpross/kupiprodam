@@ -49,6 +49,42 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpGet]
+        public ActionResult SellerMessages(int? id)
+        {
+            if (id.HasValue)
+            {
+                TenderMessage message = null;
+
+                using (var session = DBHelper.OpenSession())
+                {
+                    message = session.CreateCriteria<TenderMessage>()
+                        .List<TenderMessage>()
+                        .Where(x => x.Id == id)
+                        .FirstOrDefault();
+                }
+
+                if (message != null)
+                {
+                    var subMessages = new TenderMessageDetails()
+                    {
+                        Message = message,
+                        SubMessages = new List<TenderMessage>()
+                    };
+
+                    return View(subMessages);   
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult SellerMessages(string message)
+        {
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult Newtender()
         {
             var list = new DictionaryThemes().List;
@@ -106,7 +142,8 @@ namespace YaProdayu2.Controllers
                 SubTheme = model.SubTheme,
                 AllowWriteMe = model.AllowWriteMe,
                 Cost = model.Coste,
-                TypeTender = model.TenderType
+                TypeTender = model.TenderType,
+                IsClose = false
             };
 
             using (var session = DBHelper.OpenSession())
@@ -144,10 +181,37 @@ namespace YaProdayu2.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult RemoveTender(int? id)
+        [HttpGet]
+        public ActionResult CloseTender(int? tenderId)
         {
-            return View();
+            if (tenderId.HasValue)
+            {
+                this.CloseTend((int)tenderId);
+            }
+
+            return RedirectToAction(string.Format("Details/{0}", tenderId));
+        }
+
+        private void CloseTend(int tenderId)
+        {
+            using (var session = DBHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var tender = session.CreateCriteria<Tender>()
+                        .List<Tender>()
+                        .Where(x => x.Id == tenderId)
+                        .FirstOrDefault();
+
+                    if (tender != null)
+                    {
+                        tender.IsClose = true;
+
+                        session.SaveOrUpdate(tender);
+                        transaction.Commit();
+                    }
+                }
+            }
         }
 
         [HttpGet]
@@ -164,6 +228,38 @@ namespace YaProdayu2.Controllers
             }
 
             return RedirectToAction("List");
+        }
+
+        [HttpPost]
+        public ActionResult Details(TenderAddMessageView model)
+        {
+            if (model != null)
+            {
+                var user = this.GetUserByEmail(model.UserLogin);
+
+                if (user != null)
+                {
+                    var newMessage = new TenderMessage()
+                    {
+                        CreationTime = DateTime.Now,
+                        Coste = model.Cost,
+                        Message = model.Message,
+                        FromUserId = user.Id,
+                        TenderId = model.TenderId
+                    };
+
+                    using (var session = DBHelper.OpenSession())
+                    {
+                        using (var transaction = session.BeginTransaction())
+                        {
+                            session.Save(newMessage);
+                            transaction.Commit();
+                        }
+                    }
+                }
+            }
+
+            return RedirectToAction(string.Format("Details/{0}", model.TenderId));
         }
 
         private SellerTenderDetailsView GetMessages(int messageId)

@@ -150,6 +150,7 @@
     <Compile Include="Models\Views\Account\LoginView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerProfileView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerRegistrationView.cs" />
+    <Compile Include="Models\Views\Buyer\TenderMessageDetails.cs" />
     <Compile Include="Models\Views\Seller\SellerProfileView.cs" />
     <Compile Include="Models\Views\Seller\SellerRegistrationView.cs" />
     <Compile Include="Models\Views\Seller\SellerTenderDetailsView.cs" />
@@ -613,6 +614,7 @@
     <Content Include="Views\Error\Unauthorised.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Buyer\SellerMessages.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

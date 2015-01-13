@@ -19,7 +19,8 @@ namespace YaProdayu2.Y2System.System
                 .Mappings(m =>
                     m.FluentMappings
                     .AddFromAssemblyOf<UserSystem>()
-                    .AddFromAssemblyOf<Tender>())
+                    .AddFromAssemblyOf<Tender>()
+                    .AddFromAssemblyOf<TenderMessage>())
                 .ExposeConfiguration(cfg => new SchemaExport(cfg)
                 .Create(false, false))
                 .BuildSessionFactory();

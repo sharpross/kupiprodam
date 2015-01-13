@@ -34,7 +34,7 @@ namespace YaProdayu2
                 configuration.For<HomeController>().Ignore();
                 configuration.For<ErrorController>().Ignore();
 
-                /*configuration.ResolveServicesUsing(type =>
+                configuration.ResolveServicesUsing(type =>
                 {
                     if (type == typeof(IPolicyViolationHandler))
                     {
@@ -48,9 +48,9 @@ namespace YaProdayu2
                         return handlers;
                     }
                     return Enumerable.Empty<object>();
-                });*/
+                });
 
-                configuration.DefaultPolicyViolationHandlerIs<ExceptionPolicyViolationHandler>();
+                //configuration.DefaultPolicyViolationHandlerIs<ExceptionPolicyViolationHandler>();
             });
 
             filters.Add(new HandleErrorAttribute());

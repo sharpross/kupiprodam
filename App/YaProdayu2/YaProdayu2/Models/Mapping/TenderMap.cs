@@ -23,6 +23,7 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.AllowWriteMe);
             Map(x => x.Cost);
             Map(x => x.TypeTender);
+            Map(x => x.IsClose);
             Map(x => x.Status);
             Table("Tender");
         }
