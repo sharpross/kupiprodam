@@ -1,38 +1,42 @@
 ﻿@model YaProdayu2.Models.Views.SellerRegistrationView
 
+@{
+    ViewBag.Title = "Регистрация";
+}
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <form role="form" action="RegSeller" method="post">
             <div class="form-group">
                 <label for="Name">Ваше ФИО*</label>
-                <input type="text" class="form-control" name="Name" placeholder="Название организации" value="@Model.Name">
+                <input type="text" class="form-control" name="Name" placeholder="Название организации" value="@Model.Name" required>
             </div>
             <div class="form-group">
                 <label for="Name">Название организации (или ваше ФИО)*</label>
-                <input type="text" class="form-control" name="Organization" placeholder="Название организации" value="@Model.Organization">
+                <input type="text" class="form-control" name="Organization" placeholder="Название организации" value="@Model.Organization" required>
             </div>
             <div class="form-group">
                 <label for="Name">Должность</label>
-                <input type="text" class="form-control" name="Post" placeholder="Должность" value="@Model.Post">
+                <input type="text" class="form-control" name="Post" placeholder="Должность" value="@Model.Post" required>
             </div>
             <div class="vert_20"></div>
             <div class="form-group">
                 <label for="Email">Email*</label>
-                <input type="email" class="form-control" name="Email" placeholder="Email" value="@Model.Email">
+                <input type="email" class="form-control" name="Email" placeholder="Email" value="@Model.Email" required>
             </div>
             <div class="form-group">
                 <label for="Phone">Телефон*</label>
-                <input type="tel" class="form-control" name="Phone" placeholder="+71234567890" value="@Model.Phone">
+                <input type="tel" class="form-control" name="Phone" placeholder="+71234567890" value="@Model.Phone" required>
             </div>
             <div class="form-group">
                 <label for="Password">Пароль*</label>
-                <input type="password" class="form-control" name="Password" placeholder="Пароль" value="@Model.Password">
+                <input type="password" class="form-control" name="Password" placeholder="Пароль" value="@Model.Password" required>
             </div>
             <p style="color:red">* - объязательные поля</p>
             <div class="vert_20"></div>
             <p><input type="checkbox" name="IsAcceptRules" value="@Model.IsAcceptRules" /> Согласен с <a href="#">условиями договора</a></p>
             <div style="width: 100%; text-align: center;">
-                <button type="submit" class="btn btn-four">Зарегистрироваться</button>
+                <button type="submit" class="btn btn-two">Зарегистрироваться</button>
             </div>
         </form>
     </div>

@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using YaProdayu2.Models.Entities;
 using YaProdayu2.Y2System;
-using YaProdayu2.Y2System.System;
 
 namespace YaProdayu2.Controllers
 {

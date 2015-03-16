@@ -87,6 +87,12 @@
     <![endif]-->
 @Scripts.Render("~/Content/app/js")
 
+    <script>
+        $(document).ready(function () {
+            @ViewBag.Scripts
+        });
+    </script>
+
 @RenderSection("scripts", required: false)
 </body>
 </html>

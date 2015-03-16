@@ -1,93 +1,111 @@
 ﻿@model YaProdayu2.Models.Views.SellerTenderDetailsView
 @{
     ViewBag.Title = "Тендер";
+    ViewBag.Scripts = "NewTender()";
 }
-<div class="row" style="border: 1px; border-bottom: 0px; border-color: #D8D8D8; border-style: solid;">
+<div class="row" style="border: 0px; border-bottom: 0px; border-color: #D8D8D8; border-style: solid;">
     <div class="col-md-12" style="text-align: center;">
-        <h4>З а я в к а</h4>
+        <h4>Заявка</h4>
     </div>
 </div>
-<div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px; ">
-    <div class="col-md-12">
-        <div class="row" style="font-size: 16px; padding-top: 0px;">
-            <div class="col-md-3" style="text-align: right;">
-                <p>
-                    <strong>Тема: </strong>
-                </p>
-            </div>
-            <div class="col-md-9">
-                <p>
-                    @Model.TenderInfo.Theme
-                </p>
-            </div>
-        </div>
-        <div class="row" style="font-size: 16px;">
-            <div class="col-md-3" style="text-align: right;">
-                <p>
-                    <strong>Категория: </strong>
-                </p>
-            </div>
-            <div class="col-md-9">
-                <p>
-                    @Model.TenderInfo.SubTheme
-                </p>
-            </div>
-        </div>
-        <div class="row" style="font-size: 16px;">
-            <div class="col-md-3" style="text-align: right;">
-                <p>
-                    <strong>Регион/Город: </strong>
-                </p>
-            </div>
-            <div class="col-md-9">
-                <p>
-                    @Model.TenderInfo.City
-                </p>
-            </div>
-        </div>
-        <div class="row" style="font-size: 16px;">
-            <div class="col-md-3" style="text-align: right;">
-                <p>
-                    <strong>Заголовок: </strong>
-                </p>
-            </div>
-            <div class="col-md-9">
-                <p>
-                    @Model.TenderInfo.Title
-                </p>
-            </div>
-        </div>
-        <div class="row" style="font-size: 16px; padding-bottom: 10px;">
-            <div class="col-md-3" style="text-align: right;">
-                <p>
-                    <strong>Сообщение: </strong>
-                </p>
-            </div>
-            <div class="col-md-9">
-                <p>
-                    @Model.TenderInfo.Message
-                </p>
-            </div>
-        </div>
+<div class="row">
+    <div class="col-md-12" style="font-size: 12px;">
+        <p>
+            <span style="font-weight: bold;">Тема:</span><br />
+            @Model.TenderInfo.Theme
+        </p>
+        <p>
+            <span style="font-weight: bold;">Категория:</span><br />
+            @Model.TenderInfo.SubTheme
+        </p>
+        <p>
+            <span style="font-weight: bold;">Регион/Город исполнения заявки:</span><br />
+            @Model.TenderInfo.City
+        </p>
+        <p>
+            <span style="font-weight: bold;">Заголовок:</span><br />
+            @Model.TenderInfo.Title
+        </p>
+        <p>
+            <span style="font-weight: bold;">Сообщение:</span><br />
+            @Html.Raw(Model.TenderInfo.Message)
+        </p>
+    </div>
+</div>
 
-        @if (Model.TenderInfo.Photos != null && Model.TenderInfo.Photos.Length > 0)
+@if (Model.TenderInfo.Photos != null && Model.TenderInfo.Photos.Length > 0)
+{
+    <div class="row" style="padding-bottom: 10px;">
+        @foreach (var item in Model.TenderInfo.Photos)
         {
-            <div class="row" style="padding-bottom: 10px;">
-                @foreach (var item in Model.TenderInfo.Photos)
-                {
-                    <div class="col-md-3">
-                        <a href="~/Image/Get?id=@item" data-lightbox="@item">
-                            <img src="~/Image/Get?id=@item" width="100" height="100">
-                        </a>
-                    </div>
-                }
+            <div class="col-md-3">
+                <a href="~/Image/Get?id=@item" data-lightbox="@item">
+                    <img src="~/Image/Get?id=@item" width="100" height="100">
+                </a>
             </div>
         }
     </div>
-</div>
+}
+
 <div style="padding-top: 15px;"></div>
-@if (Model.HaveMyMessages == false)
+
+@if (Model.Messages != null)
 {
+    <div style="padding-top: 15px;"></div>
+    <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid;">
+        <div class="col-md-12" style="text-align: center; font-weight: bold;">
+            Предложения
+        </div>
+    </div>
+
+    foreach (var message in Model.Messages)
+    {
+        <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
+            <div class="col-md-3">
+                <div style="width: 100%; text-align: center;">
+                    <p><img src='/Image/Get?id=@message.User.ImageId' style="width: 150px; height: 150px;  padding-top: 5px;" /></p>
+                    <p><div style="color: blue; width:100%; text-align: center; font-size: 12px;"><strong>@Html.ActionLink(message.User.Name, "Card", "Account", new { user = message.User.Login }, null)</strong></div></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div style="padding-top: 35px;">
+                    <p>@Html.Raw(message.Messages.Message)</p>
+                    <p>
+                        <a href="~/Buyer/SellerMessages?tenderId=@Model.TenderInfo.Id&messageId=@message.Messages.Id" class="btn btn-four">Подробнее...</a>
+                        
+                        @if (Model.TenderInfo.IsClose == false)
+                        {
+                            
+                            @Html.ActionLink("Выбрать!", "CloseTender", "Buyer", new { @tenderId = Model.TenderInfo.Id, @messageId = message.Messages.Id }, new { @class = "btn btn-two" })
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="border: 1px solid #D8D8D8; border-top: 0px;">
+            <div class="col-md-12">
+                <span>
+                    @Html.ActionLink("Написать сообщение", "Write", "Messages", new { @toUserId = message.User.Id }, null)
+                </span>
+                <span style="padding-left: 20px;">
+                    <a>Добавить в визитки</a>
+                </span>
+                <span style="padding-left: 20px;">
+                    <a>Пожаловаться</a>
+                </span>
+                <span style="padding-left: 40px;">
+                    @Html.ActionLink("Выбрать победителем", "Close", "Tender", new { }, new { @style = "color: red" })
+                </span>
+            </div>
+        </div>
+        <div class="padding-x-16"></div>
+    }
+}
+
+@if (Model.HaveMyMessages == false && Model.TenderInfo.IsClose == false)
+{
+    <div style="padding-top: 15px;"></div>
     <div class="row">
         @using (Html.BeginForm())
         {
@@ -95,18 +113,8 @@
             <input hidden="hidden" name="TenderId" value="@Model.TenderInfo.Id" />
             <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="SubTheme2" class="control-label col-md-2">Сообщение</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <label for="Cost" class="control-label col-md-2">Сумма</label>
-                    <div class="col-md-4">
-                        <input type="number" class="form-control" name="Cost" placeholder="Средняя цена" />
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="10" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
                     </div>
                 </div>
             </div>
@@ -118,41 +126,4 @@
             </div>
         }
     </div>
-}
-
-@if (Model.Messages != null)
-{
-    <div style="padding-top: 15px;"></div>
-    <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid;">
-        <div class="col-md-12">
-            <p>
-                <h4>Предложения:</h4>
-            </p>
-        </div>
-    </div>
-
-    foreach (var message in Model.Messages)
-    {
-        <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
-            <div class="col-md-3">
-                <div style="width: 100%; text-align: center;">
-                    <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink(message.User.Name, "Card", "Account", new { email = message.User.Email }, null)</strong></div></p>
-                    <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div style="padding-top: 35px;">
-                    <p>@message.Messages.ShortMessage</p>
-                    <p>
-                        @Html.ActionLink("Подробнее...", "SellerMessages", "Buyer", new { id = message.Messages.Id }, null)
-                        
-                        @if (Model.TenderInfo.IsClose == false)
-                        {
-                            @Html.ActionLink("Выбрать!", "CloseTender", "Buyer", new { tenderId = @Model.TenderInfo.Id }, new { @style = "padding-left: 100px;" })
-                        }
-                    </p>
-                </div>
-            </div>
-        </div>
-    }
 }

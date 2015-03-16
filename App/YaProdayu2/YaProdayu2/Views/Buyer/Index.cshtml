@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<YaProdayu2.Models.Entities.Tender>
 
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Заявки на торги";
 }
 
-<h2>Список моих торгов</h2>
+<h2>Заявки на торги</h2>
 
 <p>
     @Html.ActionLink("Новое", "Newtender")
@@ -20,12 +20,11 @@
         </th>
 
         <th style="text-align: center">
-            Регион/Город
+            Регион/Город исполнения заявки
         </th>
 
         <th style="text-align: center">
             Бюджет
-            (&#8381;)
         </th>
         <th></th>
     </tr>
@@ -34,22 +33,21 @@
     {
         <tr>
             <td width="100">
-                @item.Title
+                @Html.ActionLink(item.Title, "Details", new { id = item.Id })
             </td>
             <td width="100" style="text-align: center">
-                @item.Theme
+                @Html.ActionLink(item.Theme, "Details", new { id = item.Id })
                 <br />
-                @item.SubTheme
+                @Html.ActionLink(item.SubTheme, "Details", new { id = item.Id })
             </td>
             <td width="100" style="text-align: center">
-                @item.City
+                @Html.ActionLink(item.City, "Details", new { id = item.Id })
             </td>
             <td width="70" style="text-align: center">
-                @item.Cost руб.
+                @Html.ActionLink(item.Cost + "руб.", "Details", new { id = item.Id })
             </td>
 
             <td width="90">
-                @Html.ActionLink("Подробно", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
             </td>
         </tr>

@@ -1,20 +1,31 @@
 ﻿<div class="widget">
     @if (ViewBag.IsAuth == true)
     {
-        <p>@Html.ActionLink("На главную", "Index", "Home", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
-        <p>@Html.ActionLink("Мои заявки", "MyTenders", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
+        <p>@Html.ActionLink("На главную", "Index", "Home", null, new { @style = "color: #000066;" })</p>
+        
         if (ViewBag.IsSeller == true)
         {
-            <p>@Html.ActionLink("Заявки на торги", "Index", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
-            <p>@Html.ActionLink("Активные торги", "Index", "Seller", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
-            <p>@Html.ActionLink("Сообщения", "List", "Buyer", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
-            <p>@Html.ActionLink("Моя визитка", "Card", "Account", new { email = ViewBag.UserLogin }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
+            <p>
+                @Html.ActionLink("Моя визитка", "Card", "Account", new { user = ViewBag.UserLogin }, new { @style = "color: #000066" })
+                @Html.ActionLink(" ред.", "Profile", "Account", null, new { @style = "color: gray; font-size: 10px;" })
+            </p>
+            <p>@Html.ActionLink("Сообщения", "Index", "Messages", null, new { @style = "color: #000066;" })</p>
+            <p>@Html.ActionLink("Заявки на торги", "Index", "Buyer", null, new { @style = "color: #000066;" })</p>
+            <p>@Html.ActionLink("Активные торги", "Index", "Seller", null, new { @style = "color: #000066;" })</p>
+            <p>@Html.ActionLink("Визитница", "Index", "Cutaway", null, new { @style = "color: #000066" })</p>
         }
+        else
+        {
+            <p>@Html.ActionLink("Мои заявки", "MyTenders", "Buyer", null, new { @style = "color: #000066;" })</p>
+            <p>@Html.ActionLink("Сообщения", "Index", "Messages", null, new { @style = "color: #000066;" })</p>
+            <p>@Html.ActionLink("Визитница", "Index", "Cutaway", null, new { @style = "color: #000066" })</p>
+        }
+        
     }
     else
     {
-        <p>@Html.ActionLink("Регистрация", "Registration", "Account", null, new { @style = "text-transform: ; font-weight: bold; color: #000066;" })</p>
-        <p>@Html.ActionLink("Как это работает", "HowTo", "Home", new { id = 0 }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
-        <p>@Html.ActionLink("О нас", "About", "Home", new { id = 0 }, new { @style = "text-transform: ; font-weight: bold; color: #000066" })</p>
+        <p>@Html.ActionLink("Регистрация", "Registration", "Account", null, new { @style = "color: #000066;" })</p>
+        <p>@Html.ActionLink("Как это работает", "HowTo", "Home", new { id = 0 }, new { @style = "color: #000066" })</p>
+        <p>@Html.ActionLink("О нас", "About", "Home", new { id = 0 }, new { @style = "color: #000066" })</p>
     }
 </div>

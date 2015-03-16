@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using YaProdayu2.Y2System.System;
+using YaProdayu2.Y2System;
 
 namespace YaProdayu2.Models.Entities
 {
@@ -22,7 +22,7 @@ namespace YaProdayu2.Models.Entities
 
         public virtual DateTime CreationTime { get; set; }
 
-        public virtual decimal Coste { get; set; }
+        public virtual bool IsSubMessage { get; set; }
 
         public virtual UserSystem UserInfo 
         {

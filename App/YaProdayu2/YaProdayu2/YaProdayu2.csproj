@@ -120,6 +120,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\UserSystem\" />
     <Folder Include="Views\Image\" />
     <Folder Include="Y2System\Generators\" />
   </ItemGroup>
@@ -130,24 +131,42 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuyerController.cs" />
+    <Compile Include="Controllers\CutawayController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contacts\Contacts.cs" />
+    <Compile Include="Models\Contacts\ContactsMap.cs" />
+    <Compile Include="Models\Contacts\ContactsService.cs" />
+    <Compile Include="Models\Entities\City.cs" />
     <Compile Include="Models\Entities\Image.cs" />
+    <Compile Include="Models\Entities\MessageModel.cs" />
+    <Compile Include="Models\Entities\Region.cs" />
+    <Compile Include="Models\Entities\Subsciptions.cs" />
     <Compile Include="Models\Entities\TenderMessages.cs" />
     <Compile Include="Models\Entities\UserMessage.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\Tender.cs" />
     <Compile Include="Models\Entities\UserSystem.cs" />
+    <Compile Include="Models\Entities\UserSystemService.cs" />
+    <Compile Include="Models\Mapping\CityMap.cs" />
     <Compile Include="Models\Mapping\ImageMap.cs" />
+    <Compile Include="Models\Mapping\RegionMap.cs" />
+    <Compile Include="Models\Mapping\SubsciptionsMap.cs" />
     <Compile Include="Models\Mapping\TenderMap.cs" />
     <Compile Include="Models\Mapping\TenderMessageMap.cs" />
     <Compile Include="Models\Mapping\UserSystemMap.cs" />
+    <Compile Include="Models\UserMessages\UserMessage.cs" />
+    <Compile Include="Models\UserMessages\UserMessageMap.cs" />
+    <Compile Include="Models\UserMessages\UserMessageModel.cs" />
+    <Compile Include="Models\UserMessages\UserMessageService.cs" />
     <Compile Include="Models\Views\Account\LoginView.cs" />
+    <Compile Include="Models\Views\Account\ProfileView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerProfileView.cs" />
     <Compile Include="Models\Views\Buyer\BuyerRegistrationView.cs" />
     <Compile Include="Models\Views\Buyer\TenderMessageDetails.cs" />
@@ -162,14 +181,15 @@
     <Compile Include="Models\Views\Theme\ThemeListView.cs" />
     <Compile Include="Models\Views\Theme\ThemeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Y2System\DataSource.cs" />
     <Compile Include="Y2System\Secutity\DenyAnonymousAccessPolicyViolationHandler.cs" />
     <Compile Include="Y2System\Secutity\IAuthentication.cs" />
     <Compile Include="Y2System\BaseController.cs" />
     <Compile Include="Y2System\Secutity\Y2Authentication.cs" />
     <Compile Include="Y2System\System\DBHelper.cs" />
-    <Compile Include="Y2System\Utils\City.cs" />
-    <Compile Include="Y2System\Utils\DictionaryCitys.cs" />
+    <Compile Include="Y2System\System\MailService.cs" />
     <Compile Include="Y2System\Utils\DictionaryThemes.cs" />
+    <Compile Include="Y2System\Utils\MD5Helper.cs" />
     <Compile Include="Y2System\Utils\Theme.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +202,8 @@
     <Content Include="Content\images\fish\3.jpg" />
     <Content Include="Content\images\fish\4.jpg" />
     <Content Include="Content\images\fish\45.png" />
+    <Content Include="Content\images\fish\46.png" />
+    <Content Include="Content\images\fish\63.png" />
     <Content Include="Content\images\image_not_found.png" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\need_help_act.png" />
@@ -217,6 +239,9 @@
     <Content Include="Content\static\lightbox\screen.css" />
     <Content Include="Content\static\svgjs\svg.js" />
     <Content Include="Content\static\svgjs\svg.min.js" />
+    <Content Include="Content\static\te\jquery-te-1.4.0.css" />
+    <Content Include="Content\static\te\jquery-te-1.4.0.min.js" />
+    <Content Include="Content\static\te\jquery-te.png" />
     <Content Include="Content\static\theme\assets\animate\animate.css" />
     <Content Include="Content\static\theme\assets\animate\animate.min.css" />
     <Content Include="Content\static\theme\assets\animate\_notes\dwsync.xml" />
@@ -523,6 +548,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\Common\login.js" />
+    <Content Include="Scripts\App\Common\subscriptions.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\static\jquery\jquery.min.map" />
@@ -566,7 +592,9 @@
     <Content Include="Content\static\theme\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\static\theme\font-awesome\scss\_variables.scss" />
     <Content Include="Content\static\lightbox\lightbox.min.map" />
-    <None Include="Properties\PublishProfiles\wq.pubxml" />
+    <None Include="Properties\PublishProfiles\wq.pubxml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -615,6 +643,10 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Buyer\SellerMessages.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Messages\Write.cshtml" />
+    <Content Include="Views\Cutaway\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

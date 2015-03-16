@@ -1,13 +1,22 @@
-﻿<h2>Регистрация</h2>
+﻿@{
+    ViewBag.Title = "Регистрация";
+}
+<div class="font_black" style="text-align: center;">
+    <h2>Регистрация</h2>
+</div>
 <br />
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6">
+        <div>
+            <div style="width: 100%; text-align: center;">
+                <img src="@Url.Content("~/Content/images/cart_sell.png")" width="80" height="80" />
+            </div>    
+            <div class="font_black" style="width: 100%; text-transform: uppercase; line-height: 15px; text-align: center; padding: 10px 0px 10px 0px;">
+                <strong>буду продавать</strong><br />
+                (ежемесячный взнос)
+            </div>    
+        </div>
         <div class="desc_block">
-            <div class="title">
-                <div><img src="@Url.Content("~/Content/images/cart_sell.png")" /></div>
-                <div class="title_text">я буду продавать</div>
-                <div class="title_desc">ежемесячный взнос</div>
-            </div>
             <div class="desc_text">
                 <p>
                     Компания Microsoft рекомендует отказаться от установки обновления MS14-045 (KB2982791), которое вышло на этой неделе в рамках patch tuesday.
@@ -19,12 +28,16 @@
         </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="desc_block">
-            <div class="title">
-                <div><img src="@Url.Content("~/Content/images/cart_buy.png")" /></div>
-                <div class="title_text">я буду покупать</div>
-                <div class="title_desc">бесплатно</div>
+        <div>
+            <div style="width: 100%; text-align: center;">
+                <img src="@Url.Content("~/Content/images/cart_buy.png")" width="80" height="80" />
             </div>
+            <div class="font_black" style="width: 100%; text-transform: uppercase; line-height: 15px; text-align: center; padding: 10px 0px 10px 0px;">
+                <strong>я буду покупать</strong><br />
+                (бесплатно)
+            </div>
+        </div>
+        <div class="desc_block">
             <div class="desc_text">
                 <p>
                     Компания Microsoft рекомендует отказаться от установки обновления MS14-045 (KB2982791), которое вышло на этой неделе в рамках patch tuesday.
@@ -36,12 +49,18 @@
         </div>
     </div>
 </div>
-<hr>
+
 <div class="row">
     <div class="col-lg-6 col-md-6 col-lg-6" style="text-align: center;">
-        @Html.ActionLink("Зарегистрироваться как продавец", "RegSeller", "Account", null, new { @class = "btn btn-four" })
+        @Html.ActionLink("Зарегистрироваться как продавец", "RegSeller", "Account", null, new { @class = "btn btn-two" })
     </div>
     <div class="col-lg-6 col-md-6 col-lg-6" style="text-align: center;">
-        @Html.ActionLink("Зарегистрироваться как покупатель", "RegBuyer", "Account", null, new { @class = "btn btn-four" })
+        @Html.ActionLink("Зарегистрироваться как покупатель", "RegBuyer", "Account", null, new { @class = "btn btn-two" })
     </div>
+</div>
+<div class="font_black" style="width: 100%; padding-top: 20px; text-align: center; font-size: 16px;">
+    <p>
+        <strong>С уважением к Вам и Вашему бизнесу каманда</strong>
+    </p> 
+    <img src="@Url.Content("~/Content/images/logo.jpg")" height="30">
 </div>

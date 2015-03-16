@@ -13,7 +13,7 @@
                     <h4 class="modal-title">Войти</h4>
                 </div>
                 <div class="modal-body">
-                    <form name="LoginForm">
+                    <form name="LoginForm" action="/Account/Login" method="post">
                         <div class="form-group">
                             <input type="email" class="form-control" name="Login" placeholder="Email">
                         </div>
@@ -33,9 +33,11 @@
     </div>
 }
 @if (ViewBag.IsAuth == true)
-{ 
+{
+    string loginName = ViewBag.UserLogin.ToString();
+    
     <div style="text-align: center;">
-        <p><strong>@ViewBag.UserName</strong></p>
-        <p><a name="LogoutButton">Выход</a></p>
+        <p><strong>@Html.ActionLink(loginName, "Profile", "Account", null, new { @style = "color: rgb(83, 185, 203);" })</strong></p>
+        <p><strong><a name="LogoutButton" style="color: rgb(83, 185, 203);">Выход</a></strong></p>
     </div>
 }

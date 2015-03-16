@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Security;
 using YaProdayu2.Models.Entities;
 using YaProdayu2.Y2System.Security;
-using YaProdayu2.Y2System.System;
+using YaProdayu2.Y2System;
+using YaProdayu2.Y2System.Utils;
 
 namespace YaProdayu2.Y2System.Secutity
 {
@@ -23,10 +24,10 @@ namespace YaProdayu2.Y2System.Secutity
 
             using (var session = DBHelper.OpenSession())
             {
-                var md5Password = password;
+                var md5Password = MD5Helper.GetMD5String(password);
 
                 user = session.CreateCriteria<UserSystem>().List<UserSystem>()
-                    .Where(rec => rec.Email == login && rec.Password == md5Password)
+                    .Where(rec => rec.Login == login && rec.Password == md5Password)
                     .FirstOrDefault();
 
                 if (user != null)
@@ -45,7 +46,7 @@ namespace YaProdayu2.Y2System.Secutity
             using (var session = DBHelper.OpenSession())
             {
                 user = session.CreateCriteria<UserSystem>().List<UserSystem>()
-                    .Where(rec => rec.Email == login)
+                    .Where(rec => rec.Login == login)
                     .FirstOrDefault();
 
                 if (user != null)
@@ -84,7 +85,7 @@ namespace YaProdayu2.Y2System.Secutity
                             {
                                 
                                 this.CurrentSystemUser = session.CreateCriteria<UserSystem>().List<UserSystem>()
-                                    .Where(rec => rec.Email == ticket.Name)
+                                    .Where(rec => rec.Login == ticket.Name)
                                     .FirstOrDefault();
                             }
                         }
@@ -105,12 +106,15 @@ namespace YaProdayu2.Y2System.Secutity
 
         private void CreateCookie(string userName, bool isPersistent = false)
         {
+            var issuer = DateTime.Now.AddDays(90);
+            //return (long)elapsedTime.TotalSeconds;
+
             var ticket = new FormsAuthenticationTicket(
                   1,
                   userName,
                   DateTime.Now,
-                  DateTime.Now.AddMinutes(600),
-                  true,
+                  issuer,
+                  isPersistent,
                   string.Empty,
                   FormsAuthentication.FormsCookiePath);
 
@@ -121,12 +125,12 @@ namespace YaProdayu2.Y2System.Secutity
             var AuthCookie = new HttpCookie(CookieName)
             {
                 Value = encTicket,
-                Expires = DateTime.Now.Add(FormsAuthentication.Timeout)
+                Expires = DateTime.Now.Add(new TimeSpan(90, 0, 0, 0))
             };
 
             this.HttpContext.Response.Cookies.Set(AuthCookie);
 
-            FormsAuthentication.SetAuthCookie(userName, true);
+            //FormsAuthentication.SetAuthCookie(userName, false);
         }
     }
 }

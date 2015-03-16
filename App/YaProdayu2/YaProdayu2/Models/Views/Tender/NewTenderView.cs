@@ -20,6 +20,8 @@ namespace YaProdayu2.Models.Views
 
         public string City { get; set; }
 
+        public string Region { get; set; }
+
         public bool AllowWriteMe { get; set; }
 
         public string Title { get; set; }
@@ -34,7 +36,7 @@ namespace YaProdayu2.Models.Views
 
         public List<string> ListSubThemes { get; set; }
 
-        public List<City> Citys { get; set; }
+        public List<string> ListCitys { get; set; }
 
         public List<string> Errors { get; set; }
 
@@ -46,6 +48,8 @@ namespace YaProdayu2.Models.Views
         {
             this.Errors = new List<string>();
         }
+
+        public List<string> ListRegions { get; set; }
 
         public bool IsValid()
         {

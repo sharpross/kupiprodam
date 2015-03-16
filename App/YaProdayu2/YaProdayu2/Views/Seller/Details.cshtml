@@ -1,6 +1,7 @@
 ﻿@model YaProdayu2.Models.Views.SellerTenderDetailsView
 @{
     ViewBag.Title = "Тенедер";
+    ViewBag.Scripts = "NewTender()";
 }
 <div class="row" style="border: 1px; border-bottom: 0px; border-color: #D8D8D8; border-style: solid;">
     <div class="col-md-12" style="text-align: center;">
@@ -65,7 +66,7 @@
             </div>
             <div class="col-md-9">
                 <p>
-                    @Model.TenderInfo.Message
+                    @Html.Raw(Model.TenderInfo.Message)
                 </p>
             </div>
         </div>
@@ -85,40 +86,6 @@
         }
     </div>
 </div>
-<div style="padding-top: 15px;"></div>
-@if (Model.HaveMyMessages == false)
-{
-    <div class="row">
-        @using (Html.BeginForm())
-        {
-            <input hidden="hidden" name="UserLogin" value="@ViewBag.UserLogin" />
-            <input hidden="hidden" name="TenderId" value="@Model.TenderInfo.Id" />
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <label for="SubTheme2" class="control-label col-md-2">Сообщение</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <label for="Cost" class="control-label col-md-2">Сумма</label>
-                    <div class="col-md-4">
-                        <input type="number" class="form-control" name="Cost" placeholder="Средняя цена" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="" style="text-align: center;">
-                    <button type="submit" class="btn btn-two">Добавить</button>
-                </div>
-            </div>
-        }
-    </div>
-}
 
 @if (Model.Messages != null)
 {
@@ -136,15 +103,39 @@
         <div class="row" style="border: 1px; border-color: #D8D8D8; border-style: solid; border-top: 0px">
             <div class="col-md-3">
                 <div style="width: 100%; text-align: center;">
-                    <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink(message.User.Name, "Card", "Account", new { email = message.User.Email }, null)</strong></div></p>
-                    <p><img src='@Url.Content("~/Content/images/fish/1.jpg")' style="width: 150px; height: 150px;" /></p>
+                    <p><img src='/Image/Get?id=@message.User.ImageId' style="width: 150px; height: 150px;  padding-top: 5px;" /></p>
+                    <p><div style="color: blue; width:100%; text-align: center; font-size: 16px;"><strong>@Html.ActionLink(message.User.Name, "Card", "Account", new { user = message.User.Login }, null)</strong></div></p>
                 </div>
             </div>
             <div class="col-md-9">
                 <div style="padding-top: 35px;">
-                    @message.Messages.ShortMessage
+                    @Html.Raw(message.Messages.Message)
                 </div>
             </div>
         </div>
     }
+}
+<div style="padding-top: 15px;"></div>
+@if (Model.HaveMyMessages == false)
+{
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            <input hidden="hidden" name="UserLogin" value="@ViewBag.UserLogin" />
+            <input hidden="hidden" name="TenderId" value="@Model.TenderInfo.Id" />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="10" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="" style="text-align: center;">
+                    <button type="submit" class="btn btn-two">Добавить</button>
+                </div>
+            </div>
+        }
+    </div>
 }

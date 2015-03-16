@@ -8,6 +8,8 @@ namespace YaProdayu2.Models.Views
 {
     public class TenderMessageDetails
     {
+        public Tender Tender { get; set; }
+
         public TenderMessage Message { get; set; }
 
         public List<TenderMessage> SubMessages { get; set; }

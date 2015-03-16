@@ -1,25 +1,62 @@
 ﻿@model YaProdayu2.Models.Views.TenderMessageDetails
 
 @{
-    ViewBag.Title = "Сообщение продвца";
+    ViewBag.Title = "Сообщение продавца";
 }
 
 <div>
-    <h4>TenderMessageDetails</h4>
+    <h4>Подробнее</h4>
     <hr />
-    <dl class="dl-horizontal">
-    </dl>
+    <div style="width: 100%; text-align: center">
+        @Html.ActionLink("Назад к тенедеру", "Details", "Buyer", new { id = Model.Tender.Id }, new { @class = "btn btn-primary", style = "color: white" })
+    </div>
+    <hr />
 </div>
 
-<dl>
-    <dt>@Model.Message.FromUserId</dt>
-    <dd>@Model.Message.Message</dd>
-</dl>
+
 
 <dl>
-    @foreach (var message in Model.SubMessages)
-    {
-        <dt>@message.UserInfo.Name</dt>
-        <dd>@message.Message</dd>
-    }
+    <dt>От: @Model.Message.UserInfo.Name</dt>
+    <dd><strong>Сообщение:</strong> @Model.Message.Message</dd>
 </dl>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <input hidden="hidden" name="TenderId" value="@Model.Tender.Id" />
+        <input hidden="hidden" name="ParentMessageId" value="@Model.Message.Id" />
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="SubTheme2" class="control-label col-md-2">Сообщение</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" rows="7" name="Message" placeholder="Максимально подробно опишите детали и условия вашего предложения"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="" style="text-align: center;">
+                <button type="submit" class="btn btn-two">Отправить</button>
+            </div>
+        </div>
+    </div>
+}
+
+<hr />
+
+@if (Model.SubMessages != null)
+{
+    
+    foreach (var message in Model.SubMessages)
+    {
+        <div style="padding-bottom: 10px;">
+            <p style="padding-bottom: 5px;">От: @message.UserInfo.Name (@message.CreationTime.ToString("dd.MM.yyyy"))</p>
+            <p>@message.Message</p>
+            <hr />
+        </div>
+    }
+
+}

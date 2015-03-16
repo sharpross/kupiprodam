@@ -16,6 +16,7 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.Password);
             Map(x => x.Phone);
             Map(x => x.Email);
+            Map(x => x.Login);
             Map(x => x.VKontakte);
             Map(x => x.Facebook);
             Map(x => x.About);
@@ -25,6 +26,8 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.Organization);
             Map(x => x.CreationTime);
             Map(x => x.Post);
+            Map(x => x.ImageId);
+            Map(x => x.Portfolio);
             Table("Users");
         }
     }

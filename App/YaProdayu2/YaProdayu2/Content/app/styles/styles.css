@@ -1,5 +1,5 @@
 ﻿body {
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+    font-family: tahoma, arial, verdana, sans-serif, Lucida Sans !important;
     font-size: 12px;
 }
 
@@ -124,4 +124,31 @@ div.tabs ul.nav-tabs a:last-child, div.tabs ul.nav-tabs a:last-child:hover {
 
 .wp-theme-1 h1, .wp-theme-1 h2, .wp-theme-1 h3, .wp-theme-1 h4, .wp-theme-1 h5, .wp-theme-1 h6 {
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+}
+
+.font_black {
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+b, strong {
+    color: black;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    color: black;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    color: black;
+}
+
+.jqte_tool.jqte_tool_1 .jqte_tool_label {
+    height: 23px;
 }

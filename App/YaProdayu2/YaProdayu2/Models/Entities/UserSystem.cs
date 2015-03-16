@@ -34,5 +34,13 @@ namespace YaProdayu2.Models.Entities
         public virtual string Post { get; set; }
 
         public virtual string Organization { get; set; }
+
+        public virtual int ImageId { get; set; }
+
+        public virtual string Login { get; set; }
+
+        public virtual string Portfolio { get; set; }
+
+        public virtual List<int> ListImages { get; set; }
     }
 }

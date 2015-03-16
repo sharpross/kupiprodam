@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Новая заявка";
+    ViewBag.Scripts = "NewTender()";
 }
 
 @using (Html.BeginForm("CreateTender", "Buyer", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -34,7 +35,7 @@
         <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Выберите категорию</label>
             <div class="col-md-8">
-                <select class="form-control" name="SubTheme">
+                <select class="form-control" name="SubTheme" required>
                     @if (string.IsNullOrEmpty(Model.SubTheme))
                     {
                         <option selected="selected" disabled="disabled">Выберите категорию</option>
@@ -71,13 +72,23 @@
         </div>
 
         <div class="form-group">
+            <label for="SubTheme2" class="control-label col-md-4">Регион</label>
+            <div class="col-md-4">
+                <select class="form-control" name="Region" id="RegionSelect" required>
+                    <option disabled selected>Выберите регион</option>
+                    @foreach (var item in Model.ListRegions)
+                    {
+                        <option>@item</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="SubTheme2" class="control-label col-md-4">Город</label>
             <div class="col-md-4">
-                <select class="form-control" name="City">
-                    @foreach (var item in Model.Citys)
-                    {
-                        <option selected="selected">@item.Name</option>
-                    }
+                <select class="form-control" name="City" required>
+                    <option disabled selected>Выберите город</option>
                 </select>
             </div>
         </div>

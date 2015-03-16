@@ -15,8 +15,10 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.TenderId);
             Map(x => x.FromUserId);
             Map(x => x.Message);
-            Map(x => x.Coste);
+            ///Map(x => x.Coste);
             Map(x => x.CreationTime);
+            Map(x => x.IsSubMessage);
+            Map(x => x.ParentMessageId);
             Table("TenderMessage");
         }
     }

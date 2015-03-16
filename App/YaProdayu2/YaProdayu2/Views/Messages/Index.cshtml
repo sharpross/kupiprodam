@@ -1,0 +1,44 @@
+﻿@model IEnumerable<YaProdayu2.Models.MessageModel>
+
+@{
+    ViewBag.Title = "Сообщения";
+}
+
+<h2>Сообщения</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Имя
+        </th>
+        <th>
+            Должность
+        </th>
+        <th>
+            Организация
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.User.Name, "Card", "Account", new { @user = item.User.Login }, null)
+        </td>
+        <td style="font-weight: bold;">
+            @Html.ActionLink(item.User.Post, "Card", "Account", new { @user = item.User.Login }, null)
+        </td>
+        <td style="font-weight: bold;">
+            @Html.ActionLink(item.User.Organization, "Card", "Account", new { @user = item.User.Login }, null)
+        </td>
+        <td>
+            @Html.ActionLink("Написать", "Write", new { @toUserId = item.User.Id }, null)
+            @if(item.UnReaded != 0)
+            {
+                @: (@item.UnReaded)
+            }
+        </td>
+    </tr>
+}
+
+</table>

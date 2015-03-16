@@ -1,0 +1,41 @@
+﻿@model IEnumerable<YaProdayu2.Models.Entities.UserSystem>
+
+@{
+    ViewBag.Title = "Визитница";
+}
+
+<h2>Визитница</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Имя
+        </th>
+        <th>
+            Должность
+        </th>
+        <th>
+            Организация
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Card", "Account", new { @email = item.Email }, null)
+            </td>
+            <td>
+                @Html.ActionLink(item.Post, "Card", "Account", new { @email = item.Email }, null)
+            </td>
+            <td>
+                @Html.ActionLink(item.Organization, "Card", "Account", new { @email = item.Email }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Написать", "Write", "Messages", new { @toUserId = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

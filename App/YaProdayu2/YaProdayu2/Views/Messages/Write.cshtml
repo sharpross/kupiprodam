@@ -1,0 +1,56 @@
+﻿@model YaProdayu2.Models.UserMessages.UserMessageModel
+
+@{
+    ViewBag.Title = "Write";
+}
+<p style="font-size: 14px;">
+    <span style="font-weight: bold;">Написать сообщние:</span> Вася
+</p>
+
+@if (Model.ListMessages != null)
+{
+    <div class="row" style="padding-top: 10px;">
+        @foreach (var msg in Model.ListMessages)
+        {
+            <div class="row">
+                <div class="col-lg-2" style="text-align: center;">
+                    <img src="~/Image/Get?id=@msg.User.ImageId" width="100" style="padding-top: 50px;" />
+                    <p>
+                        @msg.User.Name
+                    </p>
+                </div>
+                <div class="col-lg-10">
+                    <div style="margin: 0px 10px 0px 10px">
+                        <p>
+                            <div style="color: rgb(23, 118, 140); font-weight: bold; width: 100%; text-align: right">
+                                @string.Format("({0})", msg.DateCreation.ToString("dd.MM.yyyy HH:mm"))            
+                            </div>
+                        </p>
+                        <p>
+                            @msg.Message
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        }
+    </div> 
+}
+
+@using (@Html.BeginForm("Write", "Messages", FormMethod.Post))
+{
+    <input hidden="hidden" name="UserId" value="@Model.UserId" />
+    <input hidden="hidden" name="ToUserId" value="@Model.ToUserId" />
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <textarea name="Message" rows="3" class="form-control" placeholder="Ваше сообщение"></textarea>
+        </div>
+
+        <div class="form-group">
+            <div style="width: 100%; text-align: center">
+                <button type="submit" class="btn btn-two">Отправить</button>
+            </div>
+        </div>
+    </div>
+}

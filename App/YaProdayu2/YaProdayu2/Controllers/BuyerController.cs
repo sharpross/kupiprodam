@@ -7,7 +7,6 @@ using YaProdayu2.Models.Entities;
 using YaProdayu2.Models.Views;
 using YaProdayu2.Y2System;
 using YaProdayu2.Y2System.Utils;
-using YaProdayu2.Y2System.System;
 using YaProdayu2.Models;
 using System.IO;
 
@@ -49,26 +48,47 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpGet]
-        public ActionResult SellerMessages(int? id)
+        public ActionResult SellerMessages(int? tenderId, int? messageId)
         {
-            if (id.HasValue)
+            if (tenderId.HasValue && messageId.HasValue)
             {
                 TenderMessage message = null;
+                Tender tender = null;
+                var listMessages = new List<TenderMessage>();
 
                 using (var session = DBHelper.OpenSession())
                 {
                     message = session.CreateCriteria<TenderMessage>()
                         .List<TenderMessage>()
-                        .Where(x => x.Id == id)
+                        .Where(x => x.Id == messageId)
                         .FirstOrDefault();
+                }
+
+                using (var session = DBHelper.OpenSession())
+                {
+                    tender = session.CreateCriteria<Tender>()
+                        .List<Tender>()
+                        .Where(x => x.Id == tenderId)
+                        .FirstOrDefault();
+                }
+
+                using (var session = DBHelper.OpenSession())
+                {
+                    listMessages = session.CreateCriteria<TenderMessage>()
+                        .List<TenderMessage>()
+                        .Where(x => x.ParentMessageId == messageId)
+                        .Where(x => x.IsSubMessage == true)
+                        .OrderByDescending(x => x.CreationTime)
+                        .ToList();
                 }
 
                 if (message != null)
                 {
                     var subMessages = new TenderMessageDetails()
                     {
+                        Tender = tender,
                         Message = message,
-                        SubMessages = new List<TenderMessage>()
+                        SubMessages = listMessages
                     };
 
                     return View(subMessages);   
@@ -79,9 +99,30 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpPost]
-        public ActionResult SellerMessages(string message)
+        public ActionResult SellerMessages(PostMessageInfo model)
         {
-            return View();
+            if (model != null)
+            {
+                var newMessage = new TenderMessage() 
+                { 
+                    FromUserId = this.Auth.CurrentUser.Id,
+                    CreationTime = DateTime.Now,
+                    Message = model.Message,
+                    ParentMessageId = model.ParentMessageId,
+                    IsSubMessage = true
+                };
+
+                using (var session = DBHelper.OpenSession())
+                {
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        session.Save(newMessage);
+                        transaction.Commit();
+                    }
+                }
+            }
+
+            return RedirectToAction("SellerMessages", new { tenderId = model.TenderId, messageId = model.ParentMessageId});
         }
 
         [HttpGet]
@@ -103,14 +144,16 @@ namespace YaProdayu2.Controllers
             model.IconWidth = themes.List.Where(x => x.Key == theme).FirstOrDefault().Width;
             model.IconHeight = themes.List.Where(x => x.Key == theme).FirstOrDefault().Heigth;
             model.ListSubThemes = themes.List.Where(x => x.Key == theme).FirstOrDefault().SubThemes;
-            model.Citys = new DictionaryCitys().List;
+            model.ListRegions = this.GetRegions();
+            model.ListCitys = new List<string>();
             model.AllowWriteMe = true;
             model.ListPhoto = new List<HttpPostedFileBase>().ToArray();
-
+            
             return View(model);
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult CreateTender(NewTenderView model)
         {
             if (this.Auth.CurrentUser == null)
@@ -125,13 +168,15 @@ namespace YaProdayu2.Controllers
                 model.IconWidth = themes.List.Where(x => x.Key == model.Theme).FirstOrDefault().Width;
                 model.IconHeight = themes.List.Where(x => x.Key == model.Theme).FirstOrDefault().Heigth;
                 model.ListSubThemes = themes.List.Where(x => x.Key == model.Theme).FirstOrDefault().SubThemes;
-                model.Citys = new DictionaryCitys().List;
+                model.ListCitys = new List<string>();
+                model.ListRegions = this.GetRegions();
 
                 return View(model);
             }
 
             var tender = new Tender()
             {
+                Region = model.Region,
                 City = model.City,
                 UserId = this.Auth.CurrentUser.Id,
                 Message = model.Message,
@@ -182,17 +227,17 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpGet]
-        public ActionResult CloseTender(int? tenderId)
+        public ActionResult CloseTender(int? tenderId, int? userId)
         {
             if (tenderId.HasValue)
             {
-                this.CloseTend((int)tenderId);
+                this.CloseTend(tenderId.Value, userId.Value);
             }
 
             return RedirectToAction(string.Format("Details/{0}", tenderId));
         }
 
-        private void CloseTend(int tenderId)
+        private void CloseTend(int tenderId, int winnerId)
         {
             using (var session = DBHelper.OpenSession())
             {
@@ -203,9 +248,15 @@ namespace YaProdayu2.Controllers
                         .Where(x => x.Id == tenderId)
                         .FirstOrDefault();
 
-                    if (tender != null)
+                    var winner = session.CreateCriteria<UserSystem>()
+                        .List<UserSystem>()
+                        .Where(x => x.Id == winnerId)
+                        .FirstOrDefault();
+
+                    if (tender != null && winner != null)
                     {
                         tender.IsClose = true;
+                        tender.Winner = winner.Id;
 
                         session.SaveOrUpdate(tender);
                         transaction.Commit();
@@ -231,6 +282,7 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Details(TenderAddMessageView model)
         {
             if (model != null)
@@ -242,10 +294,11 @@ namespace YaProdayu2.Controllers
                     var newMessage = new TenderMessage()
                     {
                         CreationTime = DateTime.Now,
-                        Coste = model.Cost,
+                        //Coste = model.Cost,
                         Message = model.Message,
                         FromUserId = user.Id,
-                        TenderId = model.TenderId
+                        TenderId = model.TenderId,
+                        IsSubMessage = false
                     };
 
                     using (var session = DBHelper.OpenSession())
@@ -353,6 +406,11 @@ namespace YaProdayu2.Controllers
 
             foreach (var file in files)
             {
+                if (file == null)
+                {
+                    continue;
+                }
+
                 if (i == 3) 
                 {
                     continue;
@@ -377,7 +435,8 @@ namespace YaProdayu2.Controllers
                     Name = file.FileName,
                     Type = file.ContentType,
                     ParentId = parentId,
-                    Data = ms.ToArray()
+                    Data = ms.ToArray(),
+                    TypeFor = 0
                 };
 
                 using (var session = DBHelper.OpenSession())
@@ -399,14 +458,12 @@ namespace YaProdayu2.Controllers
 
             using (var session = DBHelper.OpenSession())
             {
-                
-
                 if (all)
                 {
                     var obj = new List<Image>();
 
                     obj = session.CreateCriteria<Image>().List<Image>()
-                        .Where(x => x.ID == parentId).ToList();
+                        .Where(x => x.ParentId == parentId && x.TypeFor == 0).ToList();
 
                     if (obj != null)
                     {
@@ -418,7 +475,7 @@ namespace YaProdayu2.Controllers
                     var obj = new Image();
 
                     obj = session.CreateCriteria<Image>().List<Image>()
-                        .Where(x => x.ID == parentId)
+                        .Where(x => x.ID == parentId && x.TypeFor == 0)
                         .FirstOrDefault();
 
                     if (obj != null)
@@ -429,6 +486,63 @@ namespace YaProdayu2.Controllers
             }
 
             return list.ToArray();
+        }
+
+        public class PostMessageInfo
+        {
+            public int TenderId { get; set; }
+
+            public int ParentMessageId { get; set; }
+
+            public string Message { get; set; }
+        }
+
+        public List<string> GetRegions()
+        {
+            var list = new List<string>();
+
+            using (var session = DBHelper.OpenSession())
+            {
+                list = session.CreateCriteria<Region>()
+                    .List<Region>()
+                    .Where(x => x.Country_id == 3159)
+                    //.Where(x => x.Country_id == 9908)
+                    .Select(x => x.Name)
+                    .OrderBy(x => x)
+                    .ToList();
+            }
+
+            return list;
+        }
+
+        [HttpGet]
+        public JsonResult GetListCityes(string name)
+        {
+            var list = new List<string>();
+            var list2 = new object();
+
+            if (!string.IsNullOrEmpty(name.Trim()))
+            {
+                using (var session = DBHelper.OpenSession())
+                {
+                    var region = session.CreateCriteria<Region>()
+                        .List<Region>()
+                        .Where(x => x.Name == name)
+                        .FirstOrDefault();
+
+                    if (region != null)
+                    {
+                        list = session.CreateCriteria<City>()
+                            .List<City>()
+                            .Where(x => x.Region_id == region.Region_id)
+                            .OrderBy(x => x.Name)
+                            .Select(x => x.Name)
+                            .ToList();
+                    }
+                }
+            }
+
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
 	}
 }

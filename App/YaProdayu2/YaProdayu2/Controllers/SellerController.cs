@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using YaProdayu2.Models.Entities;
 using YaProdayu2.Models.Views;
 using YaProdayu2.Y2System;
-using YaProdayu2.Y2System.System;
 
 namespace YaProdayu2.Controllers
 {
@@ -50,6 +49,7 @@ namespace YaProdayu2.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Details(TenderAddMessageView model)
         {
             if (model != null)
@@ -61,7 +61,7 @@ namespace YaProdayu2.Controllers
                     var newMessage = new TenderMessage()
                     {
                         CreationTime = DateTime.Now,
-                        Coste = model.Cost,
+                        //Coste = model.Cost,
                         Message = model.Message,
                         FromUserId = user.Id,
                         TenderId = model.TenderId

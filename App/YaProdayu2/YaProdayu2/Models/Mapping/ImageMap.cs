@@ -16,6 +16,7 @@ namespace YaProdayu2.Models.Mapping
             Map(x => x.Data);
             Map(x => x.ParentId);
             Map(x => x.Type);
+            Map(x => x.TypeFor);
             Table("Images");
         }
     }

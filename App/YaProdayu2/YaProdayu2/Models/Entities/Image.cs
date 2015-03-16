@@ -16,5 +16,10 @@ namespace YaProdayu2.Models.Entities
         public virtual string Type { get; set; }
 
         public virtual int ParentId { get; set; }
+
+        /// <summary>
+        /// 0 - тендер, 1 - портфоли
+        /// </summary>
+        public virtual int TypeFor { get; set; }
     }
 }
