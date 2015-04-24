@@ -29,6 +29,7 @@ namespace YaProdayu2
                         "~/Content/static/theme/js/respond.min.js",
                         "~/Content/static/lightbox/lightbox.min.js",
                         "~/Content/static/te/jquery-te-1.4.0.min.js",
+                        "~/Scripts/md5.min.js",
 
                         "~/Content/static/theme/assets/fancybox/jquery.fancybox.js",
                         "~/Content/static/theme/assets/hover-dropdown/bootstrap-hover-dropdown.min.js",

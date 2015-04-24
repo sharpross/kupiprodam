@@ -37,7 +37,11 @@ namespace YaProdayu2.Controllers
         {
             var service = new ContactsService();
 
-            var exist = service.Get(id);
+            var exist = service
+                .GetAll()
+                .Where(x => x.UserId == this.Auth.CurrentUser.Id)
+                .Where(x => x.ContactId == id)
+                .FirstOrDefault();
 
             if (exist == null)
             {

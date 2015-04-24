@@ -1,0 +1,73 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <p>
+            @if (ViewBag.PayEnd == null)
+            {
+                @:"У вас ещё нет платной подписки!" 
+            }
+        </p>
+        <p>
+            Как осуществяется платная подписка:
+            <ol>
+                <li>
+                    Вы оплачивает на 1 месяц подписку
+                </li>
+                <li>
+                    Оплата проходит через сервис <a href="http://www.robokassa.ru" target="_blank">ROBOKASSA</a>
+                </li>
+                <li>
+                    После оплаты вы можете проверить статус своей подписки в личном кабинете на страница "Оплата"
+                </li>
+                <li>
+                    Так же вы можете посмотреть историю своих подписок на страница "Оплата"
+                </li>
+                <li>
+                    При каких либо ошибках вы можете написать в @Html.ActionLink("Службу поддержка", "Support", "Home", null, new { @style = "color: #245071;" })
+                </li>
+            </ol>
+        </p>
+        <p class="text-center">
+            Оплатить на 1 месяц через сервис <a href="http://www.robokassa.ru" target="_blank">ROBOKASSA</a> на сумму <strong>100.00 рублей</strong>
+        </p>
+        <div class="text-center">
+            @Html.Raw(ViewBag.PayScript)
+            <script>
+                function getSign() {
+                    return md5("my-tend.com:100:0:test");
+                }
+                $(document).ready(function () {
+                    $('form[id=pay]').find('[name=SignatureValue]').val(md5("my-tend.com:100.0:0:test:my-tend2015"));
+                });
+            </script>
+            <form id="pay" action='http://test.robokassa.ru/Index.aspx' method=POST>
+                <input type=hidden name="MrchLogin" value="my-tend.com">
+                <input type=hidden name="OutSum" value="100">
+                <input type=hidden name="InvId" value="0">
+                <input type=hidden name="Desc" value="test3405816fd0f08e425e7feed32d2301d3
+                <input type=hidden name=" signaturevalue" value='3405816fd0f08e425e7feed32d2301d3'>
+                <input type="submit" value='Оплатить'>
+            </form>
+        </div>
+        <div>
+            <p>
+                История подписок:
+            </p>
+            @if (ViewBag.PayHistory.Count > 0)
+            {
+                <ol>
+                    @foreach(var row in ViewBag.PayHistory)
+                    {
+                        <li>@row</li>
+                    }
+                </ol>
+            }
+            else
+            {
+                @:Вы ещё не оплачивали подписку 
+            }
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</div>

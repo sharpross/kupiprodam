@@ -21,15 +21,25 @@ namespace YaProdayu2.Controllers
 
         public ActionResult List()
         {
-            var listTenders = new List<Tender>();
-
             using (var session = DBHelper.OpenSession())
             {
-                listTenders = session.CreateCriteria<Tender>().List<Tender>()
+                var subs = session.CreateCriteria<Tender>().List<Subsciptions>()
+                    .Where(x => x.UserId != this.Auth.CurrentUser.Id)
                     .ToList();
-            }
 
-            return View(listTenders);
+                var listTenders = session.CreateCriteria<Tender>().List<Tender>()
+                    .Where(x => x.UserId != this.Auth.CurrentUser.Id)
+                    .ToList();
+
+                var tenders = new List<Tender>();
+
+                foreach (var sub in subs)
+                {
+                    tenders.AddRange(listTenders.Where(x => x.Theme == sub.Theme).ToList());
+                }
+
+                return View(tenders);
+            }
         }
 
         [HttpGet]
@@ -41,6 +51,7 @@ namespace YaProdayu2.Controllers
 
                 if (tenderDetails != null)
                 {
+                    this.ViewBag.IsMyTender = tenderDetails.TenderInfo.UserId == this.Auth.CurrentUser.Id;
                     return View(tenderDetails);
                 }
             }

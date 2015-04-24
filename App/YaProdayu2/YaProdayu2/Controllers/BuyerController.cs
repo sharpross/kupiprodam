@@ -20,10 +20,22 @@ namespace YaProdayu2.Controllers
         {
             using (var session = DBHelper.OpenSession())
             {
-                var listTenders = session.CreateCriteria<Tender>().List<Tender>()
-                    .Where(x => x.UserId != this.Auth.CurrentUser.Id);
+                var subs = session.CreateCriteria<Tender>().List<Subsciptions>()
+                    .Where(x => x.UserId != this.Auth.CurrentUser.Id)
+                    .ToList();
 
-                return View(listTenders);
+                var listTenders = session.CreateCriteria<Tender>().List<Tender>()
+                    .Where(x => x.UserId != this.Auth.CurrentUser.Id)
+                    .ToList();
+
+                var tenders = new List<Tender>();
+
+                foreach (var sub in subs)
+                {
+                    tenders.AddRange(listTenders.Where(x => x.Theme == sub.Theme).ToList());
+                }
+
+                return View(tenders);
             }
         }
 
@@ -144,7 +156,8 @@ namespace YaProdayu2.Controllers
             model.IconWidth = themes.List.Where(x => x.Key == theme).FirstOrDefault().Width;
             model.IconHeight = themes.List.Where(x => x.Key == theme).FirstOrDefault().Heigth;
             model.ListSubThemes = themes.List.Where(x => x.Key == theme).FirstOrDefault().SubThemes;
-            model.ListRegions = this.GetRegions();
+            model.ListCountrys = this.GetCountrys();
+            model.ListRegions = new List<string>();//this.GetRegions();
             model.ListCitys = new List<string>();
             model.AllowWriteMe = true;
             model.ListPhoto = new List<HttpPostedFileBase>().ToArray();
@@ -256,7 +269,7 @@ namespace YaProdayu2.Controllers
                     if (tender != null && winner != null)
                     {
                         tender.IsClose = true;
-                        tender.Winner = winner.Id;
+                        tender.Winner = winnerId;
 
                         session.SaveOrUpdate(tender);
                         transaction.Commit();
@@ -274,6 +287,7 @@ namespace YaProdayu2.Controllers
 
                 if (tenderDetails != null)
                 {
+                    this.ViewBag.IsMyTender = tenderDetails.TenderInfo.UserId == this.Auth.CurrentUser.Id;
                     return View(tenderDetails);
                 }
             }
@@ -497,6 +511,37 @@ namespace YaProdayu2.Controllers
             public string Message { get; set; }
         }
 
+        public List<string> GetCountrys()
+        {
+            var list = new List<string>();
+            var tempList = new List<string>();
+            list.Add("Россия");
+
+            using (var session = DBHelper.OpenSession())
+            {
+                tempList = session.CreateCriteria<Country>()
+                    .List<Country>()
+                    .Where(x => x.Country_id == 9908 ||
+                        x.Country_id == 248 ||
+                        x.Country_id == 9787 ||
+                        x.Country_id == 1894 ||
+                        x.Country_id == 1280 ||
+                        x.Country_id == 81 ||
+                        x.Country_id == 2788 ||
+                        x.Country_id == 2303 ||
+                        x.Country_id == 9575 ||
+                        x.Country_id == 245 ||
+                        x.Country_id == 9638)
+                    //.Where(x => x.Country_id == 9908)
+                    .Select(x => x.Name)
+                    .OrderBy(x => x)
+                    .ToList();
+            }
+            list.AddRange(tempList);
+
+            return list;
+        }
+
         public List<string> GetRegions()
         {
             var list = new List<string>();
@@ -513,6 +558,36 @@ namespace YaProdayu2.Controllers
             }
 
             return list;
+        }
+
+        [HttpGet]
+        public JsonResult GetListRegions(string name)
+        {
+            var list = new List<string>();
+            var list2 = new object();
+
+            if (!string.IsNullOrEmpty(name.Trim()))
+            {
+                using (var session = DBHelper.OpenSession())
+                {
+                    var region = session.CreateCriteria<Country>()
+                        .List<Country>()
+                        .Where(x => x.Name == name)
+                        .FirstOrDefault();
+
+                    if (region != null)
+                    {
+                        list = session.CreateCriteria<Region>()
+                            .List<Region>()
+                            .Where(x => x.Country_id == region.Country_id)
+                            .OrderBy(x => x.Name)
+                            .Select(x => x.Name)
+                            .ToList();
+                    }
+                }
+            }
+
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

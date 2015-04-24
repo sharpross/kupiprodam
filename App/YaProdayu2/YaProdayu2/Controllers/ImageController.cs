@@ -37,6 +37,7 @@ namespace YaProdayu2.Controllers
             return base.File(path, "image/png");
         }
 
+        [HttpPost]
         public JsonResult Remove(int? id)
         {
             if (id.HasValue)

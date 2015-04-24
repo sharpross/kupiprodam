@@ -50,5 +50,15 @@ namespace YaProdayu2.Models.Views
         public HttpPostedFileBase[] NewImages { get; set; }
 
         public List<int> ListImages { get; set; }
+
+        public List<string> ListCountrys { get; set; }
+
+        public List<string> ListRegions { get; set; }
+
+        public string PayScript { get; set; }
+
+        public DateTime PayEnd { get; set; }
+
+        public List<string> PayHistory { get; set; }
     }
 }

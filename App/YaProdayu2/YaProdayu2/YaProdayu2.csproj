@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,9 +145,12 @@
     <Compile Include="Models\Contacts\ContactsMap.cs" />
     <Compile Include="Models\Contacts\ContactsService.cs" />
     <Compile Include="Models\Entities\City.cs" />
+    <Compile Include="Models\Entities\Country.cs" />
     <Compile Include="Models\Entities\Image.cs" />
     <Compile Include="Models\Entities\MessageModel.cs" />
+    <Compile Include="Models\Entities\PayInfo.cs" />
     <Compile Include="Models\Entities\Region.cs" />
+    <Compile Include="Models\Entities\SubsciptionsCitys.cs" />
     <Compile Include="Models\Entities\Subsciptions.cs" />
     <Compile Include="Models\Entities\TenderMessages.cs" />
     <Compile Include="Models\Entities\UserMessage.cs" />
@@ -154,13 +158,17 @@
     <Compile Include="Models\Entities\Tender.cs" />
     <Compile Include="Models\Entities\UserSystem.cs" />
     <Compile Include="Models\Entities\UserSystemService.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
     <Compile Include="Models\Mapping\CityMap.cs" />
     <Compile Include="Models\Mapping\ImageMap.cs" />
     <Compile Include="Models\Mapping\RegionMap.cs" />
+    <Compile Include="Models\Mapping\SubsciptionsCitysMap.cs" />
     <Compile Include="Models\Mapping\SubsciptionsMap.cs" />
     <Compile Include="Models\Mapping\TenderMap.cs" />
     <Compile Include="Models\Mapping\TenderMessageMap.cs" />
     <Compile Include="Models\Mapping\UserSystemMap.cs" />
+    <Compile Include="Models\Support\SupportModel.cs" />
+    <Compile Include="Models\UserMessages\UserListMessagesView.cs" />
     <Compile Include="Models\UserMessages\UserMessage.cs" />
     <Compile Include="Models\UserMessages\UserMessageMap.cs" />
     <Compile Include="Models\UserMessages\UserMessageModel.cs" />
@@ -598,6 +606,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\md5.js" />
+    <Content Include="Scripts\md5.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -647,6 +657,18 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\Write.cshtml" />
     <Content Include="Views\Cutaway\Index.cshtml" />
+    <Content Include="Views\Home\How.cshtml" />
+    <Content Include="Views\Home\Reginfo.cshtml" />
+    <Content Include="Views\Home\Termins.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Views\Shared\Payments\_pay.cshtml" />
+    <Content Include="Views\Pay\Index.cshtml" />
+    <Content Include="Views\Pay\Success.cshtml" />
+    <Content Include="Views\Pay\Fail.cshtml" />
+    <Content Include="Views\Home\Sendmessge.cshtml" />
+    <Content Include="Views\Home\Docs.cshtml" />
+    <Content Include="Views\Home\Rules.cshtml" />
+    <Content Include="Views\Home\Instruction.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -37,6 +37,7 @@ namespace YaProdayu2
                 configuration.For<AccountController>(ac => ac.RegSeller()).Ignore();
                 configuration.For<AccountController>(ac => ac.RegBuyer()).Ignore();
                 configuration.For<AccountController>(ac => ac.UpdateAvatar()).Ignore();
+                configuration.For<AccountController>(ac => ac.Card(string.Empty)).Ignore();
 
                 configuration.For<ImageController>(ac => ac.Get(new int())).Ignore();
 

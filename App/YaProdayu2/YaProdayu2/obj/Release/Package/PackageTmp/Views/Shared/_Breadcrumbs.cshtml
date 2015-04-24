@@ -1,0 +1,20 @@
+﻿@if (ViewBag.Breadcrumbs != null)
+{
+    if (ViewBag.HideBreadcrumbs == null)
+    {
+        <ol class="breadcrumb">
+            @foreach (var page in (List<KupiProdam.Utils.BreadcrumbsItem>)ViewBag.Breadcrumbs)
+            {
+                if(!page.IsActive)
+                {
+                    @: <li>@Html.ActionLink(page.Title, page.Method, page.Controller)</li>
+                }
+                else 
+                { 
+                    @: <li class="active">@page.Title</li>
+                }
+
+            }
+        </ol>
+    }
+}

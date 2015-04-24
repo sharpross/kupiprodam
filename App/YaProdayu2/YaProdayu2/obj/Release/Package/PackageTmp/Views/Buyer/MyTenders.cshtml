@@ -1,0 +1,48 @@
+﻿@model IEnumerable<YaProdayu2.Models.Entities.Tender>
+
+@{
+    ViewBag.Title = "Мои тендеры";
+}
+
+<h2>Список моих торгов</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Название торгов
+        </th>
+
+        <th style="text-align: center">
+            Тема/категория
+        </th>
+
+        <th style="text-align: center">
+            Регион/Город исполнения заявки
+        </th>
+
+        <th style="text-align: center">
+            Бюджет
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td width="100">
+                @Html.ActionLink(item.Title, "Details", "Buyer", new { id = item.Id }, null)
+            </td>
+            <td width="100" style="text-align: center">
+                @Html.ActionLink(item.Theme, "Details", "Buyer", new { id = item.Id }, null)
+                <br />
+                @Html.ActionLink(item.SubTheme, "Details", "Buyer", new { id = item.Id }, null)
+            </td>
+            <td width="100" style="text-align: center">
+                @Html.ActionLink(item.City, "Details", "Buyer", new { id = item.Id }, null)
+            </td>
+            <td width="70" style="text-align: center">
+                @Html.ActionLink(item.Cost + "руб.", "Details", "Buyer", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

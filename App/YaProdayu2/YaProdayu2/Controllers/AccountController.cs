@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using YaProdayu2.Models.Entities;
@@ -20,53 +22,125 @@ namespace YaProdayu2.Controllers
 
         public ActionResult Confirm(string k)
         {
-
-
             var user = new UserSystem();
             this.Auth.Login(user.Login, user.Password);
 
             return RedirectToAction("Index", "Home");
         }
 
+        private string GetPayString()
+        {
+            // регистрационная информация (логин, пароль #1)
+            // registration info (login, password #1)
+            string sMrchLogin = "alfa-tender";
+            string sMrchPass1 = "my-tend201";
+
+            // номер заказа
+            // number of order
+            int nInvId = 0;
+
+            // описание заказа
+            // order description
+            string sDesc = "Оплата подписки на Я-Прелагаю";
+
+            // сумма заказа
+            // sum of order
+            string sOutSum = "100.00";
+
+            // тип товара
+            // code of goods
+            string sShpItem = "1";
+
+            // язык
+            // language
+            string sCulture = "ru";
+
+            // кодировка
+            // encoding
+            string sEncoding = "utf-8";
+
+            // формирование подписи
+            // generate signature
+            string sCrcBase = string.Format("{0}:{1}:{2}:{3}:shpItem={4}",
+                                sMrchLogin, sOutSum, nInvId, sMrchPass1, sShpItem);
+
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] bSignature = md5.ComputeHash(Encoding.UTF8.GetBytes(sCrcBase));
+
+            StringBuilder sbSignature = new StringBuilder();
+            foreach (byte b in bSignature)
+                sbSignature.AppendFormat("{0:x2}", b);
+
+            string sCrc = sbSignature.ToString();
+
+            // HTML-страница с кассой
+            // ROBOKASSA HTML-page
+            // ltKassa is System.Web.UI.WebControls.Literal;
+
+            return "<script language=JavaScript " +
+                                    "src=\"https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" +
+                                    "MerchantLogin=" + sMrchLogin +
+                                    "&OutSum=" + sOutSum +
+                                    "&InvoiceID=" + nInvId +
+                                    "&shpItem=" + sShpItem +
+                                    "&SignatureValue=" + sCrc +
+                                    "&Description=" + sDesc +
+                                    "&Culture=" + sCulture +
+                                    "&Encoding=" + sEncoding + "\"></script>";
+        }
+
+        private ProfileView GetProfile(int id)
+        {
+            var user = new UserSystemService().Get(id); // this.Auth.CurrentUser;
+
+            //var prof = new ProfileView();
+
+            var listSubsciptions = new List<Subsciptions>();
+
+            using (var session = DBHelper.OpenSession())
+            {
+                listSubsciptions = session.CreateCriteria<Subsciptions>().List<Subsciptions>()
+                    .Where(x => x.UserId == id)
+                    .ToList();
+            }
+
+            var profile = new ProfileView()
+            {
+                Id = user.Id,
+                About = user.About,
+                Email = user.Email,
+                Facebook = user.Facebook,
+                Name = user.Name,
+                Organization = user.Organization,
+                Portfolio = user.Portfolio,
+                Phone = user.Phone,
+                Post = user.Post,
+                Site = user.Site,
+                Skype = user.Skype,
+                VKontakte = user.VKontakte,
+                ImageId = user.ImageId,
+                IsSeller = user.IsSeller,
+                ListSubsciptions = listSubsciptions,
+                ListThemes = new DictionaryThemes().List,
+                ListImages = new List<int>(this.GetImagesFirst(user.Id, true)),
+                ListCountrys = this.GetCountrys(),
+                ListRegions = new List<string>(),
+                PayScript = this.GetPayString(),
+                PayEnd = new DateTime(),
+                PayHistory = new List<string>()
+            };
+
+            return profile;
+        }
+
         [HttpGet]
         public ActionResult Profile()
         {
-            
             var user = this.Auth.CurrentUser;
 
             if (user != null)
             {
-                var listSubsciptions = new List<Subsciptions>();
-
-                using (var session = DBHelper.OpenSession())
-                {
-                    listSubsciptions = session.CreateCriteria<Subsciptions>().List<Subsciptions>()
-                        .Where(x => x.UserId == this.Auth.CurrentUser.Id)
-                        .ToList();
-                }
-
-                var profile = new ProfileView() 
-                { 
-                    Id = user.Id,
-                    About = user.About,
-                    Email = user.Email,
-                    Facebook = user.Facebook,
-                    Name = user.Name,
-                    Organization = user.Organization,
-                    Portfolio = user.Portfolio,
-                    Phone = user.Phone,
-                    Post = user.Post,
-                    Site = user.Site,
-                    Skype = user.Skype,
-                    VKontakte = user.VKontakte,
-                    ImageId = user.ImageId,
-                    IsSeller = user.IsSeller,
-                    ListSubsciptions = listSubsciptions,
-                    ListThemes = new DictionaryThemes().List,
-                    ListImages = new List<int>(this.GetImagesFirst(user.Id, true))
-                };
-
-                return View(profile);
+                return View(this.GetProfile(this.Auth.CurrentUser.Id));
             }
             
             
@@ -264,14 +338,14 @@ namespace YaProdayu2.Controllers
                     .FirstOrDefault();
             }
 
-            if (userSystem == null)
+            var prof = this.GetProfile(userSystem.Id);
+
+            if (prof != null)
             {
-                return RedirectToAction("Index", "Home");
+                return View(prof);
             }
 
-            //userSystem.ListImages = new List<int>(this.GetImagesFirst(userSystem.Id, true));
-
-            return View(userSystem);
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -335,7 +409,7 @@ namespace YaProdayu2.Controllers
             var user = new UserSystem() {
                 Name = model.Name,
                 Email = model.Email,
-                Login = model.Email,
+                Login = model.Email.ToLower(),
                 Password = MD5Helper.GetMD5String(model.Password),
                 Organization = model.Organization,
                 Post = model.Post,
@@ -360,7 +434,7 @@ namespace YaProdayu2.Controllers
             mailParams.Add("{url}", "");
             mailParams.Add("{key}", "");
 
-            this.Auth.Login(user.Login, user.Password);
+            this.Auth.Login(user.Login);
 
             return RedirectToAction("Profile");
         }
@@ -399,7 +473,7 @@ namespace YaProdayu2.Controllers
             var user = new UserSystem() {
                 Name = model.Name,
                 Email = model.Email,
-                Login = model.Email,
+                Login = model.Email.ToLower(),
                 Password = MD5Helper.GetMD5String(model.Password),
                 IsSeller = false,
                 CreationTime = DateTime.Now,
@@ -415,10 +489,11 @@ namespace YaProdayu2.Controllers
                 }
             }
 
-            this.Auth.Login(user.Login, user.Password);
+            this.Auth.Login(user.Login);
 
             return RedirectToAction("Profile");
         }
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -429,7 +504,7 @@ namespace YaProdayu2.Controllers
             if (!string.IsNullOrEmpty(login) &&
                 !string.IsNullOrEmpty(password))
             {
-                user = this.Auth.Login(login, password, remembeMe == null ? false : (bool)remembeMe);
+                user = this.Auth.Login(login.ToLower(), password, remembeMe == null ? false : (bool)remembeMe);
 
                 if (user != null)
                 {
@@ -450,6 +525,45 @@ namespace YaProdayu2.Controllers
             return Json(result);
         }
 
+        [HttpPost]
+        public JsonResult SaveCitys(string[] citys)
+        {
+            if (citys != null && citys.Length > 0)
+            {
+                foreach (var city in citys)
+                {
+                    var listCity = new List<City>();
+
+                    using (var session = DBHelper.OpenSession())
+                    {
+                        var objCity = session.CreateCriteria<City>().List<City>()
+                            .Where(x => x.Name == city)
+                            .FirstOrDefault();
+
+                        if (objCity != null)
+                        {
+                            session.Save(new SubsciptionsCitys() {
+                                UserId = this.Auth.CurrentUser.Id,
+                                CityId = objCity.City_id
+                            });
+                        }
+                    }
+                }
+                
+                return Json(new
+                {
+                    Success = false,
+                    Data = "null"
+                });
+            }
+
+            return Json(new
+            {
+                Success = false,
+                Data = "null"
+            });
+        }
+        
         public JsonResult Logout()
         {
             this.Auth.LogOut();
@@ -497,13 +611,45 @@ namespace YaProdayu2.Controllers
             return list.ToArray();
         }
 
+        public List<string> GetCountrys()
+        {
+            var list = new List<string>();
+            list.Add("Россия");
+            var tempList = new List<string>();
+
+            using (var session = DBHelper.OpenSession())
+            {
+                tempList = session.CreateCriteria<Country>()
+                    .List<Country>()
+                    .Where(x => x.Country_id == 9908 ||
+                        x.Country_id == 248 ||
+                        x.Country_id == 9787 ||
+                        x.Country_id == 1894 ||
+                        x.Country_id == 1280 ||
+                        x.Country_id == 81 ||
+                        x.Country_id == 2788 ||
+                        x.Country_id == 2303 ||
+                        x.Country_id == 9575 ||
+                        x.Country_id == 245 ||
+                        x.Country_id == 9638)
+                    //.Where(x => x.Country_id == 9908)
+                    .Select(x => x.Name)
+                    .OrderBy(x => x)
+                    .ToList();
+            }
+
+            list.AddRange(list);
+
+            return list;
+        }
+
         private void SaveImages(HttpPostedFileBase[] files, int parentId)
         {
             var i = 0;
 
             foreach (var file in files)
             {
-                if (i == 3)
+                if (i == 19)
                 {
                     continue;
                 }

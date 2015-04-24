@@ -18,6 +18,8 @@ namespace YaProdayu2.Models.Views
 
         public string SubTheme { get; set; }
 
+        public string Country { get; set; }
+
         public string City { get; set; }
 
         public string Region { get; set; }
@@ -35,6 +37,8 @@ namespace YaProdayu2.Models.Views
         public string TenderType { get; set; }
 
         public List<string> ListSubThemes { get; set; }
+
+        public List<string> ListCountrys { get; set; }
 
         public List<string> ListCitys { get; set; }
 

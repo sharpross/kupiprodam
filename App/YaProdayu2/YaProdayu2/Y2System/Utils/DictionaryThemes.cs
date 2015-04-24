@@ -315,7 +315,7 @@ namespace YaProdayu2.Y2System.Utils
                 }
             });
 
-            this.List.Add(new Theme()
+            /*this.List.Add(new Theme()
             {
                 Image = "14.png",
                 Key = "Товары",
@@ -323,7 +323,7 @@ namespace YaProdayu2.Y2System.Utils
                 {
                     "<d>Категория \"товары\" в разработке"
                 }
-            });
+            });*/
         }
     }
 }

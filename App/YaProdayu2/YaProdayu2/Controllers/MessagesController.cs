@@ -15,7 +15,7 @@ namespace YaProdayu2.Controllers
         // GET: Messages
         public ActionResult Index()
         {
-            var messagModel = new List<MessageModel>();
+            /*var messagModel = new List<MessageModel>();
 
             var contacts = new ContactsService().GetAll()
                 .Where(x => x.UserId == this.Auth.CurrentUser.Id);
@@ -58,16 +58,18 @@ namespace YaProdayu2.Controllers
                         User = new UserSystemService().Get(msg.UserId),
                         UnReaded = messageService.GetAll().Where(x => !x.IsRead && x.ToUserId == this.Auth.CurrentUser.Id).Count()
                     });
-                }*/
-            }
+                }
+            }*/
 
-            return View(messagModel);
+            var messages = new UserListMessagesView(this.Auth.CurrentUser.Id);
+
+            return View(messages);
         }
 
         [HttpGet]
-        public ActionResult Write(int toUserId)
+        public ActionResult Write(int? toUserId)
         {
-            var messages = new UserMessageModel(this.Auth.CurrentUser.Id, toUserId);
+            var messages = new UserMessageModel(this.Auth.CurrentUser.Id, toUserId.Value);
 
             return View(messages);
         }
