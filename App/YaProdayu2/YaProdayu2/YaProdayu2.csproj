@@ -145,11 +145,13 @@
     <Compile Include="Models\Contacts\ContactsMap.cs" />
     <Compile Include="Models\Contacts\ContactsService.cs" />
     <Compile Include="Models\Entities\City.cs" />
+    <Compile Include="Models\Entities\CityService.cs" />
     <Compile Include="Models\Entities\Country.cs" />
     <Compile Include="Models\Entities\Image.cs" />
     <Compile Include="Models\Entities\MessageModel.cs" />
     <Compile Include="Models\Entities\PayInfo.cs" />
     <Compile Include="Models\Entities\Region.cs" />
+    <Compile Include="Models\Entities\RegionService.cs" />
     <Compile Include="Models\Entities\SubsciptionsCitys.cs" />
     <Compile Include="Models\Entities\Subsciptions.cs" />
     <Compile Include="Models\Entities\TenderMessages.cs" />
@@ -161,12 +163,17 @@
     <Compile Include="Models\Mapping\CountryMap.cs" />
     <Compile Include="Models\Mapping\CityMap.cs" />
     <Compile Include="Models\Mapping\ImageMap.cs" />
+    <Compile Include="Models\Mapping\PayInfoMap.cs" />
     <Compile Include="Models\Mapping\RegionMap.cs" />
     <Compile Include="Models\Mapping\SubsciptionsCitysMap.cs" />
     <Compile Include="Models\Mapping\SubsciptionsMap.cs" />
     <Compile Include="Models\Mapping\TenderMap.cs" />
     <Compile Include="Models\Mapping\TenderMessageMap.cs" />
     <Compile Include="Models\Mapping\UserSystemMap.cs" />
+    <Compile Include="Models\Pay\PayService.cs" />
+    <Compile Include="Models\SubCityModel.cs" />
+    <Compile Include="Models\SubCityModelMap.cs" />
+    <Compile Include="Models\SubCityModelService.cs" />
     <Compile Include="Models\Support\SupportModel.cs" />
     <Compile Include="Models\UserMessages\UserListMessagesView.cs" />
     <Compile Include="Models\UserMessages\UserMessage.cs" />
@@ -669,6 +676,11 @@
     <Content Include="Views\Home\Docs.cshtml" />
     <Content Include="Views\Home\Rules.cshtml" />
     <Content Include="Views\Home\Instruction.cshtml" />
+    <Content Include="Views\Pay\Payresult.cshtml" />
+    <Content Include="Views\Home\AboutMenu.cshtml" />
+    <Content Include="Views\Home\AboutProfile.cshtml" />
+    <Content Include="Views\Pay\sjrfhgsiueh.cshtml" />
+    <Content Include="Views\Shared\Profile\_SubCitys.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

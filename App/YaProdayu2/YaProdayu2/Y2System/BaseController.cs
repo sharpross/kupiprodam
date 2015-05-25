@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using YaProdayu2.Models.Entities;
+using YaProdayu2.Models.Pay;
 using YaProdayu2.Y2System.Secutity;
 
 namespace YaProdayu2.Y2System
@@ -13,9 +14,38 @@ namespace YaProdayu2.Y2System
     {
         public Y2Authentication Auth { get; set; }
 
+        public bool IsSubmited { get; set; }
+
         public BaseController() : base()
         {
             this.Auth = new Y2Authentication();
+            this.IsSubmited = this.GetSubmeted();
+        }
+
+        private bool GetSubmeted()
+        {
+            var result = false;
+
+            if (this.Auth.CurrentUser != null)
+            {
+                var records = new PayService()
+                    .GetAll()
+                    .Where(x => x.UserId == this.Auth.CurrentUser.Id)
+                    .OrderBy(x => x.DateBegin)
+                    .ToList();
+
+                if (records.Count() > 0)
+                {
+                    var last = records[0];
+
+                    if (DateTime.Now >= last.DateBegin && DateTime.Now <= last.DateEnd)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return result;
         }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -34,6 +64,25 @@ namespace YaProdayu2.Y2System
             }
 
  	        base.OnActionExecuting(filterContext);
+        }
+
+        private bool IsSub()
+        {
+            var result = false;
+
+            if (this.Auth.CurrentUser != null)
+            {
+                var payService = new PayService();
+
+                var pays = payService
+                    .GetAll()
+                    .Where(x => x.UserId == this.Auth.CurrentUser.Id)
+                    .OrderBy(x => x.DateBegin);
+
+                //var lastPay = pays.Count() > 0 : pays[0] ? null;
+            }
+
+            return result;
         }
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
@@ -76,5 +125,6 @@ namespace YaProdayu2.Y2System
 
             return false;
         }
+
     }
 }

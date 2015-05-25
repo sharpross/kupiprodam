@@ -43,7 +43,10 @@ namespace YaProdayu2
 
                 configuration.For<BuyerController>(ac => ac.CreateTender(string.Empty)).Ignore();
                 configuration.For<BuyerController>(ac => ac.GetListCityes(string.Empty)).Ignore();
+                configuration.For<BuyerController>(ac => ac.GetListRegions(string.Empty)).Ignore();
+                configuration.For<BuyerController>(ac => ac.GetCountrys()).Ignore();
                 configuration.For<HomeController>().Ignore();
+                configuration.For<PayController>().Ignore();
                 configuration.For<ErrorController>().Ignore();
 
                 configuration.ResolveServicesUsing(type =>

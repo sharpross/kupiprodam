@@ -1,0 +1,134 @@
+﻿<form method ="post" action="UpdateProfile">
+    <div class="form-group">
+        <label for="SubTheme2" class="control-label col-md-12">Страна</label>
+        <div class="col-md-4">
+            <select class="form-control" name="Country" id="CountrysSelect" required>
+                <option disabled selected>Выберите страну</option>
+                @foreach (var item in Model.ListCountrys)
+                {
+                    <option>@item</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="SubTheme2" class="control-label col-md-12">Регион</label>
+        <div class="col-md-4">
+            <select class="form-control" name="Region" id="RegionSelect" required>
+                <option disabled selected>Выберите регион</option>
+                @foreach (var item in Model.ListRegions)
+                {
+                    <option disabled selected>Выберите регион</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="SubTheme2" class="control-label col-md-12">Город</label>
+        <div class="col-md-4">
+            <select class="form-control" name="City" id="CitySelect" required>
+                <option disabled selected>Выберите город</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group col-md-12" style=" padding-top: 10px;">
+        <button type="button" class="button" onclick="addCityToList()">Добавить город</button>
+        <button type="button" class="button" onclick="addRegionsToList()">Добавить регион</button>
+    </div>
+    <div class="col-lg-6" id="listCity">
+        
+    </div>
+    <div class="col-lg-6" id="listRegions">
+        
+    </div>
+    <div class="form-group">
+        <div class="col-md-12" style=" padding-top: 10px;">
+            <a href="#" class="btn btn-two" onclick="SaveCitys()">Сохранить</a>
+        </div>
+    </div>
+</form>
+
+<script>
+    function addCityToList() {
+        var e = $('select#CitySelect')
+
+        if (e.val() == 'Выберите регион' || e.val() == null) {
+            return;
+        }
+
+        if (canAdd('city', e.val())) {
+            var id = e.val().toString().replace(/\s/g, '_');
+            var newVal = '<div class="city-block" id="' + id + '"><div class="city-title">'
+                + e.val()
+                + ' <span class="fa fa-trash-o like-link" onclick="removeFromList('
+                + id + ')"></span></div></div>';
+
+            $('div#listCity').append(newVal);
+        }
+    }
+
+    function addRegionsToList() {
+        var e = $('select#RegionSelect')
+
+        if (e.val() == 'Выберите регион' || e.val() == null) {
+            return;
+        }
+
+        if (canAdd('region', e.val())) {
+            var id = e.val().toString().replace(/\s/g, '_');
+            var newVal = '<div class="city-block" id="' + id + '"><div class="city-title">'
+                + e.val()
+                + ' <span class="fa fa-trash-o like-link" onclick="removeFromList('
+                + id + ')"></span></div></div>';
+
+            $('div#listRegions').append(newVal);
+        }
+    }
+
+    function removeFromList(id) {
+        if (id) {
+            id.remove()
+        }
+    }
+
+    function canAdd(type, name) {
+        var list = null;
+
+        if (type == 'city') {
+            list = 'listCity';
+        }
+        if (type == 'region') {
+            list = 'listRegions';
+        }
+
+        var items = $('[id=' + list + '] > div');
+
+        if (items.length >= 10) {
+            return false;
+        }
+
+        for (var i = 0; i < items.length; i++) {
+            if (name == items[i].id.toString().replace(/_/g, ' ')) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+</script>
+
+<style>
+    .city-block {
+        max-width: 300px;
+        text-align: center;
+    }
+    .like-link {
+        cursor: pointer;
+    }
+    .city-title {
+        margin-top: 5px;
+    }
+</style>

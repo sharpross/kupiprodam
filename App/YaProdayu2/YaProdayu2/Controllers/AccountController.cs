@@ -621,8 +621,7 @@ namespace YaProdayu2.Controllers
             {
                 tempList = session.CreateCriteria<Country>()
                     .List<Country>()
-                    .Where(x => x.Country_id == 9908 ||
-                        x.Country_id == 248 ||
+                    .Where(x => x.Country_id == 248 ||
                         x.Country_id == 9787 ||
                         x.Country_id == 1894 ||
                         x.Country_id == 1280 ||
@@ -638,7 +637,7 @@ namespace YaProdayu2.Controllers
                     .ToList();
             }
 
-            list.AddRange(list);
+            list.AddRange(tempList);
 
             return list;
         }

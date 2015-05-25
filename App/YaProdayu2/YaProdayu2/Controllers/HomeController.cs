@@ -33,6 +33,16 @@ namespace YaProdayu2.Controllers
             return View();
         }
 
+        public ActionResult AboutMenu()
+        {
+            return View();
+        }
+
+        public ActionResult AboutProfile()
+        {
+            return View();
+        }
+
         public ActionResult Instruction()
         {
             return View();
@@ -49,14 +59,14 @@ namespace YaProdayu2.Controllers
             var model = new SupportModel();
 
             var service = new MailService();
-            service.Send(new MailServiceParams()
+            /*service.Send(new MailServiceParams()
             {
                 Body = model.Message,
                 From = "site",
                 Title = model.Title,
                 To = "",
                 
-            });
+            });*/
 
             return View(model);
         }

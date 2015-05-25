@@ -2,18 +2,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
-
             </div>
             <div class="col-lg-8">
                 @if (ViewBag.IsAuth == false)
                 {
-                        @Html.ActionLink("Регистрация, как это работает", "Registration", "Account", null, new { @style = "color: #245071;" }) @:- 
+                    @Html.ActionLink("Регистрация, как это работает", "Registration", "Account", null, new { @style = "color: #245071;" }) @:-
                 }
-                @Html.ActionLink("Документы", "Docs", "Home", null, new { @style = "color: #245071;" }) - 
-                @Html.ActionLink("Поддержка", "Support", "Home", null, new { @style = "color: #245071;" }) - 
-                @Html.ActionLink("Рекламодателям ", "Adv", "Home", null, new { @style = "color: #245071;" }) 
+                @Html.ActionLink("Документы и правила", "Docs", "Home", null, new { @style = "color: #245071;" }) -
+                @Html.ActionLink("Обратная связь", "Support", "Home", null, new { @style = "color: #245071;" }) -
+                @Html.ActionLink("Рекламодателям ", "Adv", "Home", null, new { @style = "color: #245071;" })
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-12">
+                <div> Я предлагаю © — интернет торги услуг (товаров) для физических лиц и частных компний. Просмотр, регистрация, использование сайта, означает согласие с @Html.ActionLink("пользовательским соглашением", "Termins", "Home", null, new { @style = "text-decoration: underline;" }). </div>
+                <div>Совершая оплату на сайте, вы принимаете @Html.ActionLink("оферта", "Termins", "Home", null, new { @style = "text-decoration: underline;" }).</div>
+                <div>Оставляя при использовании сайта персональные данные, Вы согласны, что они будут опубликованы для просмотра третьим лицам.</div>
             </div>
         </div>
     </div>

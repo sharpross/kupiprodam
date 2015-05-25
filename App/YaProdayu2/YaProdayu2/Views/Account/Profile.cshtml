@@ -34,6 +34,9 @@
                     </form>
                 </div>
                 <div class="col-md-8">
+                    <div class="form-group">
+                        @Html.ActionLink("Правила заполнения профиля", "AboutProfile", "Home", null, new { @style = "text-decoration: underline;" })
+                    </div>
                     <form method="post" action="UpdateProfile">
                         <div class="form-group">
                             <label for="Name">Имя</label>
@@ -186,56 +189,7 @@
             </div>
             <div class="tab-pane" id="tab5-5">
                 <div class="row">
-                    <form method="post" action="UpdateProfile">
-                        <div class="form-group">
-                            <label for="SubTheme2" class="control-label col-md-12">Страна</label>
-                            <div class="col-md-4">
-                                <select class="form-control" name="Country" id="CountrysSelect" required>
-                                    <option disabled selected>Выберите страну</option>
-                                    @foreach (var item in Model.ListCountrys)
-                                    {
-                                        <option>@item</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="SubTheme2" class="control-label col-md-12">Регион</label>
-                            <div class="col-md-4">
-                                <select class="form-control" name="Region" id="RegionSelect" required>
-                                    <option disabled selected>Выберите регион</option>
-                                    @foreach (var item in Model.ListRegions)
-                                    {
-                                        <option disabled selected>Выберите регион</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="SubTheme2" class="control-label col-md-12">Город</label>
-                            <div class="col-md-4">
-                                <select class="form-control" name="City" required>
-                                    <option disabled selected>Выберите город</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-12" style=" padding-top: 10px;">
-                            <button type="button" class="button" onclick="AddCity()">Добавить</button>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <select class="form-control" name="CityList" size="10" >
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12" style=" padding-top: 10px;">
-                                <a href="#" class="btn btn-two" onclick="SaveCitys()">Сохранить</a>
-                            </div>
-                        </div>
-                    </form>
+                    @Html.Partial("Profile/_SubCitys")
                 </div>
             </div>
             <div class="tab-pane" id="tab5-6">

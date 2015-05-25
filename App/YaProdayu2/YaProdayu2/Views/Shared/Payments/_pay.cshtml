@@ -31,22 +31,6 @@
         </p>
         <div class="text-center">
             @Html.Raw(ViewBag.PayScript)
-            <script>
-                function getSign() {
-                    return md5("my-tend.com:100:0:test");
-                }
-                $(document).ready(function () {
-                    $('form[id=pay]').find('[name=SignatureValue]').val(md5("my-tend.com:100.0:0:test:my-tend2015"));
-                });
-            </script>
-            <form id="pay" action='http://test.robokassa.ru/Index.aspx' method=POST>
-                <input type=hidden name="MrchLogin" value="my-tend.com">
-                <input type=hidden name="OutSum" value="100">
-                <input type=hidden name="InvId" value="0">
-                <input type=hidden name="Desc" value="test3405816fd0f08e425e7feed32d2301d3
-                <input type=hidden name=" signaturevalue" value='3405816fd0f08e425e7feed32d2301d3'>
-                <input type="submit" value='Оплатить'>
-            </form>
         </div>
         <div>
             <p>

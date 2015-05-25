@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using YaProdayu2.Models.Entities;
+using YaProdayu2.Models.Pay;
+using YaProdayu2.Y2System;
 
 namespace YaProdayu2.Controllers
 {
-    public class PayController : Controller
+    public class PayController : BaseController
     {
         // GET: Pay
         public ActionResult Index()
@@ -22,42 +26,21 @@ namespace YaProdayu2.Controllers
 
         private string GetPayString()
         {
-            // регистрационная информация (логин, пароль #1)
-            // registration info (login, password #1)
-            string sMrchLogin = "alfa-tender";
-            string sMrchPass1 = "my-tend201";
-
-            // номер заказа
-            // number of order
+            // your registration data
+            string sMrchLogin = "my-tend.com";
+            string sMrchPass1 = "my-tend2015";
+            // order properties
+            decimal nOutSum = 10M;
             int nInvId = 0;
+            string sDesc = "desc";
 
-            // описание заказа
-            // order description
-            string sDesc = "Оплата подписки на Я-Прелагаю";
+            string sOutSum = nOutSum.ToString("0.00", CultureInfo.InvariantCulture);
+            string sCrcBase = string.Format("{0}:{1}:{2}:{3}:Shp_item={4}",
+                                             sMrchLogin, sOutSum, nInvId, sMrchPass1, this.Auth.CurrentUser.Id);
 
-            // сумма заказа
-            // sum of order
-            string sOutSum = "100.00";
-
-            // тип товара
-            // code of goods
-            string sShpItem = "1";
-
-            // язык
-            // language
-            string sCulture = "ru";
-
-            // кодировка
-            // encoding
-            string sEncoding = "utf-8";
-
-            // формирование подписи
-            // generate signature
-            string sCrcBase = string.Format("{0}:{1}:{2}:{3}:shpItem={4}",
-                                sMrchLogin, sOutSum, nInvId, sMrchPass1, sShpItem);
-
+            // build CRC value
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] bSignature = md5.ComputeHash(Encoding.UTF8.GetBytes(sCrcBase));
+            byte[] bSignature = md5.ComputeHash(Encoding.ASCII.GetBytes(sCrcBase));
 
             StringBuilder sbSignature = new StringBuilder();
             foreach (byte b in bSignature)
@@ -65,20 +48,15 @@ namespace YaProdayu2.Controllers
 
             string sCrc = sbSignature.ToString();
 
-            // HTML-страница с кассой
-            // ROBOKASSA HTML-page
-            // ltKassa is System.Web.UI.WebControls.Literal;
+            // build URL
+            return "<a href=\"https://auth.robokassa.ru/Merchant/Index.aspx?" +
+                                                "MrchLogin=" + sMrchLogin +
+                                                "&OutSum=" + sOutSum +
+                                                "&InvId=" + nInvId +
+                                                "&Desc=" + sDesc +
+                                                "&Shp_item=" + this.Auth.CurrentUser.Id +
+                                                "&SignatureValue=" + sCrc + "\">оплатить</a>";
 
-            return "<script language=JavaScript " +
-                                    "src=\"https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" +
-                                    "MerchantLogin=" + sMrchLogin +
-                                    "&OutSum=" + sOutSum +
-                                    "&InvoiceID=" + nInvId +
-                                    "&shpItem=" + sShpItem +
-                                    "&SignatureValue=" + sCrc +
-                                    "&Description=" + sDesc +
-                                    "&Culture=" + sCulture +
-                                    "&Encoding=" + sEncoding + "\"></script>";
         }
 
         public ActionResult Success()
@@ -91,22 +69,72 @@ namespace YaProdayu2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Payresult()
+        public ActionResult sjrfhgsiueh()
         {
-            if (this.IsValid())
+            var payService = new PayService();
+            var userService = new UserSystemService();
+
+            var records = payService.GetAll();
+
+            var list = new List<PayInfoModel>();
+
+            foreach (var rec in records)
             {
-                var user = this.Request["shpItem"].ToString();
-
-                var dateBegin = DateTime.Now;
-                var dateEnd = DateTime.Now.AddMonths(1);
-
-                //var temdata = this.Request["shpItem"].ToString();
-
-                return RedirectToAction("Success");
+                list.Add(new PayInfoModel() { 
+                    UserMail = userService.GetAll().Where(x => x.Id == rec.UserId).FirstOrDefault().Login,
+                    PayDay = rec.DateBegin,
+                    PayEnd = rec.DateEnd
+                });
             }
 
-            return RedirectToAction("Fail");
+            return View(list);
+        }
+
+        public ActionResult Payresult()
+        {
+            try
+            {
+                if (this.IsValid())
+                {
+                    var userId = GetPrm("Shp_item");
+
+                    var dateBegin = DateTime.Now;
+                    var dateEnd = DateTime.Now.AddMonths(1);
+
+                    var userService = new UserSystemService();
+
+                    var user = userService.Get(int.Parse(userId));
+
+                    if (user != null)
+                    {
+                        var payService = new PayService();
+
+                        payService.Save(new PayInfo()
+                        {
+                            UserId = user.Id,
+                            DateBegin = dateBegin,
+                            DateEnd = dateEnd
+                        });
+                    }
+
+                    ViewBag.IsTruePay = "true";
+
+
+                    //return RedirectToAction("Success");
+                }
+                else
+                {
+                    ViewBag.IsTruePay = "false";
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.IsTruePay = ex.StackTrace;
+            }
+
+            return View();
+
+            //return RedirectToAction("Fail");
         }
 
         private bool IsValid()
@@ -116,10 +144,11 @@ namespace YaProdayu2.Controllers
             // HTTP parameters
             string sOutSum = GetPrm("OutSum");
             string sInvId = GetPrm("InvId");
+            string Shp_item = GetPrm("Shp_item");
             string sCrc = GetPrm("SignatureValue");
 
-            string sCrcBase = string.Format("{0}:{1}:{2}",
-                                             sOutSum, sInvId, sMrchPass2);
+            string sCrcBase = string.Format("{0}:{1}:{2}:Shp_item={3}",
+                                             sOutSum, sInvId, sMrchPass2, Shp_item);
 
             // build own CRC
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
@@ -142,16 +171,27 @@ namespace YaProdayu2.Controllers
 
         private string GetPrm(string sName)
         {
-            string sValue;
-            sValue = this.Request[sName] as string;
+            string sValue = string.Empty;
 
-            if (string.IsNullOrEmpty(sValue))
-                sValue = this.Request.Params[sName] as string;
+            if ((this.Request.Params[sName] as string) != null)
+                return this.Request.Params[sName] as string;
 
-            if (string.IsNullOrEmpty(sValue))
-                sValue = String.Empty;
+            if ((this.Request[sName] as string) != null)
+                return this.Request[sName] as string;
+
+            if ((this.Request.QueryString[sName] as string) != null)
+                return this.Request.QueryString[sName] as string;
 
             return sValue;
         }
+    }
+
+    public class PayInfoModel
+    {
+        public string UserMail { get; set; }
+
+        public DateTime PayDay { get; set; }
+
+        public DateTime PayEnd { get; set; }
     }
 }

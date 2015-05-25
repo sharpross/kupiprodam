@@ -135,7 +135,7 @@ label {
 }
 
 b, strong {
-    color: black;
+    font-weight: 300;
 }
 
 h1, h2, h3 {

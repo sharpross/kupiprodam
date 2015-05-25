@@ -73,7 +73,7 @@ namespace YaProdayu2.Y2System.Secutity
         {
             get
             {
-                if (this.CurrentSystemUser == null)
+                if (this.CurrentSystemUser == null && this.HttpContext != null)
                 {
                     try
                     {
